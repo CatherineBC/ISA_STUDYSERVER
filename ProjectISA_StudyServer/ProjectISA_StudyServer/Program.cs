@@ -16,7 +16,7 @@ namespace ProjectISA_StudyServer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new FormMainUser());
         }
     }
 }
