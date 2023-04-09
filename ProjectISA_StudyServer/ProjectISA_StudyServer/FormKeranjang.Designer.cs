@@ -65,6 +65,7 @@ namespace ProjectISA_StudyServer
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormKeranjang";
             this.Text = "FormKeranjang";
+            this.Load += new System.EventHandler(this.FormKeranjang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

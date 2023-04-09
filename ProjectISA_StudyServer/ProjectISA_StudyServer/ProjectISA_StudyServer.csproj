@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>db.settings</DependentUpon>
+    </Compile>
     <Compile Include="FormBeli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +134,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="db.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
