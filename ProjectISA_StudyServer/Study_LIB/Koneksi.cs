@@ -39,7 +39,7 @@ namespace Study_LIB
             }
         }
 
-        /*
+        
         public static MySqlDataReader JalankanPerintahQuery(string sql)
         {
             //MySqlDataReader result = null;
@@ -60,10 +60,10 @@ namespace Study_LIB
             MySqlCommand command = new MySqlCommand(sql, dbConnection.KoneksiDB);
             return command.ExecuteNonQuery();
         }
-        */
+        
         #endregion
 
-        /*
+        
 
         #region Constuctor 
 
@@ -76,7 +76,7 @@ namespace Study_LIB
             ConfigurationSectionGroup userSettings = config.SectionGroups["userSettings"];
 
             //Ambil bagian setting
-            var settingSection = userSettings.Sections["ProjectUTS.db"] as ClientSettingsSection;
+            var settingSection = userSettings.Sections["ProjectISA_StudyServer.db"] as ClientSettingsSection;
 
             //Ambil tiap variable setting
             string DbServer = settingSection.Settings.Get("DbServer").Value.ValueXml.InnerText;
@@ -95,6 +95,6 @@ namespace Study_LIB
         }
 
         #endregion
-        */
+        
     }
 }
