@@ -46,16 +46,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormBeli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormBeli.Designer.cs">
+      <DependentUpon>FormBeli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKeranjang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKeranjang.Designer.cs">
+      <DependentUpon>FormKeranjang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainSeller.Designer.cs">
+      <DependentUpon>FormMainSeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainUser.Designer.cs">
+      <DependentUpon>FormMainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisPengguna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisPengguna.Designer.cs">
+      <DependentUpon>FormRegisPengguna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisSeller.Designer.cs">
+      <DependentUpon>FormRegisSeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahBarangSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahBarangSeller.Designer.cs">
+      <DependentUpon>FormTambahBarangSeller.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormBeli.resx">
+      <DependentUpon>FormBeli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKeranjang.resx">
+      <DependentUpon>FormKeranjang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainSeller.resx">
+      <DependentUpon>FormMainSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainUser.resx">
+      <DependentUpon>FormMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisPengguna.resx">
+      <DependentUpon>FormRegisPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisSeller.resx">
+      <DependentUpon>FormRegisSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahBarangSeller.resx">
+      <DependentUpon>FormTambahBarangSeller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
