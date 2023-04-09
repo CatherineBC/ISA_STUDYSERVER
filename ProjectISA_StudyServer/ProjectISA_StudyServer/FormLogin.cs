@@ -51,5 +51,12 @@ namespace ProjectISA_StudyServer
                 MessageBox.Show("Login Gagal. Pesan Kesalahan : " + ex.Message, "Information");
             }
         }
+
+        private void labelDriver_Click(object sender, EventArgs e)
+        {
+            FormRegisPengguna formRegisPengguna = new FormRegisPengguna();
+            formRegisPengguna.Owner = this;
+            formRegisPengguna.ShowDialog();
+        }
     }
 }

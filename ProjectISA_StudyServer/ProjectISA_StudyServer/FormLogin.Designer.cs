@@ -93,6 +93,7 @@ namespace ProjectISA_StudyServer
             this.labelDriver.Size = new System.Drawing.Size(49, 21);
             this.labelDriver.TabIndex = 77;
             this.labelDriver.Text = "User";
+            this.labelDriver.Click += new System.EventHandler(this.labelDriver_Click);
             // 
             // label4
             // 
@@ -126,7 +127,7 @@ namespace ProjectISA_StudyServer
             this.buttonLogin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonLogin.Location = new System.Drawing.Point(173, 229);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(133, 49);
             this.buttonLogin.TabIndex = 74;
@@ -138,7 +139,7 @@ namespace ProjectISA_StudyServer
             // 
             this.textBoxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxUsername.Location = new System.Drawing.Point(164, 121);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(273, 22);
             this.textBoxUsername.TabIndex = 70;
@@ -148,7 +149,7 @@ namespace ProjectISA_StudyServer
             this.checkBoxShowPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxShowPassword.AutoSize = true;
             this.checkBoxShowPassword.Location = new System.Drawing.Point(175, 192);
-            this.checkBoxShowPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxShowPassword.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
             this.checkBoxShowPassword.Size = new System.Drawing.Size(125, 20);
             this.checkBoxShowPassword.TabIndex = 73;
@@ -171,7 +172,7 @@ namespace ProjectISA_StudyServer
             // 
             this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPassword.Location = new System.Drawing.Point(164, 156);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(273, 22);
