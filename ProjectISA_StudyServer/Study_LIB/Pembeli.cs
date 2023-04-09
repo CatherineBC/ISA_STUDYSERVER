@@ -10,7 +10,7 @@ namespace Study_LIB
     public class Pembeli
     {
         #region Data Members
-        string id;
+        int id;
         string nama;
         string username;
         string password;
@@ -20,7 +20,7 @@ namespace Study_LIB
         #endregion
 
         #region Constructors
-        public Pembeli(string id, string nama, string username, string password, string email, string alamat, string no_telpon)
+        public Pembeli(int id, string nama, string username, string password, string email, string alamat, string no_telpon)
         {
             Id = id;
             Nama = nama;
@@ -32,7 +32,7 @@ namespace Study_LIB
         }
         public Pembeli()
         {
-            Id = "";
+            Id = 1;
             Nama = "";
             Username = "";
             Password = "";
@@ -43,7 +43,7 @@ namespace Study_LIB
         #endregion
 
         #region Properties
-        public string Id { get => id; set => id = value; }
+        public int Id { get => id; set => id = value; }
         public string Nama { get => nama; set => nama = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
@@ -74,13 +74,49 @@ namespace Study_LIB
                 pembeli.No_telpon = hasil.GetValue(6).ToString();
                 return pembeli;
                 */
-                Pembeli pembeli = new Pembeli(hasil.GetValue(0).ToString(), hasil.GetValue(1).ToString(),
+                Pembeli pembeli = new Pembeli(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(),
                     hasil.GetValue(2).ToString(),
                     hasil.GetValue(3).ToString(), hasil.GetValue(4).ToString(),
                     hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString());
                 return pembeli;
             }
             return null;
+        }
+
+        public static Boolean TambahData(Pembeli pembeli)
+        {
+            
+            string sql = "INSERT INTO pembelis(id, nama, username, password, email, alamat, no_telpon) VALUES ('"
+                + pembeli.Id + "','" +
+                pembeli.Nama.Replace("'", "\\'") + "','" + pembeli.Username + "','" +  pembeli.Password + "','"
+                + pembeli.Email + "','" + pembeli.Alamat + "','" + pembeli.No_telpon + "')";
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0)
+            {
+                return false;
+            }
+            else { return true; }
+        }
+
+        public static int GenerateId()
+        {
+            string sql = "select max(right(id,3)) from pembelis";
+            int hasilNo = 1;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    int noId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                    hasilNo = noId;
+                }
+                else
+                {
+                    hasilNo = 1;
+                }
+            }
+
+            return hasilNo;
         }
         #endregion
     }

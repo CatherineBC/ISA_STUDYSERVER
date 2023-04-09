@@ -20,7 +20,36 @@ namespace ProjectISA_StudyServer
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            //Pembeli pembeli = new Pembeli(textBoxNamaPegawai.Text, );
+            try
+            {
+                if(textBoxPwd.Text == textBoxPwdUlang.Text)
+                {
+                    int id = Pembeli.GenerateId();
+
+                    Pembeli pembeli = new Pembeli(id, textBoxNama.Text, textBoxUserName.Text, textBoxPwdUlang.Text,
+                        textBoxEmail.Text, textBoxAlamat.Text, textBoxNoHp.Text);
+                    Boolean status = Pembeli.TambahData(pembeli);
+                    if (status == true)
+                    {
+                        MessageBox.Show("Data pengguna berhasil ditambahkan.", "Informasi");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Password yang dimasukkan tidak sesuai");
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }

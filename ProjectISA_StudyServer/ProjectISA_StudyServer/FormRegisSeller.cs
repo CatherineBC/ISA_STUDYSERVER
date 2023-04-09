@@ -16,5 +16,10 @@ namespace ProjectISA_StudyServer
         {
             InitializeComponent();
         }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

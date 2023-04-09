@@ -58,5 +58,12 @@ namespace ProjectISA_StudyServer
             formRegisPengguna.Owner = this;
             formRegisPengguna.ShowDialog();
         }
+
+        private void labelSender_Click(object sender, EventArgs e)
+        {
+            FormRegisSeller frm = new FormRegisSeller();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
     }
 }

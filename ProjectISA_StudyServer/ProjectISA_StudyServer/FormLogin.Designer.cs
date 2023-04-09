@@ -80,6 +80,7 @@ namespace ProjectISA_StudyServer
             this.labelSender.Size = new System.Drawing.Size(58, 21);
             this.labelSender.TabIndex = 78;
             this.labelSender.Text = "Seller";
+            this.labelSender.Click += new System.EventHandler(this.labelSender_Click);
             // 
             // labelDriver
             // 
