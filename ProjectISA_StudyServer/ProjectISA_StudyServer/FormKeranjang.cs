@@ -16,5 +16,10 @@ namespace ProjectISA_StudyServer
         {
             InitializeComponent();
         }
+
+        private void FormKeranjang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

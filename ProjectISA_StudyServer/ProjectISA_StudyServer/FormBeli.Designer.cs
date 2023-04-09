@@ -178,6 +178,7 @@ namespace ProjectISA_StudyServer
             this.Controls.Add(this.labelBeli);
             this.Name = "FormBeli";
             this.Text = "FormBeli";
+            this.Load += new System.EventHandler(this.FormBeli_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStok)).EndInit();
