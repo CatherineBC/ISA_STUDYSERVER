@@ -30,8 +30,8 @@ namespace ProjectISA_StudyServer
         private void InitializeComponent()
         {
             this.labelTambahBarang = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTambahBarang
@@ -46,15 +46,15 @@ namespace ProjectISA_StudyServer
             this.labelTambahBarang.Text = "KERANJANG";
             this.labelTambahBarang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // dataGridViewData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(957, 335);
-            this.dataGridView1.TabIndex = 33;
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Location = new System.Drawing.Point(0, 120);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.RowHeadersWidth = 62;
+            this.dataGridViewData.RowTemplate.Height = 28;
+            this.dataGridViewData.Size = new System.Drawing.Size(957, 335);
+            this.dataGridViewData.TabIndex = 33;
             // 
             // FormKeranjang
             // 
@@ -62,11 +62,11 @@ namespace ProjectISA_StudyServer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 455);
             this.Controls.Add(this.labelTambahBarang);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewData);
             this.Name = "FormKeranjang";
             this.Text = "FormKeranjang";
             this.Load += new System.EventHandler(this.FormKeranjang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,6 +74,6 @@ namespace ProjectISA_StudyServer
         #endregion
 
         private System.Windows.Forms.Label labelTambahBarang;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewData;
     }
 }

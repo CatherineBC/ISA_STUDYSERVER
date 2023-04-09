@@ -30,42 +30,42 @@ namespace ProjectISA_StudyServer
         private void InitializeComponent()
         {
             this.labelNama = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNama
             // 
             this.labelNama.AutoSize = true;
-            this.labelNama.Location = new System.Drawing.Point(658, 13);
+            this.labelNama.Location = new System.Drawing.Point(740, 16);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(150, 16);
+            this.labelNama.Size = new System.Drawing.Size(179, 20);
             this.labelNama.TabIndex = 3;
             this.labelNama.Text = "Selamat Datang , Nama";
             // 
-            // dataGridView1
+            // dataGridViewData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 86);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(851, 268);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Location = new System.Drawing.Point(12, 108);
+            this.dataGridViewData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.RowHeadersWidth = 62;
+            this.dataGridViewData.RowTemplate.Height = 28;
+            this.dataGridViewData.Size = new System.Drawing.Size(957, 335);
+            this.dataGridViewData.TabIndex = 2;
             // 
             // FormMainUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 366);
+            this.ClientSize = new System.Drawing.Size(981, 458);
             this.Controls.Add(this.labelNama);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewData);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMainUser";
             this.Text = "FormMainUser";
             this.Load += new System.EventHandler(this.FormMainUser_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,6 +74,6 @@ namespace ProjectISA_StudyServer
         #endregion
 
         private System.Windows.Forms.Label labelNama;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewData;
     }
 }

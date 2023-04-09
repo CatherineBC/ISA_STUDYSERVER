@@ -31,8 +31,8 @@ namespace ProjectISA_StudyServer
         {
             this.labelToko = new System.Windows.Forms.Label();
             this.labelNama = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
             // labelToko
@@ -53,15 +53,15 @@ namespace ProjectISA_StudyServer
             this.labelNama.TabIndex = 6;
             this.labelNama.Text = "Selamat Datang , Nama";
             // 
-            // dataGridView1
+            // dataGridViewData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(957, 333);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Location = new System.Drawing.Point(22, 208);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.RowHeadersWidth = 62;
+            this.dataGridViewData.RowTemplate.Height = 28;
+            this.dataGridViewData.Size = new System.Drawing.Size(957, 333);
+            this.dataGridViewData.TabIndex = 5;
             // 
             // FormMainSeller
             // 
@@ -70,10 +70,10 @@ namespace ProjectISA_StudyServer
             this.ClientSize = new System.Drawing.Size(1001, 564);
             this.Controls.Add(this.labelToko);
             this.Controls.Add(this.labelNama);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewData);
             this.Name = "FormMainSeller";
             this.Text = "FormMainSeller";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,6 +83,6 @@ namespace ProjectISA_StudyServer
 
         private System.Windows.Forms.Label labelToko;
         private System.Windows.Forms.Label labelNama;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewData;
     }
 }

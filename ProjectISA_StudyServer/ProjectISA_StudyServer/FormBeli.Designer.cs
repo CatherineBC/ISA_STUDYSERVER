@@ -171,7 +171,7 @@ namespace ProjectISA_StudyServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 485);
+            this.ClientSize = new System.Drawing.Size(548, 502);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.panel1);

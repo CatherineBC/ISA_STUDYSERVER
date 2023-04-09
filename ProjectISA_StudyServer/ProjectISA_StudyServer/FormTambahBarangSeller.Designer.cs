@@ -30,7 +30,7 @@ namespace ProjectISA_StudyServer
         private void InitializeComponent()
         {
             this.buttonKosongi = new System.Windows.Forms.Button();
-            this.textBoxKodeBarang = new System.Windows.Forms.TextBox();
+            this.textBoxNamaBarang = new System.Windows.Forms.TextBox();
             this.labelTambahBarang = new System.Windows.Forms.Label();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +38,12 @@ namespace ProjectISA_StudyServer
             this.buttonTambah = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBoxNamaBarang = new System.Windows.Forms.TextBox();
+            this.numericUpDownStok = new System.Windows.Forms.NumericUpDown();
+            this.textBoxDeskripsiBarang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStok)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonKosongi
@@ -58,12 +58,12 @@ namespace ProjectISA_StudyServer
             this.buttonKosongi.Text = "Kosongi";
             this.buttonKosongi.UseVisualStyleBackColor = false;
             // 
-            // textBoxKodeBarang
+            // textBoxNamaBarang
             // 
-            this.textBoxKodeBarang.Location = new System.Drawing.Point(224, 37);
-            this.textBoxKodeBarang.Name = "textBoxKodeBarang";
-            this.textBoxKodeBarang.Size = new System.Drawing.Size(260, 26);
-            this.textBoxKodeBarang.TabIndex = 14;
+            this.textBoxNamaBarang.Location = new System.Drawing.Point(224, 37);
+            this.textBoxNamaBarang.Name = "textBoxNamaBarang";
+            this.textBoxNamaBarang.Size = new System.Drawing.Size(260, 26);
+            this.textBoxNamaBarang.TabIndex = 14;
             // 
             // labelTambahBarang
             // 
@@ -121,9 +121,9 @@ namespace ProjectISA_StudyServer
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.textBoxKodeBarang);
+            this.panel1.Controls.Add(this.numericUpDownStok);
             this.panel1.Controls.Add(this.textBoxNamaBarang);
+            this.panel1.Controls.Add(this.textBoxDeskripsiBarang);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -142,21 +142,21 @@ namespace ProjectISA_StudyServer
             this.label1.TabIndex = 16;
             this.label1.Text = "Stok :";
             // 
-            // numericUpDown1
+            // numericUpDownStok
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(224, 231);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(260, 26);
-            this.numericUpDown1.TabIndex = 15;
+            this.numericUpDownStok.Location = new System.Drawing.Point(224, 231);
+            this.numericUpDownStok.Name = "numericUpDownStok";
+            this.numericUpDownStok.Size = new System.Drawing.Size(260, 26);
+            this.numericUpDownStok.TabIndex = 15;
             // 
-            // textBoxNamaBarang
+            // textBoxDeskripsiBarang
             // 
-            this.textBoxNamaBarang.Location = new System.Drawing.Point(224, 85);
-            this.textBoxNamaBarang.Multiline = true;
-            this.textBoxNamaBarang.Name = "textBoxNamaBarang";
-            this.textBoxNamaBarang.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxNamaBarang.Size = new System.Drawing.Size(260, 68);
-            this.textBoxNamaBarang.TabIndex = 13;
+            this.textBoxDeskripsiBarang.Location = new System.Drawing.Point(224, 85);
+            this.textBoxDeskripsiBarang.Multiline = true;
+            this.textBoxDeskripsiBarang.Name = "textBoxDeskripsiBarang";
+            this.textBoxDeskripsiBarang.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDeskripsiBarang.Size = new System.Drawing.Size(260, 68);
+            this.textBoxDeskripsiBarang.TabIndex = 13;
             // 
             // label7
             // 
@@ -191,7 +191,7 @@ namespace ProjectISA_StudyServer
             this.Text = "FormTambahBarangSeller";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStok)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +199,7 @@ namespace ProjectISA_StudyServer
         #endregion
 
         private System.Windows.Forms.Button buttonKosongi;
-        private System.Windows.Forms.TextBox textBoxKodeBarang;
+        private System.Windows.Forms.TextBox textBoxNamaBarang;
         private System.Windows.Forms.Label labelTambahBarang;
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Label label2;
@@ -207,8 +207,8 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBoxNamaBarang;
+        private System.Windows.Forms.NumericUpDown numericUpDownStok;
+        private System.Windows.Forms.TextBox textBoxDeskripsiBarang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
     }

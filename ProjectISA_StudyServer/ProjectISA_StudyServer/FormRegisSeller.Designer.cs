@@ -29,45 +29,45 @@ namespace ProjectISA_StudyServer
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxUlangPass = new System.Windows.Forms.TextBox();
-            this.textBoxUName = new System.Windows.Forms.TextBox();
-            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxUlang = new System.Windows.Forms.TextBox();
+            this.textBoxNoHp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.labelDaftarSupplier = new System.Windows.Forms.Label();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNamaPegawai = new System.Windows.Forms.TextBox();
+            this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxNamaToko = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPwD = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxUlangPass
+            // textBoxEmail
             // 
-            this.textBoxUlangPass.Location = new System.Drawing.Point(225, 242);
-            this.textBoxUlangPass.Name = "textBoxUlangPass";
-            this.textBoxUlangPass.Size = new System.Drawing.Size(226, 26);
-            this.textBoxUlangPass.TabIndex = 17;
+            this.textBoxEmail.Location = new System.Drawing.Point(225, 242);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(226, 26);
+            this.textBoxEmail.TabIndex = 17;
             // 
-            // textBoxUName
+            // textBoxUlang
             // 
-            this.textBoxUName.Location = new System.Drawing.Point(225, 154);
-            this.textBoxUName.Name = "textBoxUName";
-            this.textBoxUName.Size = new System.Drawing.Size(226, 26);
-            this.textBoxUName.TabIndex = 16;
+            this.textBoxUlang.Location = new System.Drawing.Point(225, 154);
+            this.textBoxUlang.Name = "textBoxUlang";
+            this.textBoxUlang.Size = new System.Drawing.Size(226, 26);
+            this.textBoxUlang.TabIndex = 16;
             // 
-            // textBoxPass
+            // textBoxNoHp
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(225, 198);
-            this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.Size = new System.Drawing.Size(226, 26);
-            this.textBoxPass.TabIndex = 15;
+            this.textBoxNoHp.Location = new System.Drawing.Point(225, 198);
+            this.textBoxNoHp.Name = "textBoxNoHp";
+            this.textBoxNoHp.Size = new System.Drawing.Size(226, 26);
+            this.textBoxNoHp.TabIndex = 15;
             // 
             // label8
             // 
@@ -120,12 +120,12 @@ namespace ProjectISA_StudyServer
             this.label2.TabIndex = 4;
             this.label2.Text = "Username : ";
             // 
-            // textBoxNamaPegawai
+            // textBoxUserName
             // 
-            this.textBoxNamaPegawai.Location = new System.Drawing.Point(225, 42);
-            this.textBoxNamaPegawai.Name = "textBoxNamaPegawai";
-            this.textBoxNamaPegawai.Size = new System.Drawing.Size(226, 26);
-            this.textBoxNamaPegawai.TabIndex = 3;
+            this.textBoxUserName.Location = new System.Drawing.Point(225, 42);
+            this.textBoxUserName.Name = "textBoxUserName";
+            this.textBoxUserName.Size = new System.Drawing.Size(226, 26);
+            this.textBoxUserName.TabIndex = 3;
             // 
             // buttonTambah
             // 
@@ -151,29 +151,29 @@ namespace ProjectISA_StudyServer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBoxNamaToko);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBoxUlangPass);
-            this.panel1.Controls.Add(this.textBoxUName);
-            this.panel1.Controls.Add(this.textBoxPass);
+            this.panel1.Controls.Add(this.textBoxPwD);
+            this.panel1.Controls.Add(this.textBoxEmail);
+            this.panel1.Controls.Add(this.textBoxUlang);
+            this.panel1.Controls.Add(this.textBoxNoHp);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBoxNamaPegawai);
+            this.panel1.Controls.Add(this.textBoxUserName);
             this.panel1.Location = new System.Drawing.Point(-15, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 312);
             this.panel1.TabIndex = 31;
             // 
-            // textBox2
+            // textBoxNamaToko
             // 
-            this.textBox2.Location = new System.Drawing.Point(225, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 26);
-            this.textBox2.TabIndex = 20;
+            this.textBoxNamaToko.Location = new System.Drawing.Point(225, 79);
+            this.textBoxNamaToko.Name = "textBoxNamaToko";
+            this.textBoxNamaToko.Size = new System.Drawing.Size(226, 26);
+            this.textBoxNamaToko.TabIndex = 20;
             // 
             // label1
             // 
@@ -184,12 +184,12 @@ namespace ProjectISA_StudyServer
             this.label1.TabIndex = 19;
             this.label1.Text = "E-mail :";
             // 
-            // textBox1
+            // textBoxPwD
             // 
-            this.textBox1.Location = new System.Drawing.Point(225, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 26);
-            this.textBox1.TabIndex = 18;
+            this.textBoxPwD.Location = new System.Drawing.Point(225, 118);
+            this.textBoxPwD.Name = "textBoxPwD";
+            this.textBoxPwD.Size = new System.Drawing.Size(226, 26);
+            this.textBoxPwD.TabIndex = 18;
             // 
             // label9
             // 
@@ -219,21 +219,21 @@ namespace ProjectISA_StudyServer
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxUlangPass;
-        private System.Windows.Forms.TextBox textBoxUName;
-        private System.Windows.Forms.TextBox textBoxPass;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxUlang;
+        private System.Windows.Forms.TextBox textBoxNoHp;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelDaftarSupplier;
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxNamaPegawai;
+        private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxNamaToko;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPwD;
         private System.Windows.Forms.Label label9;
     }
 }
