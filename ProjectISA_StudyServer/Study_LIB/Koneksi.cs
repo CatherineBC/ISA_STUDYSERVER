@@ -80,13 +80,17 @@ namespace Study_LIB
 
             //Ambil tiap variable setting
             string DbServer = settingSection.Settings.Get("DbServer").Value.ValueXml.InnerText;
-            string DbPort = settingSection.Settings.Get("DbPort").Value.ValueXml.InnerText;
             string DbName = settingSection.Settings.Get("DbName").Value.ValueXml.InnerText;
             string DbUsername = settingSection.Settings.Get("DbUsername").Value.ValueXml.InnerText;
             string DbPassword = settingSection.Settings.Get("DbPassword").Value.ValueXml.InnerText;
+            string DbPort = settingSection.Settings.Get("DbPort").Value.ValueXml.InnerText;
 
+<<<<<<< Updated upstream
             string strCon = "server=" + DbServer + ";port=" + DbPort + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword;
             //string strCon = "server=" + DbServer  + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword;
+=======
+            string strCon = "server=" + DbServer  + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword;
+>>>>>>> Stashed changes
             //tambahkan sslmode=none jika tidak bisa konek 
             KoneksiDB = new MySqlConnection();
             KoneksiDB.ConnectionString = strCon;
