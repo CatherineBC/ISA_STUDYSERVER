@@ -33,6 +33,26 @@ namespace Study_LIB
         #endregion
 
         #region METHODS
+        public static Boolean TambahData(Order o)
+        {
+            string sql = "insert into orders(idorders,tanggal,pembelis_id,penjuals_id) values ('" + o.id + "', '" + o.tgl.ToString("yyyy-MM-dd HH:mm:ss") + "', '" +
+                o.id_pembeli + "','" + o.id_penjual + "')";
+
+            int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
+            Boolean status;
+
+            if (jumlahDitambahkan == 0)
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
+
+            return status;
+        }
+
 
         #endregion
     }
