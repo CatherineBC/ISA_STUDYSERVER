@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_LIB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace ProjectISA_StudyServer
         public FormRegisPengguna()
         {
             InitializeComponent();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            //Pembeli pembeli = new Pembeli(textBoxNamaPegawai.Text, );
         }
     }
 }
