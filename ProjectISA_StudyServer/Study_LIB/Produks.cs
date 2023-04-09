@@ -41,8 +41,7 @@ namespace Study_LIB
         public static Boolean TambahData(Produks p)
         {
             p.Stok = 0;
-            string sql = "insert into produks(id,nama,harga, Stok) values ('" + p.Nama.Replace("'", "\\") + "','" +
-                p.Harga + "','" + p.Stok +  "')";
+            string sql = "insert into produks(id,nama) values ('" + p.Nama.Replace("'", "\\") +"')";
 
             int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
             Boolean status;
@@ -61,8 +60,7 @@ namespace Study_LIB
 
         public static Boolean UbahData(Produks p)
         {
-            string sql = "update produks set nama ='" + p.Nama.Replace("'", "\\'") + "', Harga ='" + p.Harga +
-                "', stok ='" + p.stok + "' where id  ='" + p.Id + "'";
+            string sql = "update produks set nama ='" + p.Nama.Replace("'", "\\'") + "' where id  ='" + p.Id + "'";
 
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             Boolean status;
