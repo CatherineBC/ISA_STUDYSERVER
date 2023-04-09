@@ -33,7 +33,6 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelHrg = new System.Windows.Forms.Label();
             this.labelStok = new System.Windows.Forms.Label();
             this.numericUpDownStok = new System.Windows.Forms.NumericUpDown();
             this.textBoxDeskripsi = new System.Windows.Forms.TextBox();
@@ -41,6 +40,7 @@ namespace ProjectISA_StudyServer
             this.labelHarga = new System.Windows.Forms.Label();
             this.labelDeskripsi = new System.Windows.Forms.Label();
             this.labelBeli = new System.Windows.Forms.Label();
+            this.textBoxHarga = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStok)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,7 @@ namespace ProjectISA_StudyServer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
-            this.panel1.Controls.Add(this.labelHrg);
+            this.panel1.Controls.Add(this.textBoxHarga);
             this.panel1.Controls.Add(this.labelStok);
             this.panel1.Controls.Add(this.numericUpDownStok);
             this.panel1.Controls.Add(this.textBoxNamaBarang);
@@ -92,15 +92,6 @@ namespace ProjectISA_StudyServer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(565, 314);
             this.panel1.TabIndex = 42;
-            // 
-            // labelHrg
-            // 
-            this.labelHrg.AutoSize = true;
-            this.labelHrg.Location = new System.Drawing.Point(231, 173);
-            this.labelHrg.Name = "labelHrg";
-            this.labelHrg.Size = new System.Drawing.Size(86, 20);
-            this.labelHrg.TabIndex = 17;
-            this.labelHrg.Text = "Harga Jual";
             // 
             // labelStok
             // 
@@ -167,6 +158,14 @@ namespace ProjectISA_StudyServer
             this.labelBeli.Text = "Tambah";
             this.labelBeli.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBoxHarga
+            // 
+            this.textBoxHarga.Enabled = false;
+            this.textBoxHarga.Location = new System.Drawing.Point(224, 173);
+            this.textBoxHarga.Name = "textBoxHarga";
+            this.textBoxHarga.Size = new System.Drawing.Size(260, 26);
+            this.textBoxHarga.TabIndex = 17;
+            // 
             // FormBeli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -192,7 +191,6 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelHrg;
         private System.Windows.Forms.Label labelStok;
         private System.Windows.Forms.NumericUpDown numericUpDownStok;
         private System.Windows.Forms.TextBox textBoxDeskripsi;
@@ -200,5 +198,6 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Label labelHarga;
         private System.Windows.Forms.Label labelDeskripsi;
         private System.Windows.Forms.Label labelBeli;
+        private System.Windows.Forms.TextBox textBoxHarga;
     }
 }
