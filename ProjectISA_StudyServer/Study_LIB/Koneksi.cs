@@ -86,6 +86,7 @@ namespace Study_LIB
             string DbPassword = settingSection.Settings.Get("DbPassword").Value.ValueXml.InnerText;
 
             string strCon = "server=" + DbServer + ";port=" + DbPort + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword;
+            //string strCon = "server=" + DbServer  + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword;
             //tambahkan sslmode=none jika tidak bisa konek 
             KoneksiDB = new MySqlConnection();
             KoneksiDB.ConnectionString = strCon;
