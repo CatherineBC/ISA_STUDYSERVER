@@ -7,78 +7,65 @@ using System.Threading.Tasks;
 
 namespace Study_LIB
 {
-    public class Pembeli
+    public class Administrator
     {
         #region Data Members
         int id;
-        string nama;
         string username;
         string password;
         string email;
-        string alamat;
-        string no_telpon;
         #endregion
 
         #region Constructors
-        public Pembeli(int id, string nama, string username, string password, string email, string alamat, string no_telpon)
+        public Administrator(int id, string username, string password, string email)
         {
             Id = id;
-            Nama = nama;
             Username = username;
             Password = password;
             Email = email;
-            Alamat = alamat;
-            No_telpon = no_telpon;
         }
-        public Pembeli()
+        public Administrator()
         {
             Id = 1;
-            Nama = "";
             Username = "";
             Password = "";
             Email = "";
-            Alamat = "";
-            No_telpon = "";
         }
         #endregion
 
         #region Properties
         public int Id { get => id; set => id = value; }
-        public string Nama { get => nama; set => nama = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
-        public string Alamat { get => alamat; set => alamat = value; }
-        public string No_telpon { get => no_telpon; set => no_telpon = value; }
         #endregion
 
         #region Methods
-        public static Pembeli CekLogin(string username, string password)
+        public static Administrator CekLogin(string username, string password)
         {
             string sql = "";
 
-            sql = "select * from pembelis where username='" + username +
+            sql = "select * from administrator where username='" + username + "' or email ='" + username +
                 "' and password = '" + password + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             while (hasil.Read() == true)
             {
-
-                Pembeli pembeli = new Pembeli(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(),
+                Administrator administrator = new Administrator(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(),
                     hasil.GetValue(2).ToString(),
-                    hasil.GetValue(3).ToString(), hasil.GetValue(4).ToString(),
-                    hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString());
-                return pembeli;
+                    hasil.GetValue(3).ToString());
+                return administrator;
             }
             return null;
         }
 
+        /*
         public static Boolean TambahData(Pembeli pembeli)
         {
-            
+
             string sql = "INSERT INTO pembelis(id, nama, username, password, email, alamat, no_telpon) VALUES ('"
                 + pembeli.Id + "','" +
-                pembeli.Nama.Replace("'", "\\'") + "','" + pembeli.Username + "','" +  pembeli.Password + "','"
+                pembeli.Nama.Replace("'", "\\'") + "','" + pembeli.Username + "','" + pembeli.Password + "','"
                 + pembeli.Email + "','" + pembeli.Alamat + "','" + pembeli.No_telpon + "')";
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0)
@@ -108,6 +95,7 @@ namespace Study_LIB
 
             return hasilNo;
         }
+        */
         #endregion
     }
 }

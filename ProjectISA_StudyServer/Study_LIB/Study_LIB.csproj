@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Keranjang.cs" />
     <Compile Include="Pembeli.cs" />

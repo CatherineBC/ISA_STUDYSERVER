@@ -16,10 +16,12 @@ namespace Study_LIB
         string password;
         string email;
         double rating;
+        string status;
+        Administrator admin;
         #endregion
 
         #region Constructors
-        public Penjual(int id, string nama, string username, string password, string email, double rating)
+        public Penjual(int id, string nama, string username, string password, string email, double rating, string status, Administrator admin)
         {
             Id = id;
             Nama = nama;
@@ -27,6 +29,8 @@ namespace Study_LIB
             Password = password;
             Email = email;
             Rating = rating;
+            Status = status;
+            Admin = admin;
         }
         public Penjual()
         {
@@ -36,6 +40,8 @@ namespace Study_LIB
             Password = "";
             Email = "";
             Rating = 0;
+            status = "";
+            Admin = new Administrator();
         }
         #endregion
 
@@ -46,6 +52,8 @@ namespace Study_LIB
         public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
         public double Rating { get => rating; set => rating = value; }
+        public string Status { get => status; set => status = value; }
+        public Administrator Admin { get => admin; set => admin = value; }
         #endregion
 
         #region Methods
@@ -53,8 +61,10 @@ namespace Study_LIB
         {
             string sql = "";
 
-            sql = "select * from penjuals where username='" + username + "' or email ='" + username +
-                "' and password = '" + password + "'";
+            sql = "select p.id, p.nama_toko, p.username, p.email, p.password, p.rating, p.status, a.id" +
+                " from penjuals p inner join administrator a on p.administrator_id = a.id" +
+                " where p.username='" + username + "' or p.email ='" + username +
+                "' and p.password = '" + password + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             while (hasil.Read() == true)
@@ -68,7 +78,13 @@ namespace Study_LIB
                 penjual.Password = hasil.GetValue(4).ToString();
 
                 penjual.Rating = double.Parse(hasil.GetValue(5).ToString());
+                penjual.Status = hasil.GetString(6);
+
+                Administrator a = new Administrator();
+                a.Id = int.Parse(hasil.GetValue(7).ToString());
+                penjual.Admin = a;
                 return penjual;
+                
             }
             return null;
         }
@@ -76,10 +92,10 @@ namespace Study_LIB
         public static Boolean TambahData(Penjual penjual)
         {
 
-            string sql = "INSERT INTO penjuals(id, nama_toko, username, email, password, rating) VALUES ('"
+            string sql = "INSERT INTO penjuals(id, nama_toko, username, email, password, rating, status) VALUES ('"
                 + penjual.Id + "','" +
                 penjual.Nama.Replace("'", "\\'") + "','" + penjual.Username + "','" + penjual.Email + "','"
-                + penjual.Password + "','" + penjual.Rating + "')";
+                + penjual.Password + "','" + penjual.Rating + "','" + penjual.Status + "')";
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0)
             {
