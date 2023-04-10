@@ -45,7 +45,7 @@ namespace Study_LIB
         {
             string sql = "";
 
-            sql = "select * from administrator where username='" + username + "' or email ='" + username +
+            sql = "select * from administrator where username='" + username +
                 "' and password = '" + password + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);

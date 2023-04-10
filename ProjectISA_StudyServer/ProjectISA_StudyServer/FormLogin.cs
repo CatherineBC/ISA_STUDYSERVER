@@ -44,6 +44,19 @@ namespace ProjectISA_StudyServer
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                Administrator adm = Administrator.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                if (!(adm is null))
+                {
+                    frmMainUser.administrator = adm;
+                    frmMainUser.status = "admin";
+                    MessageBox.Show("Login Berhasil. Selamat Menggunakan Aplikasi: " + adm.Username, "Informasi");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                if((adm is null) && (pe is null) && (p is null))
+                {
+                    MessageBox.Show("Data tidak ditemukan.\nCek kembali email atau password!");
+                }
 
             }
             catch (Exception ex)

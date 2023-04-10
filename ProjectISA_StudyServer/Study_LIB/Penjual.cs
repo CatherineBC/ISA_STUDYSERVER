@@ -89,13 +89,13 @@ namespace Study_LIB
             return null;
         }
 
-        public static Boolean TambahData(Penjual penjual)
+        public static Boolean TambahData(int id, string namaToko, string username, string email, string password, string status)
         {
 
             string sql = "INSERT INTO penjuals(id, nama_toko, username, email, password, rating, status) VALUES ('"
-                + penjual.Id + "','" +
-                penjual.Nama.Replace("'", "\\'") + "','" + penjual.Username + "','" + penjual.Email + "','"
-                + penjual.Password + "','" + penjual.Rating + "','" + penjual.Status + "')";
+                + id + "','" +
+                namaToko + "','" + username + "','" + email + "','"
+                + password + "','" + 5 + "','" + status + "')";
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0)
             {

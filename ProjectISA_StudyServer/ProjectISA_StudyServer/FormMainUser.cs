@@ -19,6 +19,7 @@ namespace ProjectISA_StudyServer
         }
         public Pembeli pembeli;
         public Penjual penjual;
+        public Administrator administrator;
         public string status;
         private void FormMainUser_Load(object sender, EventArgs e)
         {
@@ -36,9 +37,13 @@ namespace ProjectISA_StudyServer
                     {
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
                     }
-                    else
+                    else if(status == "penjual")
                     {
                         labelNama.Text = "Selamat datang, " + penjual.Nama;
+                    }
+                    else
+                    {
+                        labelNama.Text = "Selamat datang, " + administrator.Username;
                     }
 
                 }
