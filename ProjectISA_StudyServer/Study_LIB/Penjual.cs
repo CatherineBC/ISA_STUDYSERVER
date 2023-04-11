@@ -124,6 +124,28 @@ namespace Study_LIB
 
             return hasilNo;
         }
+        public static List<Penjual> BacaDataPenjualTidakAktif()
+        {
+            string sql = "select id, nama_toko, username, email, password, rating, status "
+                + "from penjuals where administrator_id is null";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Penjual> listPenjual = new List<Penjual>();
+
+            while(hasil.Read() == true)
+            {
+                Penjual penjual = new Penjual();
+                penjual.Id = int.Parse(hasil.GetString(0));
+                penjual.Nama = hasil.GetString(1);
+                penjual.Username = hasil.GetString(2);
+                penjual.Email = hasil.GetString(3);
+                penjual.Password = hasil.GetString(4);
+                penjual.Rating = double.Parse(hasil.GetString(5));
+                penjual.Status = hasil.GetString(6);
+
+                listPenjual.Add(penjual);
+            }
+            return listPenjual;
+        }
         #endregion
     }
 }
