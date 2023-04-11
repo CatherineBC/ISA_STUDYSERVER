@@ -66,6 +66,12 @@
     <Compile Include="FormKeranjang.Designer.cs">
       <DependentUpon>FormKeranjang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKonfirmasiToko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKonfirmasiToko.Designer.cs">
+      <DependentUpon>FormKonfirmasiToko.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKeranjang.resx">
       <DependentUpon>FormKeranjang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKonfirmasiToko.resx">
+      <DependentUpon>FormKonfirmasiToko.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
