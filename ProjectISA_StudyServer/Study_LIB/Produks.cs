@@ -20,6 +20,16 @@ namespace Study_LIB
             Id = id;
             Nama = nama;
         }
+        public Produks()
+        {
+            Id = 0;
+            Nama = "";
+        }
+
+        public Produks(int id)
+        {
+            Id = id;
+        }
         #endregion
 
         #region Properties

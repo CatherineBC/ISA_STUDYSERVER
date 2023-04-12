@@ -43,6 +43,11 @@ namespace Study_LIB
             status = "";
             Admin = new Administrator();
         }
+
+        public Penjual(int id)
+        {
+            Id = id;
+        }
         #endregion
 
         #region Properties
