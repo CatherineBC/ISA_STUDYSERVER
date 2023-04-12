@@ -59,5 +59,10 @@ namespace ProjectISA_StudyServer
                 this.Close();
             }
         }
+
+        private void labelNama_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
