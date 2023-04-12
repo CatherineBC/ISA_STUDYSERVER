@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
+    <Compile Include="Chat.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Keranjang.cs" />
     <Compile Include="Pembeli.cs" />

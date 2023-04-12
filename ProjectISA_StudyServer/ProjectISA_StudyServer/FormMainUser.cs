@@ -36,10 +36,13 @@ namespace ProjectISA_StudyServer
                     if (status == "pembeli")
                     {
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
+                        konfirmasiTokoToolStripMenuItem.Visible = false;
+                        
                     }
                     else if(status == "penjual")
                     {
                         labelNama.Text = "Selamat datang, " + penjual.Nama;
+                        konfirmasiTokoToolStripMenuItem.Visible = false;
                     }
                     else
                     {

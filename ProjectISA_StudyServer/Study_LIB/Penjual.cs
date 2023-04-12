@@ -146,6 +146,20 @@ namespace Study_LIB
             }
             return listPenjual;
         }
+        public static Boolean UbahStatusToko(Administrator admin, int id)
+        {
+            string sql = "update penjuals set status = '" + "Aktif" + "', administrator_id = '" + admin.Id + "'" +
+                " where id = " + id;
+            int ubahData = Koneksi.JalankanPerintahDML(sql);
+            if (ubahData == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion
     }
 }

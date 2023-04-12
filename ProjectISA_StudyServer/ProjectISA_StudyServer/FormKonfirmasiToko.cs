@@ -47,27 +47,27 @@ namespace ProjectISA_StudyServer
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
+            
             FormMainUser frm = (FormMainUser)this.Owner;
             Administrator admin;
             admin = frm.administrator;
 
-            if (e.ColumnIndex == dataGridViewDftrTabungan.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridViewData.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
             {
                 try
                 {
-                    string noRek = dataGridViewDftrTabungan.CurrentRow.Cells["NoRekening"].Value.ToString();
+                    int id = int.Parse(dataGridViewData.CurrentRow.Cells["Id"].Value.ToString());
 
-                    Tabungan.UbahStatusTabungan(employee, noRek);
+                    Penjual.UbahStatusToko(admin, id);
                     MessageBox.Show("Status berubah menjadi Aktif", "Informasi");
-                    FormKonfirmasiTabungan_Load(this, e);
+                    FormKonfirmasiToko_Load(this, e);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Kesalahan :" + ex.Message);
                 }
             }
-            */
+            
         }
     }
 }
