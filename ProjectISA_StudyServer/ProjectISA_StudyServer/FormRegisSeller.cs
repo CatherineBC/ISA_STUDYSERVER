@@ -28,7 +28,7 @@ namespace ProjectISA_StudyServer
                     Boolean status = Penjual.TambahData(id, textBoxNamaToko.Text, textBoxUserName.Text, textBoxEmail.Text, textBoxUlang.Text, "Tidak");
                     if (status == true)
                     {
-                        MessageBox.Show("Data penjual berhasil ditambahkan\nMohon Tunggu Konfirmasi Akun oleh Administrator!", "Informasi");
+                        MessageBox.Show("Data penjual berhasil ditambahkan\nMohon tunggu konfirmasi akun oleh administrator!", "Informasi");
                         this.Close();
                     }
                     else
