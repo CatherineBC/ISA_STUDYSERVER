@@ -54,6 +54,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>db.settings</DependentUpon>
     </Compile>
+    <Compile Include="FormBalasChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBalasChat.Designer.cs">
+      <DependentUpon>FormBalasChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBeli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="FormKonfirmasiToko.Designer.cs">
       <DependentUpon>FormKonfirmasiToko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListChat.Designer.cs">
+      <DependentUpon>FormListChat.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -104,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBalasChat.resx">
+      <DependentUpon>FormBalasChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBeli.resx">
       <DependentUpon>FormBeli.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKonfirmasiToko.resx">
       <DependentUpon>FormKonfirmasiToko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListChat.resx">
+      <DependentUpon>FormListChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
