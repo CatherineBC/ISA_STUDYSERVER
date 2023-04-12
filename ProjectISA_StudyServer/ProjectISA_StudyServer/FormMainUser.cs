@@ -64,5 +64,16 @@ namespace ProjectISA_StudyServer
         {
 
         }
+
+        private void konfirmasiTokoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormKonfirmasiToko"];
+            if (form == null)
+            {
+                FormKonfirmasiToko frmKonfirmasi = new FormKonfirmasiToko();
+                frmKonfirmasi.Owner = this;
+                frmKonfirmasi.Show();
+            }
+        }
     }
 }
