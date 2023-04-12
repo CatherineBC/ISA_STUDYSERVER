@@ -44,5 +44,30 @@ namespace ProjectISA_StudyServer
         {
             this.Close();
         }
+
+        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+            FormMainUser frm = (FormMainUser)this.Owner;
+            Administrator admin;
+            admin = frm.administrator;
+
+            if (e.ColumnIndex == dataGridViewDftrTabungan.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
+            {
+                try
+                {
+                    string noRek = dataGridViewDftrTabungan.CurrentRow.Cells["NoRekening"].Value.ToString();
+
+                    Tabungan.UbahStatusTabungan(employee, noRek);
+                    MessageBox.Show("Status berubah menjadi Aktif", "Informasi");
+                    FormKonfirmasiTabungan_Load(this, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kesalahan :" + ex.Message);
+                }
+            }
+            */
+        }
     }
 }

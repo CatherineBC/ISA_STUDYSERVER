@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,37 +12,40 @@ namespace Study_LIB
         #region Data Members
         int id;
         string nama;
-        int harga;
-        int stok;
-
         #endregion
 
         #region Constructors
-        public Produks(int id, string nama, int harga, int stok)
+        public Produks(int id, string nama)
         {
             Id = id;
             Nama = nama;
-            Harga = harga;
-            this.Stok = stok;
         }
-
         #endregion
 
         #region Properties
-
         public int Id { get => id; set => id = value; }
-        public string Nama { get => nama; set => nama = value; }
-        public int Harga { get => harga; set => harga = value; }
-        public int Stok { get => stok; set => stok = value; }
-
+        public string Nama 
+        { 
+            get => nama; 
+            set
+            {
+                if (value != "")
+                {
+                    nama = value;
+                }
+                else
+                {
+                    throw new Exception("Mohon mengisi nama barang");
+                }
+            }
+        }
         #endregion
 
         #region Methods
 
         public static Boolean TambahData(Produks p)
         {
-            p.Stok = 0;
-            string sql = "insert into produks(id,nama) values ('" + p.Nama.Replace("'", "\\") +"')";
+            string sql = "insert into produks(id,nama) values ('" + p.Id + "', '" + p.Nama.Replace("'", "\\") +"')";
 
             int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
             Boolean status;
@@ -92,9 +96,26 @@ namespace Study_LIB
             return status;
         }
 
+        public static int GenerateId()
+        {
+            string sql = "select max(right(id,3)) from produks";
+            int hasilNo = 1;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    int noId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                    hasilNo = noId;
+                }
+                else
+                {
+                    hasilNo = 1;
+                }
+            }
 
-
-
+            return hasilNo;
+        }
         #endregion
 
 

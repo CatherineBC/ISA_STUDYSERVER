@@ -61,8 +61,26 @@ namespace Study_LIB
 
         public static Boolean UbahData(Keranjang k)
         {
+            string sql = "update keranjang set jumlah_item=" + k.Jumlah_item + " where id = " + k.Id;
 
-            string sql = "update keranjang set nama=";
+            int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
+            Boolean status;
+
+            if (jumlahDitambahkan == 0)
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
+
+            return status;
+        }
+
+        public static Boolean HapusData(Keranjang k)
+        {
+            string sql = "Delete from keranjang where id = " + k.Id;
 
             int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
             Boolean status;
