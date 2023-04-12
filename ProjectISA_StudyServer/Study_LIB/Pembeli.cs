@@ -40,6 +40,10 @@ namespace Study_LIB
             Alamat = "";
             No_telpon = "";
         }
+        public Pembeli(int id)
+        {
+            Id = id;
+        }
         #endregion
 
         #region Properties
