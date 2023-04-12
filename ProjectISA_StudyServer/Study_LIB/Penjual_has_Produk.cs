@@ -45,10 +45,28 @@ namespace Study_LIB
         #endregion
 
         #region METHODS
+        public static Boolean TambahData(Pembeli pembeli)
+        {
+
+            string sql = "INSERT INTO pembelis(id, nama, username, password, email, alamat, no_telpon) VALUES ('"
+                + pembeli.Id + "','" +
+                pembeli.Nama.Replace("'", "\\'") + "','" + pembeli.Username + "','" + pembeli.Password + "','"
+                + pembeli.Email + "','" + pembeli.Alamat + "','" + pembeli.No_telpon + "')";
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0)
+            {
+                return false;
+            }
+            else { return true; }
 
 
 
 
-        #endregion
+
+
+
+            #endregion
+        }
     }
 }
+

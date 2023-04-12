@@ -57,6 +57,7 @@ namespace ProjectISA_StudyServer
             this.dataGridViewData.RowTemplate.Height = 28;
             this.dataGridViewData.Size = new System.Drawing.Size(941, 257);
             this.dataGridViewData.TabIndex = 36;
+            this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
             // buttonKeluar
             // 
