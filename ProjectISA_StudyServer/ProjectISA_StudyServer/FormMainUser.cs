@@ -43,6 +43,15 @@ namespace ProjectISA_StudyServer
                     {
                         labelNama.Text = "Selamat datang, " + penjual.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
+                        int cekStatus = Penjual.CekStatus(penjual.Id);
+                        if(cekStatus == 1)
+                        {
+                            konfirmasiTokoToolStripMenuItem.Visible = true;
+                        }
+                        else if(cekStatus == 0)
+                        {
+                            konfirmasiTokoToolStripMenuItem.Visible = false;
+                        }
                     }
                     else
                     {
