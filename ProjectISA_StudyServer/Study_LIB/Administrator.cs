@@ -58,6 +58,10 @@ namespace Study_LIB
             }
             return null;
         }
+        public override string ToString()
+        {
+            return Username;
+        }
 
         /*
         public static Boolean TambahData(Pembeli pembeli)
