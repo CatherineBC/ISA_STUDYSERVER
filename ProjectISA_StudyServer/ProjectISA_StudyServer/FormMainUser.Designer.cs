@@ -34,6 +34,7 @@ namespace ProjectISA_StudyServer
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.konfirmasiTokoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tambahBarangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +62,13 @@ namespace ProjectISA_StudyServer
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.konfirmasiTokoToolStripMenuItem,
-            this.chatToolStripMenuItem});
+            this.chatToolStripMenuItem,
+            this.tambahBarangToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(981, 33);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
@@ -85,6 +85,12 @@ namespace ProjectISA_StudyServer
             this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
             this.chatToolStripMenuItem.Size = new System.Drawing.Size(64, 29);
             this.chatToolStripMenuItem.Text = "Chat";
+            // 
+            // tambahBarangToolStripMenuItem
+            // 
+            this.tambahBarangToolStripMenuItem.Name = "tambahBarangToolStripMenuItem";
+            this.tambahBarangToolStripMenuItem.Size = new System.Drawing.Size(150, 29);
+            this.tambahBarangToolStripMenuItem.Text = "Tambah Barang";
             // 
             // FormMainUser
             // 
@@ -114,5 +120,6 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem konfirmasiTokoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tambahBarangToolStripMenuItem;
     }
 }
