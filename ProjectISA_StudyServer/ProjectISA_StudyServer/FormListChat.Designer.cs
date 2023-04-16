@@ -41,10 +41,9 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.BackColor = System.Drawing.Color.Navy;
             this.buttonTambah.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.White;
-            this.buttonTambah.Location = new System.Drawing.Point(358, 552);
-            this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonTambah.Location = new System.Drawing.Point(318, 442);
             this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(160, 48);
+            this.buttonTambah.Size = new System.Drawing.Size(142, 38);
             this.buttonTambah.TabIndex = 28;
             this.buttonTambah.Text = "TAMBAH";
             this.buttonTambah.UseVisualStyleBackColor = false;
@@ -54,9 +53,9 @@ namespace ProjectISA_StudyServer
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
-            this.label1.Location = new System.Drawing.Point(13, 17);
+            this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1472, 69);
+            this.label1.Size = new System.Drawing.Size(1308, 55);
             this.label1.TabIndex = 25;
             this.label1.Text = "DAFTAR SEMUA PESAN CUSTOMER SERVICE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,10 +65,9 @@ namespace ProjectISA_StudyServer
             this.buttonExit.BackColor = System.Drawing.Color.Navy;
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(20, 552);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExit.Location = new System.Drawing.Point(18, 442);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(160, 48);
+            this.buttonExit.Size = new System.Drawing.Size(142, 38);
             this.buttonExit.TabIndex = 27;
             this.buttonExit.Text = "KELUAR";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -78,25 +76,26 @@ namespace ProjectISA_StudyServer
             // 
             this.dataGridViewDftrCs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDftrCs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDftrCs.Location = new System.Drawing.Point(20, 114);
-            this.dataGridViewDftrCs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewDftrCs.Location = new System.Drawing.Point(18, 91);
             this.dataGridViewDftrCs.Name = "dataGridViewDftrCs";
             this.dataGridViewDftrCs.RowHeadersWidth = 51;
             this.dataGridViewDftrCs.RowTemplate.Height = 24;
-            this.dataGridViewDftrCs.Size = new System.Drawing.Size(1472, 418);
+            this.dataGridViewDftrCs.Size = new System.Drawing.Size(1308, 334);
             this.dataGridViewDftrCs.TabIndex = 26;
             // 
             // FormListChat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1505, 616);
+            this.ClientSize = new System.Drawing.Size(1338, 493);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.dataGridViewDftrCs);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormListChat";
             this.Text = "FormListChat";
+            this.Load += new System.EventHandler(this.FormListChat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDftrCs)).EndInit();
             this.ResumeLayout(false);
 

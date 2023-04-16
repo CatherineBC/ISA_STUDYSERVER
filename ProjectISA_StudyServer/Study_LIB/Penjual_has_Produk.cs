@@ -56,9 +56,9 @@ namespace Study_LIB
 
         #region METHODS
 
-        public static Boolean TambahData(Produks produk, Penjual penjual, Penjual_has_Produk php)
+        public static Boolean TambahData(Produks produk, Penjual penjual, string keterangan, double harga, int stok, double rating)
         {
-            string sql = "Insert into penjual_has_produk(Penjuals_id, Pembelis_id, keterangan, harga, stok, rating ) VALUES ('" + penjual.Id + "','" + produk.Id + "','" + php.Keterangan + "','" + php.Harga + "','" + php.Stok + "','" + php.Rating + "')";
+            string sql = "Insert into penjuals_has_produks(penjuals_id, produks_id, keterangan, harga, stok, rating ) VALUES ('" + penjual.Id + "','" + produk.Id + "','" + keterangan + "','" + harga + "','" + stok + "','" + rating + "')";
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0)
             {
@@ -74,13 +74,13 @@ namespace Study_LIB
 
             if (kriteria == "")
             {
-                sql = "select p.id, ps.id, php.keterangan, php.harga, php.stok, php.rating FROM Penjual_has_produk php INNER JOIN pembeli ON php.penjuals_id = p.id" +
-                    " INNER JOIN produks ps ON php.produks_id = p.id";
+                sql = "select p.id, p.nama_toko, ps.id, ps.nama, php.keterangan, php.harga, php.stok, php.rating FROM Penjuals_has_produks php INNER JOIN penjuals p ON php.penjuals_id = p.id" +
+                    " INNER JOIN produks ps ON php.produks_id = ps.id";
                 
             }
             else
             {
-                sql = "select p.id, ps.id, php.keterangan, php.harga, php.stok, php.rating FROM Penjual_has_produk php INNER JOIN pembeli ON php.penjuals_id = p.id" +
+                sql = "select p.id, p.nama_toko, ps.id, ps.nama, php.keterangan, php.harga, php.stok, php.rating FROM Penjuals_has_produks php INNER JOIN penjuals ON php.penjuals_id = p.id" +
                     " INNER JOIN produks ps ON php.produks_id = p.id" +
                     "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
             }
@@ -92,27 +92,76 @@ namespace Study_LIB
             {
 
                 Penjual_has_Produk php = new Penjual_has_Produk();
-                php.Keterangan = hasil.GetString(2);
-                php.Harga = hasil.GetDouble(3);
-                php.Stok = int.Parse(hasil.GetString(4));
-                php.Rating = hasil.GetDouble(5);
-                php.PenjualId = new Penjual();
-                php.PenjualId.Id = int.Parse(hasil.GetString(0));
-                php.ProdukId = new Produks();
-                php.ProdukId.Id = int.Parse(hasil.GetString(1));
 
+                Penjual p = new Penjual();
+                p.Id = int.Parse(hasil.GetString(0));
+                p.Nama = hasil.GetString(1);
+                php.PenjualId = p;
+
+                Produks ps = new Produks();
+                ps.Id = int.Parse(hasil.GetString(2));
+                ps.Nama = hasil.GetString(3);
+                php.ProdukId = ps;
+
+                php.Keterangan = hasil.GetString(4);
+                php.Harga = double.Parse(hasil.GetString(5));
+                php.Stok = int.Parse(hasil.GetString(6));
+                php.Rating = double.Parse(hasil.GetString(7));
 
                 listPenjualHasProduk.Add(php);
             }
             return listPenjualHasProduk;
+        }
 
-            
+        public static List<Penjual_has_Produk> BacaDataPenjuals(string kriteria, string nilaiKriteria, int idPenjuals)
+        {
+            string sql = "";
+
+            if (kriteria == "")
+            {
+                sql = "select p.id, p.nama_toko, ps.id, ps.nama, php.keterangan, php.harga, php.stok, php.rating FROM Penjuals_has_produks php INNER JOIN penjuals p ON php.penjuals_id = p.id" +
+                    " INNER JOIN produks ps ON php.produks_id = ps.id where php.penjuals_id = '" + idPenjuals + "'";
+
+            }
+            else
+            {
+                sql = "select p.id, p.nama_toko, ps.id, ps.nama, php.keterangan, php.harga, php.stok, php.rating FROM Penjuals_has_produks php INNER JOIN penjuals p ON php.penjuals_id = p.id" +
+                    " INNER JOIN produks ps ON php.produks_id = p.id" +
+                    "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Penjual_has_Produk> listPenjualHasProduk = new List<Penjual_has_Produk>();
+            while (hasil.Read() == true)
+            {
+
+                Penjual_has_Produk php = new Penjual_has_Produk();
+
+                Penjual p = new Penjual();
+                p.Id = int.Parse(hasil.GetString(0));
+                p.Nama = hasil.GetString(1);
+                php.PenjualId = p;
+
+                Produks ps = new Produks();
+                ps.Id = int.Parse(hasil.GetString(2));
+                ps.Nama = hasil.GetString(3);
+                php.ProdukId = ps;
+
+                php.Keterangan = hasil.GetString(4);
+                php.Harga = double.Parse(hasil.GetString(5));
+                php.Stok = int.Parse(hasil.GetString(6));
+                php.Rating = double.Parse(hasil.GetString(7));
+
+                listPenjualHasProduk.Add(php);
+            }
+            return listPenjualHasProduk;
         }
 
 
         public static Boolean HapusData(Penjual_has_Produk php, Koneksi k)
         {
-            string sql = "DELETE FROM deposito where penjuals_id = '" + php.PenjualId + "' AND produks_id = '" + php.ProdukId + "'";
+            string sql = "DELETE FROM penjuals_has_poduks where penjuals_id = '" + php.PenjualId + "' AND produks_id = '" + php.ProdukId + "'";
 
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             Boolean status;

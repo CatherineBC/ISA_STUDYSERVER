@@ -43,11 +43,6 @@ namespace Study_LIB
             status = "";
             Admin = new Administrator();
         }
-
-        public Penjual(int id)
-        {
-            Id = id;
-        }
         #endregion
 
         #region Properties
@@ -185,6 +180,10 @@ namespace Study_LIB
                 cek = 1;
             }
             return cek;
+        }
+        public override string ToString()
+        {
+            return Nama;
         }
         #endregion
     }

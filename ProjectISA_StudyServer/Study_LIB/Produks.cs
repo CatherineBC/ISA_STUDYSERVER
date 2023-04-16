@@ -34,21 +34,8 @@ namespace Study_LIB
 
         #region Properties
         public int Id { get => id; set => id = value; }
-        public string Nama 
-        { 
-            get => nama; 
-            set
-            {
-                if (value != "")
-                {
-                    nama = value;
-                }
-                else
-                {
-                    throw new Exception("Mohon mengisi nama barang");
-                }
-            }
-        }
+        public string Nama { get => nama; set => nama = value; }
+        
         #endregion
 
         #region Methods
@@ -125,6 +112,10 @@ namespace Study_LIB
             }
 
             return hasilNo;
+        }
+        public override string ToString()
+        {
+            return Nama;
         }
         #endregion
 

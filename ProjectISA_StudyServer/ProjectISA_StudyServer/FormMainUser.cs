@@ -21,6 +21,9 @@ namespace ProjectISA_StudyServer
         public Penjual penjual;
         public Administrator administrator;
         public string status;
+
+        public List<Penjual_has_Produk> listProdukPenjuals = new List<Penjual_has_Produk>();
+
         private void FormMainUser_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized; //Form Utama menjadi Fullscreen
@@ -37,7 +40,26 @@ namespace ProjectISA_StudyServer
                     {
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
-                        
+                        listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
+
+                        if (listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
+                        {
+                            dataGridViewData.DataSource = listProdukPenjuals;
+                            if (dataGridViewData.Columns.Count < 7)
+                            {
+                                DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
+                                bcol.HeaderText = "Aksi";
+                                bcol.Text = "Chat";
+                                bcol.Name = "btnChatGrid";
+                                bcol.UseColumnTextForButtonValue = true;
+                                dataGridViewData.Columns.Add(bcol);
+                            }
+                        }
+                        else
+                        {
+                            dataGridViewData.DataSource = null;
+                        }
+
                     }
                     else if(status == "penjual")
                     {
@@ -46,16 +68,38 @@ namespace ProjectISA_StudyServer
                         int cekStatus = Penjual.CekStatus(penjual.Id);
                         if(cekStatus == 1)
                         {
-                            konfirmasiTokoToolStripMenuItem.Visible = true;
+                            tambahBarangToolStripMenuItem.Visible = true;
+                            
+                            listProdukPenjuals = Penjual_has_Produk.BacaDataPenjuals("", "", penjual.Id);
+
+                            if(listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
+                            {
+                                dataGridViewData.DataSource = listProdukPenjuals;
+                            }
+                            else
+                            {
+                                dataGridViewData.DataSource = null;
+                            }
+                            
                         }
                         else if(cekStatus == 0)
                         {
-                            konfirmasiTokoToolStripMenuItem.Visible = false;
+                            tambahBarangToolStripMenuItem.Visible = false;
                         }
                     }
                     else
                     {
                         labelNama.Text = "Selamat datang, " + administrator.Username;
+                        listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
+
+                        if (listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
+                        {
+                            dataGridViewData.DataSource = listProdukPenjuals;
+                        }
+                        else
+                        {
+                            dataGridViewData.DataSource = null;
+                        }
                     }
 
                 }
@@ -67,7 +111,7 @@ namespace ProjectISA_StudyServer
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Koneksi gagal. Pesan kesalahan" + ex.Message);
+                MessageBox.Show("Koneksi gagal. Pesan kesalahan : " + ex.Message);
                 this.Close();
             }
         }
@@ -86,6 +130,33 @@ namespace ProjectISA_StudyServer
                 frmKonfirmasi.Owner = this;
                 frmKonfirmasi.Show();
             }
+        }
+
+        private void tambahBarangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormTambahBarangSeller"];
+            if (form == null)
+            {
+                FormTambahBarangSeller frm = new FormTambahBarangSeller();
+                frm.Owner = this;
+                frm.Show();
+            }
+        }
+
+        private void chatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormListChat"];
+            if (form == null)
+            {
+                FormListChat frm = new FormListChat();
+                frm.Owner = this;
+                frm.Show();
+            }
+        }
+
+        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
