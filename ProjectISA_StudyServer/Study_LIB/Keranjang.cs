@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Study_LIB
 {
@@ -24,6 +25,16 @@ namespace Study_LIB
             Id_penjual = id_penjual;
             Id_pembeli = id_pembeli;
             Id_produk = id_produk;
+            Sub_total = sub_total;
+            Jumlah_item = jumlah_item;
+        }
+
+        public Keranjang()
+        {
+            Id = id;
+            Id_penjual = new Penjual();
+            Id_pembeli = new Pembeli();
+            Id_produk = new Produks();
             Sub_total = sub_total;
             Jumlah_item = jumlah_item;
         }
@@ -95,6 +106,51 @@ namespace Study_LIB
             }
 
             return status;
+        }
+
+        public static List<Keranjang> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "";
+
+            if(kriteria == "")
+            {
+                sql = "select k.id, b.id,s.id,p.id,k.sub_total,k.jumlah_item FROM keranjang k INNER JOIN penjuals s ON k.penjuals_id = s.id INNER JOIN pembelis b ON k.pembelis_id = b.id INNER JOIN produks p ON k.produks_id = p.id";
+            }
+            else
+            {
+                sql = "select k.id, s.id,b.id,p.id,k.sub_total,k.jumlah_item FROM keranjang k " +
+                    "INNER JOIN penjuals s ON k.penjuals_id = s.id INNER JOIN pembelis b ON k.pembelis_id = b.id " +
+                    "INNER JOIN produks p ON k.produks_id = p.id" +
+                     "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Keranjang> listKeranjang = new List<Keranjang>();
+
+            while(hasil.Read() == true)
+            {
+                Keranjang k = new Keranjang();
+
+                Penjual s = new Penjual();
+                s.Id = int.Parse(hasil.GetString(1));
+                k.Id_penjual = s;
+
+                Pembeli b = new Pembeli();
+                b.Id = int.Parse(hasil.GetString(2));
+                k.Id_pembeli = b;
+
+                Produks p = new Produks();
+                p.Id = int.Parse(hasil.GetString(3));
+                k.Id_produk = p;
+
+                k.Id = int.Parse(hasil.GetString(0));
+                k.Sub_total = int.Parse(hasil.GetString(4));
+                k.Jumlah_item = int.Parse(hasil.GetString(5));
+
+                listKeranjang.Add(k);
+
+            }
+            return listKeranjang;       
         }
         #endregion
     }

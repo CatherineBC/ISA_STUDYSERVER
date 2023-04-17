@@ -35,7 +35,7 @@ namespace ProjectISA_StudyServer
                 frmLogin.Owner = this;
                 if (frmLogin.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Selamat datang di Aplikasi Study Server");
+                    MessageBox.Show("Selamat berbelanja di Aplikasi Study Server");
                     if (status == "pembeli")
                     {
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
