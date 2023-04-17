@@ -113,6 +113,21 @@ namespace Study_LIB
             return hasilNo;
         }
 
+        public static int CariId(string nama)
+        {
+            string sql = "select id from pembelis where username = '" + nama + "'";
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString());
+                }
+            }
+            return hasilId;
+        }
+
         public override string ToString()
         {
             return Username;

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectISA_StudyServer
 {
@@ -27,7 +28,7 @@ namespace ProjectISA_StudyServer
                 if (listChat.Count > 0 && listChat != null)
                 {
                     dataGridViewDftrCs.DataSource = listChat;
-                    /*
+                    
                     if (dataGridViewDftrCs.Columns.Count < 6)
                     {
                         DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
@@ -36,9 +37,7 @@ namespace ProjectISA_StudyServer
                         bcol.Name = "btnBalasGrid";
                         bcol.UseColumnTextForButtonValue = true;
                         dataGridViewDftrCs.Columns.Add(bcol);
-
                     }
-                    */
                 }
                 else
                 {
@@ -51,6 +50,31 @@ namespace ProjectISA_StudyServer
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridViewDftrCs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormMainUser frm = (FormMainUser)this.Owner;
+            if (frm.status == "pembeli")
+            {
+                if (e.ColumnIndex == dataGridViewDftrCs.Columns["btnBalasGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormBalasChat frm2 = new FormBalasChat();
+                    frm2.Owner = this;
+                    frm2.labelPenerima.Text = dataGridViewDftrCs.CurrentRow.Cells["Penjual"].Value.ToString();
+                    frm2.ShowDialog();
+                }
+            }
+            else
+            {
+                if (e.ColumnIndex == dataGridViewDftrCs.Columns["btnBalasGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormBalasChat frm2 = new FormBalasChat();
+                    frm2.Owner = this;
+                    frm2.labelPenerima.Text = dataGridViewDftrCs.CurrentRow.Cells["Pembeli"].Value.ToString();
+                    frm2.ShowDialog();
+                }
+            }
         }
     }
 }

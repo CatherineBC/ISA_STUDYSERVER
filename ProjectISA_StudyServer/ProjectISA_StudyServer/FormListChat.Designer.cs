@@ -83,6 +83,7 @@ namespace ProjectISA_StudyServer
             this.dataGridViewDftrCs.RowTemplate.Height = 24;
             this.dataGridViewDftrCs.Size = new System.Drawing.Size(1308, 334);
             this.dataGridViewDftrCs.TabIndex = 26;
+            this.dataGridViewDftrCs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDftrCs_CellContentClick);
             // 
             // FormListChat
             // 
