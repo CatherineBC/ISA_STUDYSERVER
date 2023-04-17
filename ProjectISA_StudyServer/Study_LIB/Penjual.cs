@@ -43,11 +43,6 @@ namespace Study_LIB
             status = "";
             Admin = new Administrator();
         }
-
-        public Penjual(int id)
-        {
-            Id = id;
-        }
         #endregion
 
         #region Properties
@@ -66,10 +61,14 @@ namespace Study_LIB
         {
             string sql = "";
 
+            /*
             sql = "select p.id, p.nama_toko, p.username, p.email, p.password, p.rating, p.status, a.id" +
                 " from penjuals p inner join administrator a on p.administrator_id = a.id" +
-                " where p.username='" + username + "' or p.email ='" + username +
-                "' and p.password = '" + password + "'";
+                " where p.username='" + username + "' and p.password = '" + password + "'";*/
+
+            sql = "select id, nama_toko, username, email, password, rating, status" +
+                " from penjuals" +
+                " where username='" + username + "' and password = '" + password + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             while (hasil.Read() == true)
@@ -85,9 +84,11 @@ namespace Study_LIB
                 penjual.Rating = double.Parse(hasil.GetValue(5).ToString());
                 penjual.Status = hasil.GetString(6);
 
+                /*
                 Administrator a = new Administrator();
                 a.Id = int.Parse(hasil.GetValue(7).ToString());
                 penjual.Admin = a;
+                */
                 return penjual;
                 
             }
@@ -164,6 +165,25 @@ namespace Study_LIB
             {
                 return true;
             }
+        }
+
+        public static int CekStatus(int id)
+        {
+            //string sql = "select * from tabungan where id_pengguna = '" + nikPengguna + "' and status = 'Aktif'";
+            string sql = "select p.id, p.nama_toko, p.username, p.email, p.password, p.rating, p.status, a.id" +
+                " from penjuals p inner join administrator a on p.administrator_id = a.id" +
+                " where p.id='" + id + "' and p.status ='Aktif'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            int cek = 0;
+            while (hasil.Read() == true)
+            {
+                cek = 1;
+            }
+            return cek;
+        }
+        public override string ToString()
+        {
+            return Nama;
         }
         #endregion
     }

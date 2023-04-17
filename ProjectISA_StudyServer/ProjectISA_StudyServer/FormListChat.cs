@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_LIB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace ProjectISA_StudyServer
         public FormListChat()
         {
             InitializeComponent();
+        }
+        public List<Penjual_has_Produk> listProdukPenjuals = new List<Penjual_has_Produk>();
+        private void FormListChat_Load(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }
