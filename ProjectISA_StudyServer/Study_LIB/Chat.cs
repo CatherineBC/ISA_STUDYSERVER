@@ -48,13 +48,13 @@ namespace Study_LIB
             string sql = "";
             if (kriteria == "")
             {
-                sql = "select c.id,pem.id, pen.id, c.isi_pesan, c.waktu" +
+                sql = "select c.id,pem.id, pem.username, pen.id, pen.nama_toko, c.isi_pesan, c.waktu" +
                 " from chats c inner join pembelis pem on c.pembelis_id = pem.id inner join penjuals pen on c.penjuals_id = pen.id" +
                 " where c.penjuals_id = '" + idPenjual + "'";
             }
             else
             {
-                sql = "select c.id,pem.id, pen.id, c.isi_pesan, c.waktu" +
+                sql = "select c.id,pem.id, pem.username, pen.id, pen.nama_toko, c.isi_pesan, c.waktu" +
                 " from chats c inner join pembelis pem on c.pembelis_id = pem.id inner join penjuals pen on c.penjuals_id = pen.id" +
                 " where " + kriteria + " like '%" + nilaiKriteria + "%' and c.penjuals_id = '" + idPenjual + "'";
             }
@@ -66,14 +66,16 @@ namespace Study_LIB
             {
                 Chat chat = new Chat();
                 chat.Id = int.Parse(hasil.GetString(0));
-                chat.Pesan = hasil.GetString(3);
-                chat.Waktu = DateTime.Parse(hasil.GetString(4));
+                chat.Pesan = hasil.GetString(5);
+                chat.Waktu = DateTime.Parse(hasil.GetString(6));
 
                 chat.Pembeli = new Pembeli();
                 chat.Pembeli.Id = int.Parse(hasil.GetString(1));
+                chat.Pembeli.Username = hasil.GetString(2);
 
                 chat.Penjual = new Penjual();
-                chat.Penjual.Id = int.Parse(hasil.GetString(2));
+                chat.Penjual.Id = int.Parse(hasil.GetString(3));
+                chat.penjual.Nama = hasil.GetString(4);
 
                 listChat.Add(chat);
             }
@@ -90,9 +92,9 @@ namespace Study_LIB
         //ngeload semua pesan yang sudah dibalaas untuk (Pengguna)
         {
             string sql = "";
-            sql = "select c.id,pem.id, pen.id, c.isi_pesan, c.waktu" +
-                " from chats c inner join pembelis pem on c.pembelis_id = pem.id inner join penjuals pen on c.penjuals_id = pen.id" +
-                " where c.pembelis_id = '" + id + "'";
+            sql = "select c.id,pem.id, pem.username, pen.id, pen.nama_toko, c.isi_pesan, c.waktu" +
+               " from chats c inner join pembelis pem on c.pembelis_id = pem.id inner join penjuals pen on c.penjuals_id = pen.id" +
+               " where c.pembelis_id = '" + id + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -101,14 +103,16 @@ namespace Study_LIB
             {
                 Chat chat = new Chat();
                 chat.Id = int.Parse(hasil.GetString(0));
-                chat.Pesan = hasil.GetString(3);
-                chat.Waktu = DateTime.Parse(hasil.GetString(4));
+                chat.Pesan = hasil.GetString(5);
+                chat.Waktu = DateTime.Parse(hasil.GetString(6));
 
                 chat.Pembeli = new Pembeli();
                 chat.Pembeli.Id = int.Parse(hasil.GetString(1));
+                chat.Pembeli.Username = hasil.GetString(2);
 
                 chat.Penjual = new Penjual();
-                chat.Penjual.Id = int.Parse(hasil.GetString(2));
+                chat.Penjual.Id = int.Parse(hasil.GetString(3));
+                chat.penjual.Nama = hasil.GetString(4);
 
                 listChat.Add(chat);
             }

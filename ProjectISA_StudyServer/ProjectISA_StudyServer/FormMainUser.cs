@@ -156,7 +156,17 @@ namespace ProjectISA_StudyServer
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (status == "pembeli")
+            {
+                if (e.ColumnIndex == dataGridViewData.Columns["btnChatGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormBalasChat frm = new FormBalasChat();
+                    frm.Owner = this;
+                    frm.labelPenerima.Text = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
+                    frm.ShowDialog();
+                }
+            }
+                
         }
     }
 }

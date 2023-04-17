@@ -71,6 +71,7 @@ namespace ProjectISA_StudyServer
             this.buttonExit.TabIndex = 27;
             this.buttonExit.Text = "KELUAR";
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // dataGridViewDftrCs
             // 

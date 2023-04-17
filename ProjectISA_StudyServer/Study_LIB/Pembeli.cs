@@ -112,7 +112,12 @@ namespace Study_LIB
 
             return hasilNo;
         }
-        
+
+        public override string ToString()
+        {
+            return Username;
+        }
+
         #endregion
     }
 }
