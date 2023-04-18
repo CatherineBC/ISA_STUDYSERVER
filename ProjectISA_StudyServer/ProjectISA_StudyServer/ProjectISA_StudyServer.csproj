@@ -126,6 +126,12 @@
     <Compile Include="FormTambahBarangSeller.Designer.cs">
       <DependentUpon>FormTambahBarangSeller.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUbahBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahBarang.Designer.cs">
+      <DependentUpon>FormUbahBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBalasChat.resx">
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahBarangSeller.resx">
       <DependentUpon>FormTambahBarangSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahBarang.resx">
+      <DependentUpon>FormUbahBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

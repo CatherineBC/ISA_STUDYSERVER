@@ -59,14 +59,13 @@ namespace Study_LIB
 
             if (kriteria == "")
             {
-                sql = "select od.idorders, k.keranjang_id,p.produks_id,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN produks p on od.produks_id = p.id";
+                sql = "select od.idorders, k.keranjang_id,p.nama,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN penjual_has_produks_ php on od.produks_id = php.produks_id INNER JOIN produks p on od.produks_id = p.id ";
 
             }
             else
             {
-                sql = "select od.idorders, k.keranjang_id,p.produks_id,od.total,od.tanggal" +
-                    " FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN " +
-                    "produks p on od.produks_id = p.id" +
+                sql = "select od.idorders, k.keranjang_id,p.id,p.nama,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id " +
+                    "INNER JOIN penjual_has_produks_ php on od.produks_id = php.produks_id INNER JOIN produks p on od.produks_id = p.id " +
                     "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
             }
 
@@ -85,10 +84,11 @@ namespace Study_LIB
 
                 Produks ps = new Produks();
                 ps.Id = int.Parse(hasil.GetString(2));
+                ps.Nama = hasil.GetString(3);
                 od.Produks_id = ps;
 
-                od.Total = int.Parse(hasil.GetString(3));
-                od.Tanggal = hasil.GetDateTime(4);
+                od.Total = int.Parse(hasil.GetString(4));
+                od.Tanggal = hasil.GetDateTime(5);
 
                 listOrderDetails.Add(od);
             }
