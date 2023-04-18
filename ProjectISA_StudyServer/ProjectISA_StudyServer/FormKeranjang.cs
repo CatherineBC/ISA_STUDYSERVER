@@ -68,17 +68,17 @@ namespace ProjectISA_StudyServer
             if (e.ColumnIndex == dataGridViewData.Columns["buttonUbahGrid"].Index && e.RowIndex >= 0)
             {
                 
-
             }
             else if (e.ColumnIndex == dataGridViewData.Columns["buttonHapusGrid"].Index && e.RowIndex >= 0)
             {
-                int id = int.Parse(dataGridViewData.CurrentRow.Cells["id"].Value.ToString());
-                string nama_hadiah = dataGridViewData.CurrentRow.Cells["nama_hadiah"].Value.ToString();
-                int harga_hadiah = int.Parse(dataGridViewData.CurrentRow.Cells["harga_hadiah"].Value.ToString());
+                string nama_produk = dataGridViewData.CurrentRow.Cells["nama"].Value.ToString();
+                int jmlh_item = int.Parse(dataGridViewData.CurrentRow.Cells["jumlah_item"].Value.ToString());
+                double sub_ttl = double.Parse(dataGridViewData.CurrentRow.Cells["sub_total"].Value.ToString());
 
                 DialogResult hasil = MessageBox.Show("Data yang ingin dihapus : " +
-                                                                    "\nnama_hadiah : " + nama_hadiah +
-                                                                    "\nharga_hadiah : " + harga_hadiah +
+                                                                    "\nNama Produk : " + nama_produk +
+                                                                    "\nJumlah Item: " + jmlh_item +
+                                                                    "\nSub-Total: " + sub_ttl +
                                                                     "\nApakah anda yakin menghapus data tersebut ?", "Konfirmasi",
                                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (hasil == DialogResult.Yes)

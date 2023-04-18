@@ -114,24 +114,20 @@ namespace Study_LIB
 
             if(kriteria == "")
             {
-                //sql = "select k.id, b.id,s.id,p.id,k.sub_total,k.jumlah_item
-                //FROM keranjang k INNER JOIN penjuals s ON k.penjuals_id = s.id
-                //INNER JOIN pembelis b ON k.pembelis_id = b.id
-                //INNER JOIN produks p ON k.produks_id = p.id";
-                sql = "select k.id, p.nama, k.sub_total, k.jumlah_item " +
-                    "FROM keranjang k INNER JOIN penjuals_has_produks pp ON k.produks_id=pp.produks_id  " +
-                    "INNER JOIN produks p ON pp.produks_id=p.id";
+                sql = "select k.id, b.id, s.id, p.id, k.sub_total, k.jumlah_item, p.nama" +
+                "FROM keranjang k INNER JOIN penjuals s ON k.penjuals_id = s.id" +
+                "INNER JOIN penjuals_has_produks pp ON k.produks_id=pp.produks_id" +
+                "INNER JOIN pembelis b ON k.pembelis_id = b.id" +
+                "INNER JOIN produks p ON k.produks_id = p.id";
             }
             else
             {
-                //sql = "select k.id, s.id,b.id,p.id,k.sub_total,k.jumlah_item FROM keranjang k " +
-                //    "INNER JOIN penjuals s ON k.penjuals_id = s.id INNER JOIN pembelis b ON k.pembelis_id = b.id " +
-                //    "INNER JOIN produks p ON k.produks_id = p.id" +
-                //     "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
-                sql = "select k.id, p.nama, k.sub_total, k.jumlah_item " +
-                    "FROM keranjang k INNER JOIN penjuals_has_produks pp ON k.produks_id=pp.produks_id  " +
-                    "INNER JOIN produks p ON pp.produks_id=p.id" +
-                    "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+                sql = "select k.id, s.id, b.id, p.id, k.sub_total, k.jumlah_item, p.nama " +
+                    "FROM keranjang k INNER JOIN penjuals s ON k.penjuals_id = s.id " +
+                    "INNER JOIN penjuals_has_produks pp ON k.produks_id=pp.produks_id" +
+                    "INNER JOIN pembelis b ON k.pembelis_id = b.id " +
+                    "INNER JOIN produks p ON k.produks_id = p.id" +
+                     "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
             }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -150,7 +146,8 @@ namespace Study_LIB
                 k.Id_pembeli = b;
 
                 Produks p = new Produks();
-                p.Nama = hasil.GetString(3);
+                p.Id = int.Parse(hasil.GetString(3));
+                p.Nama = hasil.GetString(6);
                 k.Id_produk = p;
 
                 k.Id = int.Parse(hasil.GetString(0));

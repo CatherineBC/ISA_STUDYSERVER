@@ -18,7 +18,9 @@ namespace ProjectISA_StudyServer
         {
             InitializeComponent();
         }
+
         public List<Chat> listChat = new List<Chat>();
+
         private void FormListChat_Load(object sender, EventArgs e)
         {
             FormMainUser frm = (FormMainUser)this.Owner;
@@ -66,7 +68,6 @@ namespace ProjectISA_StudyServer
                     dataGridViewDftrCs.DataSource = null;
                 }
             }
-            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
