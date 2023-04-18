@@ -59,22 +59,22 @@ namespace Study_LIB
             return status;
         }
 
-        public static Boolean UbahData(Produks p)
-        {
-            string sql = "update produks set nama ='" + p.Nama.Replace("'", "\\'") + "' where id  ='" + p.Id + "'";
+        //public static Boolean UbahData(Produks p)
+        //{
+        //    string sql = "update produks set nama ='" + p.Nama.Replace("'", "\\'") + "' where id  ='" + p.Id + "'";
 
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            Boolean status;
-            if (jumlahDiubah == 0)
-            {
-                status = false;
-            }
-            else
-            {
-                status = true;
-            }
-            return status;
-        }
+        //    int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+        //    Boolean status;
+        //    if (jumlahDiubah == 0)
+        //    {
+        //        status = false;
+        //    }
+        //    else
+        //    {
+        //        status = true;
+        //    }
+        //    return status;
+        //}
 
         public static Boolean HapusData(Produks p)
         {
