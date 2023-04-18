@@ -102,6 +102,12 @@
     <Compile Include="FormMainUser.Designer.cs">
       <DependentUpon>FormMainUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderDetails.Designer.cs">
+      <DependentUpon>FormOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegisPengguna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainUser.resx">
       <DependentUpon>FormMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrderDetails.resx">
+      <DependentUpon>FormOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisPengguna.resx">
       <DependentUpon>FormRegisPengguna.cs</DependentUpon>
