@@ -60,6 +60,12 @@
     <Compile Include="FormBalasChat.Designer.cs">
       <DependentUpon>FormBalasChat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBalasChatLagi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBalasChatLagi.Designer.cs">
+      <DependentUpon>FormBalasChatLagi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBeli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBalasChat.resx">
       <DependentUpon>FormBalasChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBalasChatLagi.resx">
+      <DependentUpon>FormBalasChatLagi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBeli.resx">
       <DependentUpon>FormBeli.cs</DependentUpon>
