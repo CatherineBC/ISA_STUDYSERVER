@@ -50,6 +50,7 @@
     <Compile Include="Chat.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Keranjang.cs" />
+    <Compile Include="OrderDetails.cs" />
     <Compile Include="Pembeli.cs" />
     <Compile Include="Penjual.cs" />
     <Compile Include="Penjual_has_Produk.cs" />
