@@ -73,7 +73,7 @@ namespace ProjectISA_StudyServer {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3360")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string DbPort {
             get {
                 return ((string)(this["DbPort"]));
