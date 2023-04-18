@@ -159,6 +159,54 @@ namespace Study_LIB
             }
             return listKeranjang;       
         }
+
+        public static int GenerateIdBaru()
+        {
+            string sql = "select max(id) from keranjang";
+            int hasilNo = 1000;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilNo = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilNo = 1000;
+                }
+            }
+
+            return hasilNo;
+        }
+        public static int GenerateIdLama(int idPembeli) //yg belum selesai statusnya
+        {
+            string sql = "select id from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";
+            int hasilNo = 1000;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    int noId = int.Parse(hasil.GetValue(0).ToString());
+                    hasilNo = noId;
+                }
+            }
+            return hasilNo;
+        }
+
+        public static int CekIdStatus(int idPembeli)
+        {
+            string sql = "select id from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";
+            int ada = 0;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                ada = 1;
+            }
+
+            return ada;
+        }
         #endregion
     }
 }

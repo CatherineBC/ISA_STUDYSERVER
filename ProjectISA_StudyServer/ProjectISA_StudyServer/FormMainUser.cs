@@ -180,6 +180,8 @@ namespace ProjectISA_StudyServer
                     FormBeli frm = new FormBeli();
                     frm.Owner = this;
                     frm.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
+                    frm.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
+                    frm.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
                     frm.ShowDialog();
                 }
             }
