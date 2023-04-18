@@ -16,5 +16,10 @@ namespace ProjectISA_StudyServer
         {
             InitializeComponent();
         }
+
+        private void FormOrderDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
