@@ -57,10 +57,9 @@ namespace ProjectISA_StudyServer
             this.panel1.Controls.Add(this.textBoxIdVoucher);
             this.panel1.Controls.Add(this.label2);
             this.panel1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.panel1.Location = new System.Drawing.Point(9, 95);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(8, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(606, 215);
+            this.panel1.Size = new System.Drawing.Size(539, 172);
             this.panel1.TabIndex = 67;
             // 
             // labelPenerima
@@ -69,9 +68,9 @@ namespace ProjectISA_StudyServer
             this.labelPenerima.BackColor = System.Drawing.Color.Transparent;
             this.labelPenerima.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPenerima.ForeColor = System.Drawing.Color.Black;
-            this.labelPenerima.Location = new System.Drawing.Point(431, 70);
+            this.labelPenerima.Location = new System.Drawing.Point(383, 56);
             this.labelPenerima.Name = "labelPenerima";
-            this.labelPenerima.Size = new System.Drawing.Size(21, 25);
+            this.labelPenerima.Size = new System.Drawing.Size(17, 21);
             this.labelPenerima.TabIndex = 8;
             this.labelPenerima.Text = "-";
             // 
@@ -81,9 +80,9 @@ namespace ProjectISA_StudyServer
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(290, 70);
+            this.label5.Location = new System.Drawing.Point(258, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 25);
+            this.label5.Size = new System.Drawing.Size(106, 21);
             this.label5.TabIndex = 7;
             this.label5.Text = "Penerima : ";
             // 
@@ -93,9 +92,9 @@ namespace ProjectISA_StudyServer
             this.labelPengirim.BackColor = System.Drawing.Color.Transparent;
             this.labelPengirim.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPengirim.ForeColor = System.Drawing.Color.Black;
-            this.labelPengirim.Location = new System.Drawing.Point(164, 70);
+            this.labelPengirim.Location = new System.Drawing.Point(146, 56);
             this.labelPengirim.Name = "labelPengirim";
-            this.labelPengirim.Size = new System.Drawing.Size(21, 25);
+            this.labelPengirim.Size = new System.Drawing.Size(17, 21);
             this.labelPengirim.TabIndex = 6;
             this.labelPengirim.Text = "-";
             // 
@@ -105,19 +104,18 @@ namespace ProjectISA_StudyServer
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(42, 70);
+            this.label4.Location = new System.Drawing.Point(37, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 25);
+            this.label4.Size = new System.Drawing.Size(102, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Pengirim : ";
             // 
             // textBoxPesan
             // 
-            this.textBoxPesan.Location = new System.Drawing.Point(269, 119);
-            this.textBoxPesan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxPesan.Location = new System.Drawing.Point(239, 95);
             this.textBoxPesan.Multiline = true;
             this.textBoxPesan.Name = "textBoxPesan";
-            this.textBoxPesan.Size = new System.Drawing.Size(281, 60);
+            this.textBoxPesan.Size = new System.Drawing.Size(250, 49);
             this.textBoxPesan.TabIndex = 4;
             // 
             // label3
@@ -126,18 +124,17 @@ namespace ProjectISA_StudyServer
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(164, 138);
+            this.label3.Location = new System.Drawing.Point(146, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 25);
+            this.label3.Size = new System.Drawing.Size(72, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Pesan :";
             // 
             // textBoxIdVoucher
             // 
-            this.textBoxIdVoucher.Location = new System.Drawing.Point(269, 20);
-            this.textBoxIdVoucher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxIdVoucher.Location = new System.Drawing.Point(239, 16);
             this.textBoxIdVoucher.Name = "textBoxIdVoucher";
-            this.textBoxIdVoucher.Size = new System.Drawing.Size(281, 26);
+            this.textBoxIdVoucher.Size = new System.Drawing.Size(250, 22);
             this.textBoxIdVoucher.TabIndex = 2;
             // 
             // label2
@@ -146,9 +143,9 @@ namespace ProjectISA_StudyServer
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(19, 19);
+            this.label2.Location = new System.Drawing.Point(17, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 25);
+            this.label2.Size = new System.Drawing.Size(201, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID Customer Service : ";
             // 
@@ -157,9 +154,9 @@ namespace ProjectISA_StudyServer
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Location = new System.Drawing.Point(8, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(606, 69);
+            this.label1.Size = new System.Drawing.Size(539, 55);
             this.label1.TabIndex = 66;
             this.label1.Text = "BALAS PESAN CS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,52 +166,53 @@ namespace ProjectISA_StudyServer
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonExit.Location = new System.Drawing.Point(455, 335);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonExit.Location = new System.Drawing.Point(404, 268);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(160, 48);
+            this.buttonExit.Size = new System.Drawing.Size(142, 38);
             this.buttonExit.TabIndex = 69;
             this.buttonExit.Text = "KELUAR";
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonSimpan
             // 
             this.buttonSimpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSimpan.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonSimpan.Location = new System.Drawing.Point(15, 335);
-            this.buttonSimpan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSimpan.Location = new System.Drawing.Point(13, 268);
             this.buttonSimpan.Name = "buttonSimpan";
-            this.buttonSimpan.Size = new System.Drawing.Size(150, 48);
+            this.buttonSimpan.Size = new System.Drawing.Size(133, 38);
             this.buttonSimpan.TabIndex = 68;
             this.buttonSimpan.Text = "SIMPAN";
             this.buttonSimpan.UseVisualStyleBackColor = false;
+            this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
             // 
             // buttonKosong
             // 
             this.buttonKosong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKosong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKosong.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKosong.Location = new System.Drawing.Point(193, 335);
-            this.buttonKosong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonKosong.Location = new System.Drawing.Point(172, 268);
             this.buttonKosong.Name = "buttonKosong";
-            this.buttonKosong.Size = new System.Drawing.Size(150, 48);
+            this.buttonKosong.Size = new System.Drawing.Size(133, 38);
             this.buttonKosong.TabIndex = 70;
             this.buttonKosong.Text = "KOSONGI";
             this.buttonKosong.UseVisualStyleBackColor = false;
             // 
             // FormBalasChatLagi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 397);
+            this.ClientSize = new System.Drawing.Size(557, 318);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSimpan);
             this.Controls.Add(this.buttonKosong);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBalasChatLagi";
             this.Text = "FormBalasChatLagi";
+            this.Load += new System.EventHandler(this.FormBalasChatLagi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

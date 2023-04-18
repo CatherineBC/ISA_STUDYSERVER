@@ -44,6 +44,28 @@ namespace ProjectISA_StudyServer
                     dataGridViewDftrCs.DataSource = null;
                 }
             }
+            else if(frm.status == "pembeli")
+            {
+                listChat = Chat.BacaPesanSudahDibalasPenjuals(frm.pembeli.Id);
+                if (listChat.Count > 0 && listChat != null)
+                {
+                    dataGridViewDftrCs.DataSource = listChat;
+
+                    if (dataGridViewDftrCs.Columns.Count < 6)
+                    {
+                        DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
+                        bcol.HeaderText = "Aksi";
+                        bcol.Text = "Balas";
+                        bcol.Name = "btnBalasGrid";
+                        bcol.UseColumnTextForButtonValue = true;
+                        dataGridViewDftrCs.Columns.Add(bcol);
+                    }
+                }
+                else
+                {
+                    dataGridViewDftrCs.DataSource = null;
+                }
+            }
             
         }
 
@@ -59,7 +81,7 @@ namespace ProjectISA_StudyServer
             {
                 if (e.ColumnIndex == dataGridViewDftrCs.Columns["btnBalasGrid"].Index && e.RowIndex >= 0)
                 {
-                    FormBalasChat frm2 = new FormBalasChat();
+                    FormBalasChatLagi frm2 = new FormBalasChatLagi();
                     frm2.Owner = this;
                     frm2.labelPenerima.Text = dataGridViewDftrCs.CurrentRow.Cells["Penjual"].Value.ToString();
                     frm2.ShowDialog();
@@ -69,7 +91,7 @@ namespace ProjectISA_StudyServer
             {
                 if (e.ColumnIndex == dataGridViewDftrCs.Columns["btnBalasGrid"].Index && e.RowIndex >= 0)
                 {
-                    FormBalasChat frm2 = new FormBalasChat();
+                    FormBalasChatLagi frm2 = new FormBalasChatLagi();
                     frm2.Owner = this;
                     frm2.labelPenerima.Text = dataGridViewDftrCs.CurrentRow.Cells["Pembeli"].Value.ToString();
                     frm2.ShowDialog();

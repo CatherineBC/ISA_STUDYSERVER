@@ -31,30 +31,15 @@ namespace ProjectISA_StudyServer
         private void buttonSimpan_Click(object sender, EventArgs e)
         {
             FormMainUser user = (FormMainUser)this.Owner;
-            if(user.status == "pembeli")
-            {
-                int idPenjual = Penjual.CariId(labelPenerima.Text);
-                Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), user.pembeli.Id, idPenjual, textBoxPesan.Text, DateTime.Now);
-                MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
-            }
-            else
-            {
-                int idPembeli = Pembeli.CariId(labelPenerima.Text);
-                Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), idPembeli, user.penjual.Id, textBoxPesan.Text, DateTime.Now);
-            }
+            int idPenjual = Penjual.CariId(labelPenerima.Text);
+            Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), user.pembeli.Id, idPenjual, textBoxPesan.Text, DateTime.Now);
+            MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
         }
 
         private void FormBalasChat_Load(object sender, EventArgs e)
         {
             FormMainUser user = (FormMainUser)this.Owner;
-            if(user.status == "pembeli")
-            {
-                labelPengirim.Text = user.pembeli.Username;
-            }
-            else
-            {
-                labelPengirim.Text = user.penjual.Nama;
-            }
+            labelPengirim.Text = user.pembeli.Username;
             int id = Chat.GenerateIdCs();
             textBoxIdVoucher.Enabled = false;
             textBoxIdVoucher.Text = id.ToString();
