@@ -46,5 +46,10 @@ namespace ProjectISA_StudyServer
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FormRegisSeller_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
