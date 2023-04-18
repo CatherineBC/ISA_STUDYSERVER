@@ -38,14 +38,16 @@ namespace ProjectISA_StudyServer
                     MessageBox.Show("Selamat berbelanja di Aplikasi Study Server");
                     if (status == "pembeli")
                     {
+                        
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
                         listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
+                        tambahBarangToolStripMenuItem.Visible = false;
 
                         if (listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
                         {
                             dataGridViewData.DataSource = listProdukPenjuals;
-                            if (dataGridViewData.Columns.Count < 7)
+                            if (dataGridViewData.Columns.Count < 9)
                             {
                                 DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
                                 bcol.HeaderText = "Aksi";
@@ -53,6 +55,14 @@ namespace ProjectISA_StudyServer
                                 bcol.Name = "btnChatGrid";
                                 bcol.UseColumnTextForButtonValue = true;
                                 dataGridViewData.Columns.Add(bcol);
+
+                                
+                                DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
+                                bcol2.HeaderText = "Masukkan";
+                                bcol2.Text = "Keranjang";
+                                bcol2.Name = "btnKeranjangGrid";
+                                bcol2.UseColumnTextForButtonValue = true;
+                                dataGridViewData.Columns.Add(bcol2);
                             }
                         }
                         else
@@ -163,6 +173,13 @@ namespace ProjectISA_StudyServer
                     FormBalasChat frm = new FormBalasChat();
                     frm.Owner = this;
                     frm.labelPenerima.Text = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
+                    frm.ShowDialog();
+                }
+                else if(e.ColumnIndex == dataGridViewData.Columns["btnKeranjangGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormBeli frm = new FormBeli();
+                    frm.Owner = this;
+                    frm.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
                     frm.ShowDialog();
                 }
             }
