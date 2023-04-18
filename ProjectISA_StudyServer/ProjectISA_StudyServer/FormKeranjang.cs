@@ -20,10 +20,16 @@ namespace ProjectISA_StudyServer
 
         public List<Keranjang> listKeranjang = new List<Keranjang>();
         Koneksi k;
+        FormMainUser formMainUser;
+        Keranjang keranjang;
 
         private void FormKeranjang_Load(object sender, EventArgs e)
         {
             k = new Koneksi();
+
+            formMainUser = (FormMainUser)this.MdiParent;
+
+
             listKeranjang = Keranjang.BacaData("", "");
 
             if(listKeranjang.Count > 0)
@@ -43,17 +49,10 @@ namespace ProjectISA_StudyServer
 
                         DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
                         bcol2.HeaderText = "Aksi";
-                        bcol2.Text = "Ubah Password";
-                        bcol2.Name = "buttonUbahPasswordGrid";
+                        bcol2.Text = "Hapus";
+                        bcol2.Name = "buttonHapusGrid";
                         bcol2.UseColumnTextForButtonValue = true;
                         dataGridViewData.Columns.Add(bcol2);
-
-                        DataGridViewButtonColumn bcol3 = new DataGridViewButtonColumn();
-                        bcol3.HeaderText = "Aksi";
-                        bcol3.Text = "Hapus";
-                        bcol3.Name = "buttonHapusGrid";
-                        bcol3.UseColumnTextForButtonValue = true;
-                        dataGridViewData.Columns.Add(bcol3);
                     }
                 }
             }
@@ -66,7 +65,29 @@ namespace ProjectISA_StudyServer
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dataGridViewData.Columns["buttonUbahGrid"].Index && e.RowIndex >= 0)
+            {
+                
 
+            }
+            else if (e.ColumnIndex == dataGridViewData.Columns["buttonHapusGrid"].Index && e.RowIndex >= 0)
+            {
+                int id = int.Parse(dataGridViewData.CurrentRow.Cells["id"].Value.ToString());
+                string nama_hadiah = dataGridViewData.CurrentRow.Cells["nama_hadiah"].Value.ToString();
+                int harga_hadiah = int.Parse(dataGridViewData.CurrentRow.Cells["harga_hadiah"].Value.ToString());
+
+                DialogResult hasil = MessageBox.Show("Data yang ingin dihapus : " +
+                                                                    "\nnama_hadiah : " + nama_hadiah +
+                                                                    "\nharga_hadiah : " + harga_hadiah +
+                                                                    "\nApakah anda yakin menghapus data tersebut ?", "Konfirmasi",
+                                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (hasil == DialogResult.Yes)
+                {
+                    keranjang = new Keranjang();
+                    Keranjang.HapusData(keranjang);
+                    MessageBox.Show("Data berhasil dihapus.", "Informasi");
+                }
+            }
         }
     }
 }

@@ -59,14 +59,13 @@ namespace Study_LIB
 
             if (kriteria == "")
             {
-                sql = "select od.idorders, k.keranjang_id,p.produks_id,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN produks p on od.produks_id = p.id";
+                sql = "select od.idorders, k.keranjang_id,p.nama,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN penjual_has_produks_ php on od.produks_id = php.produks_id INNER JOIN produks p on od.produks_id = p.id ";
 
             }
             else
             {
-                sql = "select od.idorders, k.keranjang_id,p.produks_id,od.total,od.tanggal" +
-                    " FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN " +
-                    "produks p on od.produks_id = p.id" +
+                sql = "select od.idorders, k.keranjang_id,p.nama,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id " +
+                    "INNER JOIN penjual_has_produks_ php on od.produks_id = php.produks_id INNER JOIN produks p on od.produks_id = p.id " +
                     "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
             }
 

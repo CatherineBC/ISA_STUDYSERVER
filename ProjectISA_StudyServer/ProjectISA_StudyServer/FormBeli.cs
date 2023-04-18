@@ -25,6 +25,11 @@ namespace ProjectISA_StudyServer
         {
 
         }
+
+        private void numericUpDownStok_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
         
     
