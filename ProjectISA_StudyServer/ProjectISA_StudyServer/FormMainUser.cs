@@ -190,17 +190,17 @@ namespace ProjectISA_StudyServer
                 {
                     FormBalasChat frm = new FormBalasChat();
                     frm.Owner = this;
-                    frm.labelPenerima.Text = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
+                    frm.labelPenerima.Text = dataGridViewData.CurrentRow.Cells["Penjual"].Value.ToString();
                     frm.ShowDialog();
                 }
                 else if(e.ColumnIndex == dataGridViewData.Columns["btnKeranjangGrid"].Index && e.RowIndex >= 0)
                 {
                     FormBeli frm = new FormBeli();
                     frm.Owner = this;
-                    frm.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
+                    frm.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["Produk"].Value.ToString();
                     frm.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     frm.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
-                    frm.namaPenjual = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
+                    frm.namaPenjual = dataGridViewData.CurrentRow.Cells["Penjual"].Value.ToString();
                     frm.stok = int.Parse(dataGridViewData.CurrentRow.Cells["Stok"].Value.ToString());
                     frm.ShowDialog();
                 }
