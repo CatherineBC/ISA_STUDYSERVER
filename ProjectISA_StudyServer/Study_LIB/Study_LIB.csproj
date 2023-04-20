@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,7 @@
     <Compile Include="Pembeli.cs" />
     <Compile Include="Penjual.cs" />
     <Compile Include="Penjual_has_Produk.cs" />
+    <Compile Include="CustomPrint.cs" />
     <Compile Include="Produks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

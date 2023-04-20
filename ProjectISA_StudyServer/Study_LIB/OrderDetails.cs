@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.IO;
+using System.Drawing;
+using System.Drawing.Printing;
 
 namespace Study_LIB
 {
@@ -95,8 +98,32 @@ namespace Study_LIB
             return listOrderDetails;
         }
 
+        public static void PrintOrderDetails(string printKriteria, string nilaiKriteria, string fileName, Font fontType)
+        {
+            List<OrderDetails> listOrderDetails = new List<OrderDetails>();
+            listOrderDetails = OrderDetails.BacaData(printKriteria, nilaiKriteria);
+
+            StreamWriter tempFile = new StreamWriter(fileName);
+            foreach (OrderDetails od in listOrderDetails)
+            {
+                tempFile.WriteLine("");
+                tempFile.WriteLine("Order Date      : " + od.Tanggal);
+                tempFile.WriteLine("Toko            : " + od.Keranjang_id.NamaPenjual);
+                tempFile.WriteLine("Alamat          : " + od.keranjang_id.NamaPembeli.Alamat);
+                tempFile.WriteLine("Penerima        : " + od.Keranjang_id.NamaPembeli.Nama);
+
+                tempFile.WriteLine("====================================================");
+                tempFile.WriteLine("Barang          : " + od.Produks_id.Nama);
+                tempFile.WriteLine("Jumlah Barang   : " + od.Keranjang_id.Jumlah_item);
+                tempFile.WriteLine("Jumlah          : " + od.Total);
 
 
+            }
+            tempFile.Close();
+
+            CustomPrint p = new CustomPrint(fontType, fileName, 20, 10, 10, 10);
+            p.SendToPrinter();
+        }
 
         #endregion
 
