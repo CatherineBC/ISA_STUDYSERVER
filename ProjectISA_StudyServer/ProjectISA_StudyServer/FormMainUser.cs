@@ -182,6 +182,7 @@ namespace ProjectISA_StudyServer
                     frm.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
                     frm.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     frm.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
+                    frm.namaPenjual = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
                     frm.ShowDialog();
                 }
             }

@@ -29,7 +29,19 @@ namespace ProjectISA_StudyServer
             if(listOrderDetails.Count > 0)
             {
                 dataGridViewData.DataSource = listOrderDetails;
-                
+                if (dataGridViewData.ColumnCount < 10)
+                {
+                    if (!dataGridViewData.Columns.Contains("buttonPrintGrid") )
+                    {
+                        DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
+                        bcol.HeaderText = "Aksi";
+                        bcol.Text = "Print";
+                        bcol.Name = "buttonPrintGrid";
+                        bcol.UseColumnTextForButtonValue = true;
+                        dataGridViewData.Columns.Add(bcol);
+                    }
+                }
+
             }
             else
             {
@@ -39,6 +51,9 @@ namespace ProjectISA_StudyServer
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dataGridViewData.Columns["buttonPrintGrid"].Index && e.RowIndex >= 0)
+            {
+            }
 
         }
     }
