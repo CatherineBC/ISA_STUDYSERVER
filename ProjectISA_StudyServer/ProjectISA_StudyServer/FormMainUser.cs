@@ -213,7 +213,7 @@ namespace ProjectISA_StudyServer
                     formUbahBarang.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
                     formUbahBarang.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     formUbahBarang.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
-                    formUbahBarang.numericUpDownStok.Value = (decimal)dataGridViewData.CurrentRow.Cells["Stok"].Value;
+                    formUbahBarang.numericUpDownStok.Value = Decimal.Parse(dataGridViewData.CurrentRow.Cells["Stok"].Value.ToString());
 
                     formUbahBarang.ShowDialog();
 
