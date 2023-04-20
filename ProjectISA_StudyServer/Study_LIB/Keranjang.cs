@@ -11,9 +11,9 @@ namespace Study_LIB
     {
         #region DATA MEMBERS
         int id;
-        Penjual id_penjual;
-        Pembeli id_pembeli;
-        Produks id_produk;
+        Penjual namaPenjual;
+        Pembeli namaPembeli;
+        Produks namaProduk;
         double sub_total;
         int jumlah_item;
         string status;
@@ -23,9 +23,9 @@ namespace Study_LIB
         public Keranjang(int id, Penjual id_penjual, Pembeli id_pembeli, Produks id_produk, double sub_total, int jumlah_item, string status)
         {
             Id = id;
-            Id_penjual = id_penjual;
-            Id_pembeli = id_pembeli;
-            Id_produk = id_produk;
+            NamaPenjual = id_penjual;
+            NamaPembeli = id_pembeli;
+            namaProduk = id_produk;
             Sub_total = sub_total;
             Jumlah_item = jumlah_item;
             Status = status;
@@ -34,9 +34,9 @@ namespace Study_LIB
         public Keranjang()
         {
             Id = 1;
-            Id_penjual = new Penjual();
-            Id_pembeli = new Pembeli();
-            Id_produk = new Produks();
+            NamaPenjual = new Penjual();
+            NamaPembeli = new Pembeli();
+            NamaProduk = new Produks();
             Sub_total = 0;
             Jumlah_item = 0;
             Status = "belum";
@@ -45,9 +45,9 @@ namespace Study_LIB
 
         #region PROPERTIES
         public int Id { get => id; set => id = value; }
-        public Penjual Id_penjual { get => id_penjual; set => id_penjual = value; }
-        public Pembeli Id_pembeli { get => id_pembeli; set => id_pembeli = value; }
-        public Produks Id_produk { get => id_produk; set => id_produk = value; }
+        public Penjual NamaPenjual { get => namaPenjual; set => namaPenjual = value; }
+        public Pembeli NamaPembeli { get => namaPembeli; set => namaPembeli = value; }
+        public Produks NamaProduk { get => namaProduk; set => namaProduk = value; }
         public double Sub_total { get => sub_total; set => sub_total = value; }
         public int Jumlah_item { get => jumlah_item; set => jumlah_item = value; }
         public string Status { get => status; set => status = value; } 
@@ -115,14 +115,14 @@ namespace Study_LIB
         public static List<Keranjang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "";
-
             if(kriteria == "")
             {
-                sql = "select k.id, b.id, s.id, p.id, k.sub_total, k.jumlah_item, p.nama" +
-                "FROM keranjang k INNER JOIN penjuals s ON k.penjuals_id = s.id" +
-                "INNER JOIN penjuals_has_produks pp ON k.produks_id=pp.produks_id" +
-                "INNER JOIN pembelis b ON k.pembelis_id = b.id" +
-                "INNER JOIN produks p ON k.produks_id = p.id";
+                sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item " +
+                "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
+                "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
+                "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
+                "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
+                "inner join produks pro on penp2.produks_id = pro.id";
             }
             else
             {
@@ -140,23 +140,24 @@ namespace Study_LIB
             while(hasil.Read() == true)
             {
                 Keranjang k = new Keranjang();
-
-                Penjual s = new Penjual();
-                s.Id = int.Parse(hasil.GetString(1));
-                k.Id_penjual = s;
-
-                Pembeli b = new Pembeli();
-                b.Id = int.Parse(hasil.GetString(2));
-                k.Id_pembeli = b;
-
-                Produks p = new Produks();
-                p.Id = int.Parse(hasil.GetString(3));
-                p.Nama = hasil.GetString(6);
-                k.Id_produk = p;
-
                 k.Id = int.Parse(hasil.GetString(0));
-                k.Sub_total = int.Parse(hasil.GetString(4));
-                k.Jumlah_item = int.Parse(hasil.GetString(5));
+                k.Sub_total = double.Parse(hasil.GetString(7));
+                k.Jumlah_item = int.Parse(hasil.GetString(8));
+
+                Pembeli pem = new Pembeli();
+                pem.Id = int.Parse(hasil.GetString(1));
+                pem.Username = hasil.GetString(2);
+                k.NamaPembeli = pem;
+
+                Penjual pen = new Penjual();
+                pen.Id = int.Parse(hasil.GetString(3));
+                pen.Nama = hasil.GetString(4);
+                k.NamaPenjual = pen;
+
+                Produks pro = new Produks();
+                pro.Id = int.Parse(hasil.GetString(5));
+                pro.Nama = hasil.GetString(6);
+                k.NamaProduk = pro;
 
                 listKeranjang.Add(k);
 
