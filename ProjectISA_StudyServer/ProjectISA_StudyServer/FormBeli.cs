@@ -18,6 +18,7 @@ namespace ProjectISA_StudyServer
             InitializeComponent();
         }
         public string namaPenjual;
+        public int stok;
         private void FormBeli_Load(object sender, EventArgs e)
         {
             FormMainUser user = (FormMainUser)this.Owner;
@@ -44,16 +45,24 @@ namespace ProjectISA_StudyServer
                 int idProduk = Produks.CariId(textBoxNamaBarang.Text);
                 double subTotal = (double)numericUpDownStok.Value * double.Parse(textBoxHarga.Text);
                 int jumItem = (int)numericUpDownStok.Value;
-                Boolean status = Keranjang.TambahData(int.Parse(label2.Text), user.pembeli.Id, idPenjual, idProduk, subTotal, jumItem, "belum");
-                if (status == true)
+                if(jumItem <= stok)
                 {
-                    MessageBox.Show("Data Keranjang berhasil ditambahkan!", "Informasi");
-                    this.Close();
+                    Boolean status = Keranjang.TambahData(int.Parse(label2.Text), user.pembeli.Id, idPenjual, idProduk, subTotal, jumItem, "belum");
+                    if (status == true)
+                    {
+                        MessageBox.Show("Data Keranjang berhasil ditambahkan!", "Informasi");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                    MessageBox.Show("Stok kurang dari barang yang dibutuhkan:");
                 }
+                
             }
             catch(Exception ex)
             {

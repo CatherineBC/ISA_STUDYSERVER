@@ -200,6 +200,7 @@ namespace ProjectISA_StudyServer
                     frm.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     frm.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
                     frm.namaPenjual = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
+                    frm.stok = int.Parse(dataGridViewData.CurrentRow.Cells["Stok"].Value.ToString());
                     frm.ShowDialog();
                 }
             }
