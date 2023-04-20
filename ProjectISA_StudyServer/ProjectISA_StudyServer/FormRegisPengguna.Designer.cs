@@ -176,7 +176,7 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeluar.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKeluar.Location = new System.Drawing.Point(32, 488);
+            this.buttonKeluar.Location = new System.Drawing.Point(14, 476);
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(138, 44);
@@ -201,7 +201,7 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonTambah.Location = new System.Drawing.Point(359, 488);
+            this.buttonTambah.Location = new System.Drawing.Point(363, 476);
             this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(138, 44);

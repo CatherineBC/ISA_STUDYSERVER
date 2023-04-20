@@ -31,6 +31,8 @@ namespace ProjectISA_StudyServer
         {
             this.labelTambahBarang = new System.Windows.Forms.Label();
             this.dataGridViewData = new System.Windows.Forms.DataGridView();
+            this.buttonKeluar = new System.Windows.Forms.Button();
+            this.buttonTambah = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +43,7 @@ namespace ProjectISA_StudyServer
             this.labelTambahBarang.ForeColor = System.Drawing.Color.LightCoral;
             this.labelTambahBarang.Location = new System.Drawing.Point(1, 0);
             this.labelTambahBarang.Name = "labelTambahBarang";
-            this.labelTambahBarang.Size = new System.Drawing.Size(956, 117);
+            this.labelTambahBarang.Size = new System.Drawing.Size(1006, 117);
             this.labelTambahBarang.TabIndex = 34;
             this.labelTambahBarang.Text = "KERANJANG";
             this.labelTambahBarang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -49,7 +51,7 @@ namespace ProjectISA_StudyServer
             // dataGridViewData
             // 
             this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewData.Location = new System.Drawing.Point(0, 120);
+            this.dataGridViewData.Location = new System.Drawing.Point(12, 132);
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.RowHeadersWidth = 62;
             this.dataGridViewData.RowTemplate.Height = 28;
@@ -57,11 +59,39 @@ namespace ProjectISA_StudyServer
             this.dataGridViewData.TabIndex = 33;
             this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
+            // buttonKeluar
+            // 
+            this.buttonKeluar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKeluar.ForeColor = System.Drawing.Color.LightCoral;
+            this.buttonKeluar.Location = new System.Drawing.Point(12, 486);
+            this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonKeluar.Name = "buttonKeluar";
+            this.buttonKeluar.Size = new System.Drawing.Size(138, 45);
+            this.buttonKeluar.TabIndex = 46;
+            this.buttonKeluar.Text = "Keluar";
+            this.buttonKeluar.UseVisualStyleBackColor = false;
+            // 
+            // buttonTambah
+            // 
+            this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTambah.ForeColor = System.Drawing.Color.LightCoral;
+            this.buttonTambah.Location = new System.Drawing.Point(812, 486);
+            this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonTambah.Name = "buttonTambah";
+            this.buttonTambah.Size = new System.Drawing.Size(138, 45);
+            this.buttonTambah.TabIndex = 45;
+            this.buttonTambah.Text = "Tambah";
+            this.buttonTambah.UseVisualStyleBackColor = false;
+            // 
             // FormKeranjang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 455);
+            this.ClientSize = new System.Drawing.Size(985, 558);
+            this.Controls.Add(this.buttonKeluar);
+            this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.labelTambahBarang);
             this.Controls.Add(this.dataGridViewData);
             this.Name = "FormKeranjang";
@@ -76,5 +106,7 @@ namespace ProjectISA_StudyServer
 
         private System.Windows.Forms.Label labelTambahBarang;
         private System.Windows.Forms.DataGridView dataGridViewData;
+        private System.Windows.Forms.Button buttonKeluar;
+        private System.Windows.Forms.Button buttonTambah;
     }
 }
