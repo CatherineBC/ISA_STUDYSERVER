@@ -210,7 +210,7 @@ namespace ProjectISA_StudyServer
                     FormUbahBarang formUbahBarang = new FormUbahBarang();
                     formUbahBarang.Owner = this;
                  
-                    formUbahBarang.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["NamaBarang"].Value.ToString();
+                    formUbahBarang.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
                     formUbahBarang.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     formUbahBarang.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
                     formUbahBarang.numericUpDownStok.Value = (decimal)dataGridViewData.CurrentRow.Cells["Stok"].Value;
@@ -241,6 +241,19 @@ namespace ProjectISA_StudyServer
 
             }
                 
+        }
+
+        private void keranjangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form form = Application.OpenForms["FormKeranjang"];
+            if (form == null)
+            {
+                FormKeranjang fk = new FormKeranjang();
+                fk.Owner = this;
+                fk.ShowDialog();
+            }
+
         }
     }
 }

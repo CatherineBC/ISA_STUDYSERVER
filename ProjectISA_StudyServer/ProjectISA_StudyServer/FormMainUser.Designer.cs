@@ -64,6 +64,7 @@ namespace ProjectISA_StudyServer
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.konfirmasiTokoToolStripMenuItem,
@@ -72,6 +73,7 @@ namespace ProjectISA_StudyServer
             this.keranjangToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(981, 33);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
@@ -102,6 +104,7 @@ namespace ProjectISA_StudyServer
             this.keranjangToolStripMenuItem.Name = "keranjangToolStripMenuItem";
             this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.keranjangToolStripMenuItem.Text = "Keranjang";
+            this.keranjangToolStripMenuItem.Click += new System.EventHandler(this.keranjangToolStripMenuItem_Click);
             // 
             // FormMainUser
             // 
