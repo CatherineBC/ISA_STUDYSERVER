@@ -54,7 +54,7 @@ namespace ProjectISA_StudyServer
             
             if (e.ColumnIndex == dataGridViewData.Columns["buttonPrintGrid"].Index && e.RowIndex >= 0)
             {
-                OrderDetails.PrintOrderDetails("id", dataGridViewData.Rows[e.RowIndex].Cells["id"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12));
+                //OrderDetails.PrintOrderDetails("id", dataGridViewData.Rows[e.RowIndex].Cells["id"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12));
 
                 MessageBox.Show("Nota Telah Tercetak");
             }

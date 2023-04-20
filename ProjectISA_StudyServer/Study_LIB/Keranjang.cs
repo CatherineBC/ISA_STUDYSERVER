@@ -305,6 +305,21 @@ namespace Study_LIB
 
             return ada;
         }
+
+        public static Boolean UbahStatusKeranjang(int keranjangId)
+        {
+            string sql = "update keranjang set status = '" + "selesai" + "'" +
+                " where id = " + keranjangId;
+            int ubahData = Koneksi.JalankanPerintahDML(sql);
+            if (ubahData == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion
     }
 }
