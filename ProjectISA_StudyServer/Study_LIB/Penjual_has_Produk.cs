@@ -11,8 +11,8 @@ namespace Study_LIB
     {
 
         #region DATA MEMBERS
-        Penjual penjualId;
-        Produks produkId;
+        Penjual penjual;
+        Produks produk;
         string keterangan;
         double harga;
         int stok;
@@ -22,10 +22,10 @@ namespace Study_LIB
 
         #region CONSTRUCTORS
 
-        public Penjual_has_Produk(Penjual penjualId, Produks produkId, string keterangan, double harga, int stok, double rating)
+        public Penjual_has_Produk(Penjual penjual, Produks produk, string keterangan, double harga, int stok, double rating)
         {
-            PenjualId = penjualId;
-            ProdukId = produkId;
+            Penjual = penjual;
+            Produk = produk;
             Keterangan = keterangan;
             Harga = harga;
             Stok = stok;
@@ -33,8 +33,8 @@ namespace Study_LIB
         }
         public Penjual_has_Produk()
         {
-            PenjualId = new Penjual();
-            ProdukId = new Produks();
+            Penjual = new Penjual();
+            Produk = new Produks();
             Keterangan = keterangan;
             Harga = harga;
             Stok = stok;
@@ -45,8 +45,8 @@ namespace Study_LIB
 
         #region PROPERTIES
 
-        public Penjual PenjualId { get => penjualId; set => penjualId = value; }
-        public Produks ProdukId { get => produkId; set => produkId = value; }
+        public Penjual Penjual { get => penjual; set => penjual = value; }
+        public Produks Produk { get => produk; set => produk = value; }
         public string Keterangan { get => keterangan; set => keterangan = value; }
         public double Harga { get => harga; set => harga = value; }
         public int Stok { get => stok; set => stok = value; }
@@ -96,12 +96,12 @@ namespace Study_LIB
                 Penjual p = new Penjual();
                 p.Id = int.Parse(hasil.GetString(0));
                 p.Nama = hasil.GetString(1);
-                php.PenjualId = p;
+                php.Penjual = p;
 
                 Produks ps = new Produks();
                 ps.Id = int.Parse(hasil.GetString(2));
                 ps.Nama = hasil.GetString(3);
-                php.ProdukId = ps;
+                php.Produk = ps;
 
                 php.Keterangan = hasil.GetString(4);
                 php.Harga = double.Parse(hasil.GetString(5));
@@ -141,12 +141,12 @@ namespace Study_LIB
                 Penjual p = new Penjual();
                 p.Id = int.Parse(hasil.GetString(0));
                 p.Nama = hasil.GetString(1);
-                php.PenjualId = p;
+                php.Penjual = p;
 
                 Produks ps = new Produks();
                 ps.Id = int.Parse(hasil.GetString(2));
                 ps.Nama = hasil.GetString(3);
-                php.ProdukId = ps;
+                php.Produk = ps;
 
                 php.Keterangan = hasil.GetString(4);
                 php.Harga = double.Parse(hasil.GetString(5));
@@ -159,23 +159,23 @@ namespace Study_LIB
         }
 
 
-        public static Boolean HapusData(Penjual_has_Produk php, Koneksi k)
-        {
-            string sql = "DELETE FROM penjuals_has_poduks where penjuals_id = '" + php.PenjualId + "' AND produks_id = '" + php.ProdukId + "'";
+        //public static Boolean HapusData(Penjual_has_Produk php, Koneksi k)
+        //{
+        //    string sql = "DELETE FROM penjuals_has_poduks where penjuals_id = '" + php.Penjual + "' AND produks_id = '" + php.Produk + "'";
 
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            Boolean status;
-            if (jumlahDiubah == 0)
-            {
-                status = false;
-            }
-            else
-            {
-                status = true;
-            }
+        //    int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+        //    Boolean status;
+        //    if (jumlahDiubah == 0)
+        //    {
+        //        status = false;
+        //    }
+        //    else
+        //    {
+        //        status = true;
+        //    }
 
-            return status;
-        }
+        //    return status;
+        //}
         #endregion
     }
 }

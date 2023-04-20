@@ -24,7 +24,7 @@ namespace ProjectISA_StudyServer
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
