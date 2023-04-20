@@ -19,18 +19,12 @@ namespace ProjectISA_StudyServer
         }
 
         public List<Keranjang> listKeranjang = new List<Keranjang>();
-        Koneksi k;
-        FormMainUser formMainUser;
         Keranjang keranjang;
 
         private void FormKeranjang_Load(object sender, EventArgs e)
         {
-            k = new Koneksi();
-
-            formMainUser = (FormMainUser)this.MdiParent;
-
-
-            listKeranjang = Keranjang.BacaData("", "");
+            FormMainUser frm = (FormMainUser)this.Owner;
+            listKeranjang = Keranjang.BacaDataPengguna("", "", frm.pembeli.Id);
 
             if(listKeranjang.Count > 0)
             {

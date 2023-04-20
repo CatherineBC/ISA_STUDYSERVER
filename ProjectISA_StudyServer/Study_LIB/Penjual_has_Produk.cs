@@ -159,23 +159,23 @@ namespace Study_LIB
         }
 
 
-        public static Boolean HapusData(Penjual_has_Produk php, Koneksi k)
-        {
-            string sql = "DELETE FROM penjuals_has_poduks where penjuals_id = '" + php.Penjual + "' AND produks_id = '" + php.Produk + "'";
+        //public static Boolean HapusData(Penjual_has_Produk php, Koneksi k)
+        //{
+        //    string sql = "DELETE FROM penjuals_has_poduks where penjuals_id = '" + php.Penjual + "' AND produks_id = '" + php.Produk + "'";
 
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            Boolean status;
-            if (jumlahDiubah == 0)
-            {
-                status = false;
-            }
-            else
-            {
-                status = true;
-            }
+        //    int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+        //    Boolean status;
+        //    if (jumlahDiubah == 0)
+        //    {
+        //        status = false;
+        //    }
+        //    else
+        //    {
+        //        status = true;
+        //    }
 
-            return status;
-        }
+        //    return status;
+        //}
         #endregion
     }
 }

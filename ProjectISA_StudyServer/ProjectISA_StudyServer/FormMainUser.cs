@@ -215,32 +215,30 @@ namespace ProjectISA_StudyServer
                     formUbahBarang.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
                     formUbahBarang.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     formUbahBarang.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
-                    formUbahBarang.numericUpDownStok.Value = (decimal)dataGridViewData.CurrentRow.Cells["Stok"].Value;
+                    formUbahBarang.numericUpDownStok.Value = Decimal.Parse(dataGridViewData.CurrentRow.Cells["Stok"].Value.ToString());
 
                     formUbahBarang.ShowDialog();
-
                 }
-                else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
-                {
-                  
-                    string nama = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
+                //else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+                //{
 
-                    DialogResult hasil = MessageBox.Show("Data yang akan dihpus adalah: " +                                                   
-                                                    "\nNama Barang : " + nama +
-                                                    "\n\nApakah anda ingin menghapus data ini?", "Konfirmasi",
-                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //    string nama = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
 
-                    if (hasil == DialogResult.Yes)
-                    {
-                        
+                //    DialogResult hasil = MessageBox.Show("Data yang akan dihpus adalah: " +
+                //                                    "\nNama Barang : " + nama +
+                //                                    "\n\nApakah anda ingin menghapus data ini?", "Konfirmasi",
+                //                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        //JenisTagihan jt = new JenisTagihan(id);
-                        //JenisTagihan.HapusData(jt, k);
-                        //MessageBox.Show("Data berhasil dihapus", "Informasi");
-                        //FormDaftarJenisTagihan_Load(buttonKeluar, e);
-                    }
-                }
+                //    if (hasil == DialogResult.Yes)
+                //    {
 
+
+                //        //JenisTagihan jt = new JenisTagihan(id);
+                //        //JenisTagihan.HapusData(jt, k);
+                //        //MessageBox.Show("Data berhasil dihapus", "Informasi");
+                //        //FormDaftarJenisTagihan_Load(buttonKeluar, e);
+                //    }
+                //}
             }
                 
         }
