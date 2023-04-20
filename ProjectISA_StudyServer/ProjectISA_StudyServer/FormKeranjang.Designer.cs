@@ -82,7 +82,7 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(138, 45);
             this.buttonTambah.TabIndex = 45;
-            this.buttonTambah.Text = "Tambah";
+            this.buttonTambah.Text = "Check Out";
             this.buttonTambah.UseVisualStyleBackColor = false;
             // 
             // FormKeranjang
