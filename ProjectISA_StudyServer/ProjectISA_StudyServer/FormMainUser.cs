@@ -220,8 +220,8 @@ namespace ProjectISA_StudyServer
                 }
                 else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    int id = int.Parse(dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString());
-                    string nama = dataGridViewData.CurrentRow.Cells["NamaBarang"].Value.ToString();
+                  
+                    string nama = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
 
                     DialogResult hasil = MessageBox.Show("Data yang akan dihpus adalah: " +                                                   
                                                     "\nNama Barang : " + nama +
