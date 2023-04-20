@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_LIB;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectISA_StudyServer
 {
@@ -81,6 +82,30 @@ namespace ProjectISA_StudyServer
                     Keranjang.HapusData(keranjang);
                     MessageBox.Show("Data berhasil dihapus.", "Informasi");
                 }
+            }
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormMainUser frm = (FormMainUser)this.Owner;
+            int id = OrderDetails.GenerateId();
+            int jumlahSubTotal = Keranjang.jumlahSubTotal(frm.pembeli.Id);
+            int idKeranjang = Keranjang.CariId(frm.pembeli.Id);
+            Boolean tambahOrderDetails = OrderDetails.TambahData(id, idKeranjang, jumlahSubTotal);
+            if (tambahOrderDetails == true)
+            {
+                MessageBox.Show("Data OrderDetails berhasil ditambahkan!", "Informasi");
+                Keranjang.print(frm.pembeli.Id, "notaJual.txt", new Font("Courier New", 12));
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Data gagal ditambahkan.", "Informasi");
             }
         }
     }

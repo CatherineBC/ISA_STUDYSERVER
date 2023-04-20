@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -221,6 +223,22 @@ namespace Study_LIB
 
             return hasilNo;
         }
+
+        public static int jumlahSubTotal(int idPembeli) 
+        {
+            string sql = "select sum(sub_total) as jumlah from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";
+            int hasilNo = 0;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilNo = int.Parse(hasil.GetValue(0).ToString());
+                }
+            }
+
+            return hasilNo;
+        }
         public static int GenerateIdLama(int idPembeli) //yg belum selesai statusnya
         {
             string sql = "select id from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";
@@ -236,7 +254,45 @@ namespace Study_LIB
             }
             return hasilNo;
         }
+        public static int CariId(int idPembeli)
+        {
+            string sql = "select id from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString());
+                }
+            }
+            return hasilId;
+        }
+        /*
+        public static void print(int idPembeli, string fileName, Font fontType)
+        {
+            List<Keranjang> listKeranjang = new List<Keranjang>();
+            listKeranjang = Keranjang.BacaDataPengguna("", "", idPembeli);
+            StreamWriter tempFile = new StreamWriter(fileName);
+            foreach(Keranjang k in listKeranjang)
+            {
+                tempFile.WriteLine("");
+                tempFile.WriteLine("Study Server Online Shop");
 
+                tempFile.WriteLine("Order      : " + k.Id);
+                tempFile.WriteLine("Alamat          : " + k.NamaPembeli.Alamat);
+                tempFile.WriteLine("Penerima        : " + k.NamaPembeli.Username);
+
+                tempFile.WriteLine("=".PadRight(50, '='));
+                tempFile.WriteLine("Barang          : " + k.NamaProduk);
+                tempFile.WriteLine("Jumlah Barang   : " + k.Jumlah_item);
+                tempFile.WriteLine("Sub Total         : " + k.Sub_total);
+            }
+            tempFile.Close();
+            CustomPrint p = new CustomPrint(fontType, fileName, 20, 10, 10, 10);
+            p.SendToPrinter();
+        }
+        */
         public static int CekIdStatus(int idPembeli)
         {
             string sql = "select id from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";

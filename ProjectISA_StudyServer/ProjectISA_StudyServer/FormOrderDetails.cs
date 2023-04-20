@@ -51,12 +51,14 @@ namespace ProjectISA_StudyServer
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.ColumnIndex == dataGridViewData.Columns["buttonPrintGrid"].Index && e.RowIndex >= 0)
             {
                 OrderDetails.PrintOrderDetails("id", dataGridViewData.Rows[e.RowIndex].Cells["id"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12));
 
                 MessageBox.Show("Nota Telah Tercetak");
             }
+            
 
         }
     }
