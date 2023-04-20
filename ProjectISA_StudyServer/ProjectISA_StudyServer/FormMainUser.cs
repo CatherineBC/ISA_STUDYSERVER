@@ -75,6 +75,7 @@ namespace ProjectISA_StudyServer
                     {
                         labelNama.Text = "Selamat datang, " + penjual.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
+                        keranjangToolStripMenuItem.Visible = false;
                         int cekStatus = Penjual.CekStatus(penjual.Id);
                         if(cekStatus == 1)
                         {
@@ -200,6 +201,7 @@ namespace ProjectISA_StudyServer
                     frm.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
                     frm.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
                     frm.namaPenjual = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
+                    frm.stok = int.Parse(dataGridViewData.CurrentRow.Cells["Stok"].Value.ToString());
                     frm.ShowDialog();
                 }
             }
@@ -220,8 +222,8 @@ namespace ProjectISA_StudyServer
                 }
                 else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    int id = int.Parse(dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString());
-                    string nama = dataGridViewData.CurrentRow.Cells["NamaBarang"].Value.ToString();
+                  
+                    string nama = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
 
                     DialogResult hasil = MessageBox.Show("Data yang akan dihpus adalah: " +                                                   
                                                     "\nNama Barang : " + nama +
