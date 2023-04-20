@@ -85,6 +85,23 @@ namespace ProjectISA_StudyServer
                             if(listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
                             {
                                 dataGridViewData.DataSource = listProdukPenjuals;
+                                if (dataGridViewData.Columns.Count < 9)
+                                {
+                                    DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
+                                    bcol.HeaderText = "Aksi";
+                                    bcol.Text = "Ubah";
+                                    bcol.Name = "btnUbahGrid";
+                                    bcol.UseColumnTextForButtonValue = true;
+                                    dataGridViewData.Columns.Add(bcol);
+
+
+                                    DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
+                                    bcol2.HeaderText = "Hapus";
+                                    bcol2.Text = "Hapus";
+                                    bcol2.Name = "btnHapusGrid";
+                                    bcol2.UseColumnTextForButtonValue = true;
+                                    dataGridViewData.Columns.Add(bcol2);
+                                }
                             }
                             else
                             {
@@ -185,6 +202,27 @@ namespace ProjectISA_StudyServer
                     frm.namaPenjual = dataGridViewData.CurrentRow.Cells["PenjualId"].Value.ToString();
                     frm.ShowDialog();
                 }
+            }
+            else if (status == "penjual")
+            {
+                if (e.ColumnIndex == dataGridViewData.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormUbahBarang formUbahBarang = new FormUbahBarang();
+                    formUbahBarang.Owner = this;
+                 
+                    formUbahBarang.textBoxNamaBarang.Text = dataGridViewData.CurrentRow.Cells["NamaBarang"].Value.ToString();
+                    formUbahBarang.textBoxDeskripsi.Text = dataGridViewData.CurrentRow.Cells["Keterangan"].Value.ToString();
+                    formUbahBarang.textBoxHarga.Text = dataGridViewData.CurrentRow.Cells["Harga"].Value.ToString();
+                    formUbahBarang.numericUpDownStok.Value = (decimal)dataGridViewData.CurrentRow.Cells["Stok"].Value;
+
+                    formUbahBarang.ShowDialog();
+
+                }
+                else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+                {
+                    
+                }
+
             }
                 
         }

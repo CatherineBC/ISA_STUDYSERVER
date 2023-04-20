@@ -79,6 +79,7 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.TabIndex = 47;
             this.buttonTambah.Text = "Ubah";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // panel1
             // 
@@ -197,13 +198,13 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxHarga;
         private System.Windows.Forms.Label labelStok;
-        private System.Windows.Forms.NumericUpDown numericUpDownStok;
-        private System.Windows.Forms.TextBox textBoxDeskripsi;
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelHarga;
         private System.Windows.Forms.Label labelDeskripsi;
         private System.Windows.Forms.Label labelBeli;
+        public System.Windows.Forms.TextBox textBoxHarga;
+        public System.Windows.Forms.NumericUpDown numericUpDownStok;
+        public System.Windows.Forms.TextBox textBoxDeskripsi;
     }
 }
