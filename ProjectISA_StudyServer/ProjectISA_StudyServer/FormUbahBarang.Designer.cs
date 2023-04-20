@@ -59,7 +59,7 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeluar.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKeluar.Location = new System.Drawing.Point(34, 438);
+            this.buttonKeluar.Location = new System.Drawing.Point(26, 458);
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(138, 45);
@@ -72,13 +72,14 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonTambah.Location = new System.Drawing.Point(347, 438);
+            this.buttonTambah.Location = new System.Drawing.Point(405, 458);
             this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(138, 45);
             this.buttonTambah.TabIndex = 47;
             this.buttonTambah.Text = "Ubah";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // panel1
             // 
@@ -91,10 +92,10 @@ namespace ProjectISA_StudyServer
             this.panel1.Controls.Add(this.labelNama);
             this.panel1.Controls.Add(this.labelHarga);
             this.panel1.Controls.Add(this.labelDeskripsi);
-            this.panel1.Location = new System.Drawing.Point(-7, 98);
+            this.panel1.Location = new System.Drawing.Point(11, 129);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 314);
+            this.panel1.Size = new System.Drawing.Size(556, 314);
             this.panel1.TabIndex = 46;
             // 
             // textBoxHarga
@@ -166,7 +167,7 @@ namespace ProjectISA_StudyServer
             this.labelBeli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.labelBeli.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBeli.ForeColor = System.Drawing.Color.LightCoral;
-            this.labelBeli.Location = new System.Drawing.Point(0, -5);
+            this.labelBeli.Location = new System.Drawing.Point(11, 7);
             this.labelBeli.Name = "labelBeli";
             this.labelBeli.Size = new System.Drawing.Size(557, 111);
             this.labelBeli.TabIndex = 45;
@@ -177,7 +178,7 @@ namespace ProjectISA_StudyServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 493);
+            this.ClientSize = new System.Drawing.Size(579, 514);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.panel1);
@@ -197,13 +198,13 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxHarga;
         private System.Windows.Forms.Label labelStok;
-        private System.Windows.Forms.NumericUpDown numericUpDownStok;
-        private System.Windows.Forms.TextBox textBoxDeskripsi;
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelHarga;
         private System.Windows.Forms.Label labelDeskripsi;
         private System.Windows.Forms.Label labelBeli;
+        public System.Windows.Forms.TextBox textBoxHarga;
+        public System.Windows.Forms.NumericUpDown numericUpDownStok;
+        public System.Windows.Forms.TextBox textBoxDeskripsi;
     }
 }

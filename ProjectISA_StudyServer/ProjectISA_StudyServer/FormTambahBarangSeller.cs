@@ -49,5 +49,13 @@ namespace ProjectISA_StudyServer
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonKosongi_Click(object sender, EventArgs e)
+        {
+            textBoxHargaJual.Text = "";
+            textBoxDeskripsiBarang.Text = "";
+            textBoxNamaBarang.Text = "";
+            numericUpDownStok.Value = 0;
+        }
     }
 }

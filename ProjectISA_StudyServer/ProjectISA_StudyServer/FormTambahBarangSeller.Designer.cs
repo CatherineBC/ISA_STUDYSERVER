@@ -51,20 +51,19 @@ namespace ProjectISA_StudyServer
             this.buttonKosongi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKosongi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKosongi.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKosongi.Location = new System.Drawing.Point(134, 276);
-            this.buttonKosongi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonKosongi.Location = new System.Drawing.Point(201, 425);
             this.buttonKosongi.Name = "buttonKosongi";
-            this.buttonKosongi.Size = new System.Drawing.Size(92, 29);
+            this.buttonKosongi.Size = new System.Drawing.Size(138, 45);
             this.buttonKosongi.TabIndex = 40;
             this.buttonKosongi.Text = "Kosongi";
             this.buttonKosongi.UseVisualStyleBackColor = false;
+            this.buttonKosongi.Click += new System.EventHandler(this.buttonKosongi_Click);
             // 
             // textBoxNamaBarang
             // 
-            this.textBoxNamaBarang.Location = new System.Drawing.Point(149, 24);
-            this.textBoxNamaBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNamaBarang.Location = new System.Drawing.Point(224, 37);
             this.textBoxNamaBarang.Name = "textBoxNamaBarang";
-            this.textBoxNamaBarang.Size = new System.Drawing.Size(175, 20);
+            this.textBoxNamaBarang.Size = new System.Drawing.Size(260, 26);
             this.textBoxNamaBarang.TabIndex = 14;
             // 
             // labelTambahBarang
@@ -72,10 +71,9 @@ namespace ProjectISA_StudyServer
             this.labelTambahBarang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.labelTambahBarang.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTambahBarang.ForeColor = System.Drawing.Color.LightCoral;
-            this.labelTambahBarang.Location = new System.Drawing.Point(0, -1);
-            this.labelTambahBarang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTambahBarang.Location = new System.Drawing.Point(0, -2);
             this.labelTambahBarang.Name = "labelTambahBarang";
-            this.labelTambahBarang.Size = new System.Drawing.Size(371, 63);
+            this.labelTambahBarang.Size = new System.Drawing.Size(556, 97);
             this.labelTambahBarang.TabIndex = 36;
             this.labelTambahBarang.Text = "Tambah Barang";
             this.labelTambahBarang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,10 +83,9 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeluar.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKeluar.Location = new System.Drawing.Point(261, 276);
-            this.buttonKeluar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonKeluar.Location = new System.Drawing.Point(392, 425);
             this.buttonKeluar.Name = "buttonKeluar";
-            this.buttonKeluar.Size = new System.Drawing.Size(92, 29);
+            this.buttonKeluar.Size = new System.Drawing.Size(138, 45);
             this.buttonKeluar.TabIndex = 39;
             this.buttonKeluar.Text = "Keluar";
             this.buttonKeluar.UseVisualStyleBackColor = false;
@@ -96,19 +93,17 @@ namespace ProjectISA_StudyServer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 57);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(38, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.Size = new System.Drawing.Size(138, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Deksripsi Barang :";
             // 
             // textBoxHargaJual
             // 
-            this.textBoxHargaJual.Location = new System.Drawing.Point(149, 109);
-            this.textBoxHargaJual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxHargaJual.Location = new System.Drawing.Point(224, 168);
             this.textBoxHargaJual.Name = "textBoxHargaJual";
-            this.textBoxHargaJual.Size = new System.Drawing.Size(175, 20);
+            this.textBoxHargaJual.Size = new System.Drawing.Size(260, 26);
             this.textBoxHargaJual.TabIndex = 3;
             // 
             // buttonTambah
@@ -116,10 +111,9 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonTambah.Location = new System.Drawing.Point(7, 276);
-            this.buttonTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTambah.Location = new System.Drawing.Point(10, 425);
             this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(92, 29);
+            this.buttonTambah.Size = new System.Drawing.Size(138, 45);
             this.buttonTambah.TabIndex = 38;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
@@ -136,72 +130,65 @@ namespace ProjectISA_StudyServer
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxHargaJual);
-            this.panel1.Location = new System.Drawing.Point(-4, 58);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(-6, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 204);
+            this.panel1.Size = new System.Drawing.Size(566, 314);
             this.panel1.TabIndex = 37;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 151);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(38, 232);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Stok :";
             // 
             // numericUpDownStok
             // 
-            this.numericUpDownStok.Location = new System.Drawing.Point(149, 150);
-            this.numericUpDownStok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownStok.Location = new System.Drawing.Point(224, 231);
             this.numericUpDownStok.Name = "numericUpDownStok";
-            this.numericUpDownStok.Size = new System.Drawing.Size(173, 20);
+            this.numericUpDownStok.Size = new System.Drawing.Size(260, 26);
             this.numericUpDownStok.TabIndex = 15;
             // 
             // textBoxDeskripsiBarang
             // 
-            this.textBoxDeskripsiBarang.Location = new System.Drawing.Point(149, 55);
-            this.textBoxDeskripsiBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDeskripsiBarang.Location = new System.Drawing.Point(224, 85);
             this.textBoxDeskripsiBarang.Multiline = true;
             this.textBoxDeskripsiBarang.Name = "textBoxDeskripsiBarang";
             this.textBoxDeskripsiBarang.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDeskripsiBarang.Size = new System.Drawing.Size(175, 46);
+            this.textBoxDeskripsiBarang.Size = new System.Drawing.Size(260, 69);
             this.textBoxDeskripsiBarang.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 24);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(38, 37);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.Size = new System.Drawing.Size(115, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "Nama Barang :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 112);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(38, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Harga Jual : ";
             // 
             // FormTambahBarangSeller
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 327);
+            this.ClientSize = new System.Drawing.Size(554, 503);
             this.Controls.Add(this.buttonKosongi);
             this.Controls.Add(this.labelTambahBarang);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormTambahBarangSeller";
             this.Text = "FormTambahBarangSeller";
             this.panel1.ResumeLayout(false);
