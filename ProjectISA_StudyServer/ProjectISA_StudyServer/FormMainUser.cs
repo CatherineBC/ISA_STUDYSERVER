@@ -220,7 +220,23 @@ namespace ProjectISA_StudyServer
                 }
                 else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    
+                    int id = int.Parse(dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString());
+                    string nama = dataGridViewData.CurrentRow.Cells["NamaBarang"].Value.ToString();
+
+                    DialogResult hasil = MessageBox.Show("Data yang akan dihpus adalah: " +                                                   
+                                                    "\nNama Barang : " + nama +
+                                                    "\n\nApakah anda ingin menghapus data ini?", "Konfirmasi",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (hasil == DialogResult.Yes)
+                    {
+                        
+
+                        //JenisTagihan jt = new JenisTagihan(id);
+                        //JenisTagihan.HapusData(jt, k);
+                        //MessageBox.Show("Data berhasil dihapus", "Informasi");
+                        //FormDaftarJenisTagihan_Load(buttonKeluar, e);
+                    }
                 }
 
             }
