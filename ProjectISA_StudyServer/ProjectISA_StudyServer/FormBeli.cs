@@ -17,6 +17,7 @@ namespace ProjectISA_StudyServer
         {
             InitializeComponent();
         }
+        public string namaPenjual;
         private void FormBeli_Load(object sender, EventArgs e)
         {
             FormMainUser user = (FormMainUser)this.Owner;
@@ -24,18 +25,41 @@ namespace ProjectISA_StudyServer
             if(idCek == 1)
             {
                 int id = Keranjang.GenerateIdLama(user.pembeli.Id);
-                textBoxDeskripsi.Text = id.ToString();
+                label2.Text = id.ToString();
             }
             else
             {
                 int idBaru = Keranjang.GenerateIdBaru();
-                textBoxDeskripsi.Text = idBaru.ToString();
+                label2.Text = idBaru.ToString();
             }
         }
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-
+            
+            try
+            {
+                FormMainUser user = (FormMainUser)this.Owner;
+                int idPenjual = Penjual.CariId(namaPenjual);
+                int idProduk = Produks.CariId(textBoxNamaBarang.Text);
+                double subTotal = (double)numericUpDownStok.Value * double.Parse(textBoxHarga.Text);
+                int jumItem = (int)numericUpDownStok.Value;
+                Boolean status = Keranjang.TambahData(int.Parse(label2.Text), user.pembeli.Id, idPenjual, idProduk, subTotal, jumItem, "belum");
+                if (status == true)
+                {
+                    MessageBox.Show("Data Keranjang berhasil ditambahkan!", "Informasi");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Kesalahan : " + ex.Message);
+            }
+            
         }
 
         private void numericUpDownStok_ValueChanged(object sender, EventArgs e)

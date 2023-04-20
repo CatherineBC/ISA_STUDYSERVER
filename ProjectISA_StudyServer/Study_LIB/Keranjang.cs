@@ -16,10 +16,11 @@ namespace Study_LIB
         Produks id_produk;
         double sub_total;
         int jumlah_item;
+        string status;
         #endregion
 
         #region CONSTRUCTOR
-        public Keranjang(int id, Penjual id_penjual, Pembeli id_pembeli, Produks id_produk, double sub_total, int jumlah_item)
+        public Keranjang(int id, Penjual id_penjual, Pembeli id_pembeli, Produks id_produk, double sub_total, int jumlah_item, string status)
         {
             Id = id;
             Id_penjual = id_penjual;
@@ -27,16 +28,18 @@ namespace Study_LIB
             Id_produk = id_produk;
             Sub_total = sub_total;
             Jumlah_item = jumlah_item;
+            Status = status;
         }
 
         public Keranjang()
         {
-            Id = id;
+            Id = 1;
             Id_penjual = new Penjual();
             Id_pembeli = new Pembeli();
             Id_produk = new Produks();
-            Sub_total = sub_total;
-            Jumlah_item = jumlah_item;
+            Sub_total = 0;
+            Jumlah_item = 0;
+            Status = "belum";
         }
         #endregion
 
@@ -47,13 +50,14 @@ namespace Study_LIB
         public Produks Id_produk { get => id_produk; set => id_produk = value; }
         public double Sub_total { get => sub_total; set => sub_total = value; }
         public int Jumlah_item { get => jumlah_item; set => jumlah_item = value; }
+        public string Status { get => status; set => status = value; } 
         #endregion
 
         #region METHODS
-        public static Boolean TambahData(Keranjang k)
+        public static Boolean TambahData(int idKeranjang, int idPembeli, int idPenjual, int idProduk, double sub, int jumlahItem, string statusKeran)
         {
-            string sql = "insert into keranjang(id, pembelis_id, penjuals_id, produks_id, sub_total, jumlah_item) values ('" + k.Id + "', '" + k.Id_pembeli + "', '" +
-                k.Id_penjual + "','" + k.Id_produk + "', '" + k.Sub_total + "', '" + k.Jumlah_item + "')";
+            string sql = "insert into keranjang(id, pembelis_id, penjuals_id, produks_id, sub_total, jumlah_item, status) values ('" + idKeranjang + "', '" + idPembeli + "', '" +
+                idPenjual + "','" + idProduk + "', '" + sub + "', '" + jumlahItem + "', '" + statusKeran + "')";
 
             int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
             Boolean status;
