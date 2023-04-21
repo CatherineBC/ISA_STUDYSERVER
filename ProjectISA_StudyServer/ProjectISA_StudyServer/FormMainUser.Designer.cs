@@ -36,6 +36,7 @@ namespace ProjectISA_StudyServer
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tambahBarangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keranjangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,10 +71,10 @@ namespace ProjectISA_StudyServer
             this.konfirmasiTokoToolStripMenuItem,
             this.chatToolStripMenuItem,
             this.tambahBarangToolStripMenuItem,
-            this.keranjangToolStripMenuItem});
+            this.keranjangToolStripMenuItem,
+            this.detailOrderToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(981, 33);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
@@ -106,6 +107,12 @@ namespace ProjectISA_StudyServer
             this.keranjangToolStripMenuItem.Text = "Keranjang";
             this.keranjangToolStripMenuItem.Click += new System.EventHandler(this.keranjangToolStripMenuItem_Click);
             // 
+            // detailOrderToolStripMenuItem
+            // 
+            this.detailOrderToolStripMenuItem.Name = "detailOrderToolStripMenuItem";
+            this.detailOrderToolStripMenuItem.Size = new System.Drawing.Size(124, 29);
+            this.detailOrderToolStripMenuItem.Text = "Detail Order";
+            // 
             // FormMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -136,5 +143,6 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tambahBarangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keranjangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detailOrderToolStripMenuItem;
     }
 }
