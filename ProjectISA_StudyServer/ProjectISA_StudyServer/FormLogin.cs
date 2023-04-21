@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,11 @@ namespace ProjectISA_StudyServer
             FormRegisSeller frm = new FormRegisSeller();
             frm.Owner = this;
             frm.ShowDialog();
+        }
+
+        private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

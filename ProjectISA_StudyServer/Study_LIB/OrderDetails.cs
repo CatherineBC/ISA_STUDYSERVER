@@ -38,8 +38,6 @@ namespace Study_LIB
             Tanggal = tanggal;
         }
 
-
-        
         #endregion
 
         #region PROPERTIES
@@ -67,6 +65,41 @@ namespace Study_LIB
                 " WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
             }
 
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<OrderDetails> listOrderDetails = new List<OrderDetails>();
+            while (hasil.Read() == true)
+            {
+                OrderDetails od = new OrderDetails();
+                od.IdOrders = int.Parse(hasil.GetString(0));
+
+
+                Keranjang k = new Keranjang();
+                k.Id = int.Parse(hasil.GetString(1));
+                od.Keranjang_id = k;
+
+                od.Total = int.Parse(hasil.GetString(2));
+                od.Tanggal = DateTime.Parse(hasil.GetString(3));
+
+                listOrderDetails.Add(od);
+            }
+            return listOrderDetails;
+        }
+        public static List<OrderDetails> BacaDataPengguna(string kriteria, string nilaiKriteria, int idPembeli)
+        {
+            string sql = "";
+
+            if (kriteria == "")
+            {
+                sql = "select distinct od.idorders, k.id,od.total,od.tanggal FROM order_details od inner join keranjang k on od.keranjang_id = k.id " +
+                    "where k.pembelis_id ='" + idPembeli + "'";
+
+            }
+            else
+            {
+                sql = "select distinct od.idorders, k.id,od.total,od.tanggal FROM order_details od inner join keranjang k on od.keranjang_id = k.id" +
+               " WHERE k.pembelis_id='"+ idPembeli + "'and " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<OrderDetails> listOrderDetails = new List<OrderDetails>();
@@ -127,12 +160,11 @@ namespace Study_LIB
             return hasilNo;
         }
         
-        public static void PrintOrderDetails(string printKriteria, string nilaiKriteria, string fileName, Font fontType, int idPembeli)
+        public static void PrintOrderDetails(string printKriteria, string nilaiKriteria, string printKriteria2, string nilaiKriteria2, string fileName, Font fontType, int idPembeli)
         {
             List<Keranjang> listKeranjang = new List<Keranjang>();
             List<OrderDetails> listOrderDetails = new List<OrderDetails>();
-            listOrderDetails = OrderDetails.BacaData(printKriteria, nilaiKriteria);
-
+            listOrderDetails = OrderDetails.BacaDataPengguna(printKriteria, nilaiKriteria, idPembeli);
             StreamWriter tempFile = new StreamWriter(fileName);
 
             foreach (OrderDetails od in listOrderDetails)
@@ -145,7 +177,7 @@ namespace Study_LIB
                 tempFile.WriteLine("=".PadRight(50, '='));
                 tempFile.WriteLine("");
 
-                listKeranjang = Keranjang.BacaDataPengguna("", "", idPembeli);
+                listKeranjang = Keranjang.BacaDataPenggunaSelesai(printKriteria2, nilaiKriteria2, idPembeli);
                 tempFile.Write("Product".PadRight(30, ' '));
                 tempFile.Write("Qty".PadRight(4, ' '));
                 tempFile.Write("Sub Total".PadRight(7, ' '));

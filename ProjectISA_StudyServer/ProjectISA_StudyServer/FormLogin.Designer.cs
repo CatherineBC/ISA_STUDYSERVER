@@ -156,6 +156,7 @@ namespace ProjectISA_StudyServer
             this.checkBoxShowPassword.TabIndex = 73;
             this.checkBoxShowPassword.Text = "Show Password";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
             // label2
             // 

@@ -99,12 +99,20 @@ namespace ProjectISA_StudyServer
             Boolean tambahOrderDetails = OrderDetails.TambahData(id, idKeranjang, jumlahSubTotal);
             if (tambahOrderDetails == true)
             {
-                MessageBox.Show("Data OrderDetails berhasil ditambahkan!", "Informasi");
-                this.Close();
+                Boolean statusKeranjang = Keranjang.UbahStatusKeranjang(idKeranjang);
+                if (statusKeranjang == true)
+                {
+                    MessageBox.Show("Data OrderDetails berhasil ditambahkan!", "Informasi");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Kesalahan di ubah status keranjang.", "Informasi");
+                }
             }
             else
             {
-                MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                MessageBox.Show("Data gagal ditambahkan ke order details.", "Informasi");
             }
         }
     }
