@@ -100,7 +100,6 @@ namespace ProjectISA_StudyServer
             if (tambahOrderDetails == true)
             {
                 MessageBox.Show("Data OrderDetails berhasil ditambahkan!", "Informasi");
-                Keranjang.print(frm.pembeli.Id, "notaJual.txt", new Font("Courier New", 12));
                 this.Close();
             }
             else

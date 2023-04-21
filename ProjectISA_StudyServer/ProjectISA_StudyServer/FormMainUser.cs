@@ -255,5 +255,16 @@ namespace ProjectISA_StudyServer
             }
 
         }
+
+        private void detailOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormOrderDetails"];
+            if (form == null)
+            {
+                FormOrderDetails fk = new FormOrderDetails();
+                fk.Owner = this;
+                fk.ShowDialog();
+            }
+        }
     }
 }

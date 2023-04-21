@@ -51,11 +51,11 @@ namespace ProjectISA_StudyServer
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            FormMainUser frm = (FormMainUser)this.Owner;
             if (e.ColumnIndex == dataGridViewData.Columns["buttonPrintGrid"].Index && e.RowIndex >= 0)
             {
                 //OrderDetails.PrintOrderDetails("id", dataGridViewData.Rows[e.RowIndex].Cells["id"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12));
-
+                OrderDetails.PrintOrderDetails("idorders", dataGridViewData.Rows[e.RowIndex].Cells["IdOrders"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12), frm.pembeli.Id);
                 MessageBox.Show("Nota Telah Tercetak");
             }
             

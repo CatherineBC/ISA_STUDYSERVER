@@ -58,13 +58,13 @@ namespace Study_LIB
 
             if (kriteria == "")
             {
-                sql = "select od.idorders, k.keranjang_id,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN penjual_has_produks_ php on od.produks_id = php.produks_id INNER JOIN produks p on od.produks_id = p.id ";
+                sql = "select distinct od.idorders, k.id,od.total,od.tanggal FROM order_details od inner join keranjang k on od.keranjang_id = k.id";
 
             }
             else
             {
-                sql = "select od.idorders, k.keranjang_id,od.total,od.tanggal FROM order_details od INNER JOIN Keranjang k on od.keranjang_id = k.id INNER JOIN penjual_has_produks_ php on od.produks_id = php.produks_id INNER JOIN produks p on od.produks_id = p.id " +
-                "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+                sql = "select distinct od.idorders, k.id,od.total,od.tanggal FROM order_details od inner join keranjang k on od.keranjang_id = k.id" + 
+                " WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
             }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -134,23 +134,24 @@ namespace Study_LIB
             listOrderDetails = OrderDetails.BacaData(printKriteria, nilaiKriteria);
 
             StreamWriter tempFile = new StreamWriter(fileName);
+
             foreach (OrderDetails od in listOrderDetails)
             {
                 tempFile.WriteLine("");
+                tempFile.WriteLine("Study Server Online Shop");
+                tempFile.WriteLine("=".PadRight(50, '='));
                 tempFile.WriteLine("Order Date      : " + od.Tanggal);
-                tempFile.WriteLine("Toko            : " + od.Keranjang_id.NamaPenjual);
-                tempFile.WriteLine("Alamat          : " + od.keranjang_id.NamaPembeli.Alamat);
-                tempFile.WriteLine("Penerima        : " + od.Keranjang_id.NamaPembeli.Nama);
-
+                tempFile.WriteLine("No keranjang    : " + od.Keranjang_id.Id);
                 tempFile.WriteLine("=".PadRight(50, '='));
-                tempFile.WriteLine("Product".PadRight(30, ' '));
-                tempFile.WriteLine("Jumlah Produk".PadRight(4, ' '));
-                tempFile.WriteLine("Sub Total".PadRight(7, ' '));
                 tempFile.WriteLine("");
-                tempFile.WriteLine("=".PadRight(50, '='));
 
                 listKeranjang = Keranjang.BacaDataPengguna("", "", idPembeli);
-                foreach(Keranjang keran in listKeranjang)
+                tempFile.Write("Product".PadRight(30, ' '));
+                tempFile.Write("Qty".PadRight(4, ' '));
+                tempFile.Write("Sub Total".PadRight(7, ' '));
+                tempFile.WriteLine(" ");
+                tempFile.WriteLine("=".PadRight(50, '='));
+                foreach (Keranjang keran in listKeranjang)
                 {
                     string namaBarang = keran.NamaProduk.Nama;
                     int qnty = keran.Jumlah_item;
@@ -162,9 +163,11 @@ namespace Study_LIB
                     tempFile.WriteLine("");
                 }
                 tempFile.WriteLine("=".PadRight(50, '='));
-                tempFile.WriteLine("Jumlah          : " + od.Total);
+                tempFile.WriteLine("Total Biaya          : " + od.Total);
                 tempFile.WriteLine("=".PadRight(50, '='));
-            }
+                tempFile.WriteLine("Terima kasih");
+
+            } 
             tempFile.Close();
 
             CustomPrint p = new CustomPrint(fontType, fileName, 20, 10, 10, 10);

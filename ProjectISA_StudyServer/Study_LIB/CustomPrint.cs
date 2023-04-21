@@ -43,7 +43,7 @@ namespace Study_LIB
             string rowText = PrintToFile.ReadLine();
             while(rowNum < maxRow && rowText != null)
             {
-                y = MarginTop + (rowNum + FontType.GetHeight(e.Graphics));
+                y = MarginTop + (rowNum * FontType.GetHeight(e.Graphics));
                 e.Graphics.DrawString(rowText, FontType, Brushes.Black, MarginLeft, y);
                 rowNum++;
                 rowText = printToFile.ReadLine();

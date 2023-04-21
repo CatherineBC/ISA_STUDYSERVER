@@ -202,7 +202,47 @@ namespace Study_LIB
             }
             return listKeranjang;
         }
+        public static List<Keranjang> BacaDataKeranjang(int idKeranjang)
+        {
+            string sql = "";
+            sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item " +
+                "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
+                "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
+                "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
+                "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
+                "inner join produks pro on penp2.produks_id = pro.id " +
+                "where k.id = '" + idKeranjang + "'";
 
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Keranjang> listKeranjang = new List<Keranjang>();
+
+            while (hasil.Read() == true)
+            {
+                Keranjang k = new Keranjang();
+                k.Id = int.Parse(hasil.GetString(0));
+                k.Sub_total = double.Parse(hasil.GetString(7));
+                k.Jumlah_item = int.Parse(hasil.GetString(8));
+
+                Pembeli pem = new Pembeli();
+                pem.Id = int.Parse(hasil.GetString(1));
+                pem.Username = hasil.GetString(2);
+                k.NamaPembeli = pem;
+
+                Penjual pen = new Penjual();
+                pen.Id = int.Parse(hasil.GetString(3));
+                pen.Nama = hasil.GetString(4);
+                k.NamaPenjual = pen;
+
+                Produks pro = new Produks();
+                pro.Id = int.Parse(hasil.GetString(5));
+                pro.Nama = hasil.GetString(6);
+                k.NamaProduk = pro;
+
+                listKeranjang.Add(k);
+
+            }
+            return listKeranjang;
+        }
 
         public static int GenerateIdBaru()
         {
@@ -268,31 +308,8 @@ namespace Study_LIB
             }
             return hasilId;
         }
-        /*
-        public static void print(int idPembeli, string fileName, Font fontType)
-        {
-            List<Keranjang> listKeranjang = new List<Keranjang>();
-            listKeranjang = Keranjang.BacaDataPengguna("", "", idPembeli);
-            StreamWriter tempFile = new StreamWriter(fileName);
-            foreach(Keranjang k in listKeranjang)
-            {
-                tempFile.WriteLine("");
-                tempFile.WriteLine("Study Server Online Shop");
-
-                tempFile.WriteLine("Order      : " + k.Id);
-                tempFile.WriteLine("Alamat          : " + k.NamaPembeli.Alamat);
-                tempFile.WriteLine("Penerima        : " + k.NamaPembeli.Username);
-
-                tempFile.WriteLine("=".PadRight(50, '='));
-                tempFile.WriteLine("Barang          : " + k.NamaProduk);
-                tempFile.WriteLine("Jumlah Barang   : " + k.Jumlah_item);
-                tempFile.WriteLine("Sub Total         : " + k.Sub_total);
-            }
-            tempFile.Close();
-            CustomPrint p = new CustomPrint(fontType, fileName, 20, 10, 10, 10);
-            p.SendToPrinter();
-        }
-        */
+        
+        
         public static int CekIdStatus(int idPembeli)
         {
             string sql = "select id from keranjang where status = 'belum' and pembelis_id ='" + idPembeli + "'";
@@ -319,6 +336,10 @@ namespace Study_LIB
             {
                 return true;
             }
+        }
+        public override string ToString()
+        {
+            return Id.ToString();
         }
         #endregion
     }
