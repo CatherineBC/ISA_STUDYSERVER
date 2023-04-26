@@ -112,7 +112,34 @@ namespace Study_LIB
 
             return hasilNo;
         }
-
+        public static string DapatPassword(string username)
+        {
+            string sql = "select password from pembelis where username = '" + username + "'";
+            string hasilPass = "";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilPass = hasil.GetValue(0).ToString();
+                }
+            }
+            return hasilPass;
+        }
+        public static string DapatNoTelpon(string username)
+        {
+            string sql = "select no_telpon from pembelis where username = '" + username + "'";
+            string hasilPass = "";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilPass = hasil.GetValue(0).ToString() + "1234";
+                }
+            }
+            return hasilPass;
+        }
         public static int CariId(string nama)
         {
             string sql = "select id from pembelis where username = '" + nama + "'";

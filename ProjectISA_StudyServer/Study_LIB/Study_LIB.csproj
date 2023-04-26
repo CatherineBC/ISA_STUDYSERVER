@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Administrator.cs" />
     <Compile Include="Chat.cs" />
+    <Compile Include="Cyrptography.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Keranjang.cs" />
     <Compile Include="OrderDetails.cs" />

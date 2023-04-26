@@ -22,11 +22,12 @@ namespace ProjectISA_StudyServer
         {
             try
             {
-                if(textBoxPwd.Text == textBoxPwdUlang.Text)
+                if(textBoxPwd.Text == textBoxPwdUlang.Text && textBoxNoHp.TextLength == 12)
                 {
                     int id = Pembeli.GenerateId();
-
-                    Pembeli pembeli = new Pembeli(id, textBoxNama.Text, textBoxUserName.Text, textBoxPwdUlang.Text,
+                    string key = textBoxNoHp.Text + "1234";
+                    string cipherText = Cyrptography.Encryption(textBoxPwdUlang.Text, key);
+                    Pembeli pembeli = new Pembeli(id, textBoxNama.Text, textBoxUserName.Text, cipherText,
                         textBoxEmail.Text, textBoxAlamat.Text, textBoxNoHp.Text);
                     Boolean status = Pembeli.TambahData(pembeli);
                     if (status == true)

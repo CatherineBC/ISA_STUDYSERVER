@@ -24,7 +24,19 @@ namespace ProjectISA_StudyServer
             try
             {
                 Koneksi koneksi = new Koneksi();
-                Pembeli p = Pembeli.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                string noTelpon = Pembeli.DapatNoTelpon(textBoxUsername.Text);
+                string cipherTextPembeli = "";
+                if (noTelpon != "")
+                {
+                    cipherTextPembeli = Cyrptography.Encryption(textBoxPassword.Text, noTelpon);
+                }
+                string username = Penjual.DapatUsername(textBoxUsername.Text);
+                string cipherTextPenjual = "";
+                if (username != "")
+                {
+                    cipherTextPenjual = Cyrptography.Encryption(textBoxPassword.Text, username);
+                }
+                Pembeli p = Pembeli.CekLogin(textBoxUsername.Text, cipherTextPenjual);
 
                 FormMainUser frmMainUser = (FormMainUser)this.Owner;
 
@@ -36,7 +48,7 @@ namespace ProjectISA_StudyServer
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-                Penjual pe = Penjual.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                Penjual pe = Penjual.CekLogin(textBoxUsername.Text, cipherTextPenjual);
                 if (!(pe is null))
                 {
                     frmMainUser.penjual = pe;

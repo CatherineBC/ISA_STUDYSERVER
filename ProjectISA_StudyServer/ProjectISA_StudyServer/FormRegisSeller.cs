@@ -25,15 +25,24 @@ namespace ProjectISA_StudyServer
                 int id = Penjual.GenerateId();
                 if(textBoxPwD.Text == textBoxUlang.Text)
                 {
-                    Boolean status = Penjual.TambahData(id, textBoxNamaToko.Text, textBoxUserName.Text, textBoxEmail.Text, textBoxUlang.Text, "Tidak");
-                    if (status == true)
+                    if(textBoxUserName.TextLength == 8)
                     {
-                        MessageBox.Show("Data penjual berhasil ditambahkan\nMohon tunggu konfirmasi akun oleh administrator!", "Informasi");
-                        this.Close();
+                        string key = textBoxUserName.Text + "12345678";
+                        string cipherText = Cyrptography.Encryption(textBoxUlang.Text, key);
+                        Boolean status = Penjual.TambahData(id, textBoxNamaToko.Text, textBoxUserName.Text, textBoxEmail.Text, cipherText, "Tidak");
+                        if (status == true)
+                        {
+                            MessageBox.Show("Data penjual berhasil ditambahkan\nMohon tunggu konfirmasi akun oleh administrator!", "Informasi");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                        MessageBox.Show("Username harus 8 karakter");
                     }
                 }
                 else

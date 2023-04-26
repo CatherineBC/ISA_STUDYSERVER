@@ -181,7 +181,20 @@ namespace Study_LIB
             }
             return cek;
         }
-
+        public static string DapatUsername(string username)
+        {
+            string sql = "select username from penjuals where username = '" + username + "'";
+            string hasilUsername = "";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilUsername = hasil.GetValue(0).ToString() + "12345678";
+                }
+            }
+            return hasilUsername;
+        }
         public static int CariId(string nama)
         {
             string sql = "select id from penjuals where nama_toko = '" + nama + "'";
