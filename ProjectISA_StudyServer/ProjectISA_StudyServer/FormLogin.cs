@@ -30,13 +30,7 @@ namespace ProjectISA_StudyServer
                 {
                     cipherTextPembeli = Cyrptography.Encryption(textBoxPassword.Text, noTelpon);
                 }
-                string username = Penjual.DapatUsername(textBoxUsername.Text);
-                string cipherTextPenjual = "";
-                if (username != "")
-                {
-                    cipherTextPenjual = Cyrptography.Encryption(textBoxPassword.Text, username);
-                }
-                Pembeli p = Pembeli.CekLogin(textBoxUsername.Text, cipherTextPenjual);
+                Pembeli p = Pembeli.CekLogin(textBoxUsername.Text, cipherTextPembeli);
 
                 FormMainUser frmMainUser = (FormMainUser)this.Owner;
 
@@ -47,6 +41,12 @@ namespace ProjectISA_StudyServer
                     MessageBox.Show("Login Berhasil. Selamat Menggunakan Aplikasi: " + p.Nama, "Informasi");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
+                }
+                string username = Penjual.DapatUsername(textBoxUsername.Text);
+                string cipherTextPenjual = "";
+                if (username != "")
+                {
+                    cipherTextPenjual = Cyrptography.Encryption(textBoxPassword.Text, username);
                 }
                 Penjual pe = Penjual.CekLogin(textBoxUsername.Text, cipherTextPenjual);
                 if (!(pe is null))

@@ -22,22 +22,29 @@ namespace ProjectISA_StudyServer
         {
             try
             {
-                if(textBoxPwd.Text == textBoxPwdUlang.Text && textBoxNoHp.TextLength == 12)
+                if(textBoxPwd.Text == textBoxPwdUlang.Text)
                 {
-                    int id = Pembeli.GenerateId();
-                    string key = textBoxNoHp.Text + "1234";
-                    string cipherText = Cyrptography.Encryption(textBoxPwdUlang.Text, key);
-                    Pembeli pembeli = new Pembeli(id, textBoxNama.Text, textBoxUserName.Text, cipherText,
-                        textBoxEmail.Text, textBoxAlamat.Text, textBoxNoHp.Text);
-                    Boolean status = Pembeli.TambahData(pembeli);
-                    if (status == true)
+                    if(textBoxNoHp.TextLength == 12)
                     {
-                        MessageBox.Show("Data pengguna berhasil ditambahkan.", "Informasi");
-                        this.Close();
+                        int id = Pembeli.GenerateId();
+                        string key = textBoxNoHp.Text + "1234";
+                        string cipherText = Cyrptography.Encryption(textBoxPwdUlang.Text, key);
+                        Pembeli pembeli = new Pembeli(id, textBoxNama.Text, textBoxUserName.Text, cipherText,
+                            textBoxEmail.Text, textBoxAlamat.Text, textBoxNoHp.Text);
+                        Boolean status = Pembeli.TambahData(pembeli);
+                        if (status == true)
+                        {
+                            MessageBox.Show("Data pengguna berhasil ditambahkan.", "Informasi");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Data gagal ditambahkan.", "Informasi");
+                        MessageBox.Show("No Hp harus 12 karakter");
                     }
                 }
                 else

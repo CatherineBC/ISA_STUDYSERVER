@@ -31,8 +31,10 @@ namespace ProjectISA_StudyServer
         private void buttonSimpan_Click(object sender, EventArgs e)
         {
             FormMainUser user = (FormMainUser)this.Owner;
+            string key = Pembeli.DapatNoTelpon(user.pembeli.Username);
+            string cipherText = Cyrptography.Encryption(textBoxPesan.Text, key);
             int idPenjual = Penjual.CariId(labelPenerima.Text);
-            Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), user.pembeli.Id, idPenjual, textBoxPesan.Text, DateTime.Now);
+            Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), user.pembeli.Id, idPenjual, cipherText, DateTime.Now);
             MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
         }
 
