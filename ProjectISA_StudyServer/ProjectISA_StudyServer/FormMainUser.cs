@@ -94,14 +94,6 @@ namespace ProjectISA_StudyServer
                                     bcol.Name = "btnUbahGrid";
                                     bcol.UseColumnTextForButtonValue = true;
                                     dataGridViewData.Columns.Add(bcol);
-
-
-                                    DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
-                                    bcol2.HeaderText = "Hapus";
-                                    bcol2.Text = "Hapus";
-                                    bcol2.Name = "btnHapusGrid";
-                                    bcol2.UseColumnTextForButtonValue = true;
-                                    dataGridViewData.Columns.Add(bcol2);
                                 }
                             }
                             else
@@ -219,26 +211,6 @@ namespace ProjectISA_StudyServer
 
                     formUbahBarang.ShowDialog();
                 }
-                //else if (e.ColumnIndex == dataGridViewData.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
-                //{
-
-                //    string nama = dataGridViewData.CurrentRow.Cells["ProdukId"].Value.ToString();
-
-                //    DialogResult hasil = MessageBox.Show("Data yang akan dihpus adalah: " +
-                //                                    "\nNama Barang : " + nama +
-                //                                    "\n\nApakah anda ingin menghapus data ini?", "Konfirmasi",
-                //                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                //    if (hasil == DialogResult.Yes)
-                //    {
-
-
-                //        //JenisTagihan jt = new JenisTagihan(id);
-                //        //JenisTagihan.HapusData(jt, k);
-                //        //MessageBox.Show("Data berhasil dihapus", "Informasi");
-                //        //FormDaftarJenisTagihan_Load(buttonKeluar, e);
-                //    }
-                //}
             }
                 
         }

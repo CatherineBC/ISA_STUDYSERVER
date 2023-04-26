@@ -65,7 +65,19 @@ namespace Study_LIB
                 return false;
             }
             else { return true; }
+        }
 
+        public static Boolean UbahData(int idProduk, int idPenjual, string deskripsi, int stok)
+        {
+            string sql = "UPDATE penjuals_has_produks SET keterangan = '" + deskripsi + "', stok = " + stok + " WHERE penjuals_id = " + idPenjual + " AND " + idProduk;
+
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else { return true; }
         }
 
         public static List<Penjual_has_Produk> BacaData(string kriteria, string nilaiKriteria)
@@ -157,25 +169,6 @@ namespace Study_LIB
             }
             return listPenjualHasProduk;
         }
-
-
-        //public static Boolean HapusData(Penjual_has_Produk php, Koneksi k)
-        //{
-        //    string sql = "DELETE FROM penjuals_has_poduks where penjuals_id = '" + php.Penjual + "' AND produks_id = '" + php.Produk + "'";
-
-        //    int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-        //    Boolean status;
-        //    if (jumlahDiubah == 0)
-        //    {
-        //        status = false;
-        //    }
-        //    else
-        //    {
-        //        status = true;
-        //    }
-
-        //    return status;
-        //}
         #endregion
     }
 }
