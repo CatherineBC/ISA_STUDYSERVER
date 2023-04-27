@@ -32,7 +32,6 @@ namespace ProjectISA_StudyServer
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewDftrCs = new System.Windows.Forms.DataGridView();
             this.buttonKeluar = new System.Windows.Forms.Button();
-            this.buttonTambah = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDftrCs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,26 +73,12 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.Text = "Keluar";
             this.buttonKeluar.UseVisualStyleBackColor = false;
             // 
-            // buttonTambah
-            // 
-            this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambah.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonTambah.Location = new System.Drawing.Point(1348, 550);
-            this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(138, 45);
-            this.buttonTambah.TabIndex = 47;
-            this.buttonTambah.Text = "Tambah";
-            this.buttonTambah.UseVisualStyleBackColor = false;
-            // 
             // FormListChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1505, 616);
             this.Controls.Add(this.buttonKeluar);
-            this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewDftrCs);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -109,6 +94,5 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dataGridViewDftrCs;
         private System.Windows.Forms.Button buttonKeluar;
-        private System.Windows.Forms.Button buttonTambah;
     }
 }
