@@ -26,7 +26,7 @@ namespace ProjectISA_StudyServer
             if (UbahPHP == true)
             {
                 Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
-                    textBoxDeskripsi.Text, int.Parse(textBoxHarga.Text));
+                    textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
                 MessageBox.Show("Data produk berhasil diubah.", "Informasi");
             }
             else
