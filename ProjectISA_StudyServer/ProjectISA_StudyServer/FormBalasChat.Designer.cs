@@ -30,11 +30,11 @@ namespace ProjectISA_StudyServer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.labelPenerima = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelPengirim = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPesan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxIdVoucher = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,8 +42,6 @@ namespace ProjectISA_StudyServer
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSimpan = new System.Windows.Forms.Button();
             this.buttonKosong = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,12 +49,10 @@ namespace ProjectISA_StudyServer
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.labelPenerima);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.labelPengirim);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBoxPesan);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBoxIdVoucher);
             this.panel1.Controls.Add(this.label2);
@@ -64,8 +60,17 @@ namespace ProjectISA_StudyServer
             this.panel1.Location = new System.Drawing.Point(15, 100);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(606, 305);
+            this.panel1.Size = new System.Drawing.Size(606, 256);
             this.panel1.TabIndex = 62;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(271, 129);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(279, 87);
+            this.textBox2.TabIndex = 11;
             // 
             // labelPenerima
             // 
@@ -115,22 +120,13 @@ namespace ProjectISA_StudyServer
             this.label4.TabIndex = 5;
             this.label4.Text = "Pengirim : ";
             // 
-            // textBoxPesan
-            // 
-            this.textBoxPesan.Location = new System.Drawing.Point(334, 131);
-            this.textBoxPesan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxPesan.Multiline = true;
-            this.textBoxPesan.Name = "textBoxPesan";
-            this.textBoxPesan.Size = new System.Drawing.Size(216, 48);
-            this.textBoxPesan.TabIndex = 4;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(209, 217);
+            this.label3.Location = new System.Drawing.Point(176, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 3;
@@ -173,7 +169,7 @@ namespace ProjectISA_StudyServer
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonExit.Location = new System.Drawing.Point(461, 413);
+            this.buttonExit.Location = new System.Drawing.Point(461, 376);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(160, 48);
@@ -187,7 +183,7 @@ namespace ProjectISA_StudyServer
             this.buttonSimpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSimpan.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonSimpan.Location = new System.Drawing.Point(23, 413);
+            this.buttonSimpan.Location = new System.Drawing.Point(15, 376);
             this.buttonSimpan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(150, 48);
@@ -201,7 +197,7 @@ namespace ProjectISA_StudyServer
             this.buttonKosong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKosong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKosong.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKosong.Location = new System.Drawing.Point(196, 413);
+            this.buttonKosong.Location = new System.Drawing.Point(196, 376);
             this.buttonKosong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonKosong.Name = "buttonKosong";
             this.buttonKosong.Size = new System.Drawing.Size(150, 48);
@@ -210,32 +206,11 @@ namespace ProjectISA_StudyServer
             this.buttonKosong.UseVisualStyleBackColor = false;
             this.buttonKosong.Click += new System.EventHandler(this.buttonKosong_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(19, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(290, 25);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Pesan yang ingin dibalas : ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(334, 196);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 87);
-            this.textBox2.TabIndex = 11;
-            // 
             // FormBalasChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 474);
+            this.ClientSize = new System.Drawing.Size(645, 440);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
@@ -258,7 +233,6 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label labelPengirim;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxPesan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxIdVoucher;
         private System.Windows.Forms.Label label2;
@@ -267,6 +241,5 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Button buttonSimpan;
         private System.Windows.Forms.Button buttonKosong;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
     }
 }

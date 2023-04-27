@@ -59,6 +59,7 @@
     <Compile Include="CustomPrint.cs" />
     <Compile Include="Produks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steganography.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
