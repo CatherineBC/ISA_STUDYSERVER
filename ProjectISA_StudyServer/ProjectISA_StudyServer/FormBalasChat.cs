@@ -20,7 +20,7 @@ namespace ProjectISA_StudyServer
 
         private void buttonKosong_Click(object sender, EventArgs e)
         {
-            textBoxPesan.Clear();
+            textBox2.Clear();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace ProjectISA_StudyServer
         {
             FormMainUser user = (FormMainUser)this.Owner;
             string key = Pembeli.DapatNoTelpon(user.pembeli.Username);
-            string cipherText = Cyrptography.Encryption(textBoxPesan.Text, key);
+            string cipherText = Cyrptography.Encryption(textBox2.Text, key);
             int idPenjual = Penjual.CariId(labelPenerima.Text);
             Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), user.pembeli.Id, idPenjual, cipherText, DateTime.Now);
             MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);

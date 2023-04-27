@@ -46,7 +46,7 @@ namespace Study_LIB
                 byte[] plainBytes = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
 
                 //konversi byte array hasil enkripsi menjadi cipher text
-                string plainText = Convert.ToBase64String(cipherBytes);
+                string plainText = Encoding.UTF8.GetString(plainBytes);
                 return plainText;
             }
         }

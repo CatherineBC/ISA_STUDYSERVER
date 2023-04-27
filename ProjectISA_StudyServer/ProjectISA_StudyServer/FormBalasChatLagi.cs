@@ -13,6 +13,8 @@ namespace ProjectISA_StudyServer
 {
     public partial class FormBalasChatLagi : Form
     {
+        public string pesan;
+        public string pembeli;
         public FormBalasChatLagi()
         {
             InitializeComponent();
@@ -27,7 +29,9 @@ namespace ProjectISA_StudyServer
         {
             FormListChat frmC = (FormListChat)this.Owner;
             FormMainUser frm = (FormMainUser)frmC.Owner;
-
+            string key = Pembeli.DapatNoTelpon(pembeli);
+            string plainText = Cyrptography.Decryption(pesan, key);
+            textBoxPesan.Text = plainText;
             if (frm.status == "pembeli")
             {
                 labelPengirim.Text = frm.pembeli.Username;
@@ -58,6 +62,26 @@ namespace ProjectISA_StudyServer
                 MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
             }
 
+        }
+
+        private void buttonSimpan_Click_1(object sender, EventArgs e)
+        {
+            FormListChat frmC = (FormListChat)this.Owner;
+            FormMainUser frm = (FormMainUser)frmC.Owner;
+            string key = Pembeli.DapatNoTelpon(pembeli);
+            string cipherText = Cyrptography.Encryption(textBox2.Text, key);
+            if (frm.status == "pembeli")
+            {
+                int idPenjual = Penjual.CariId(labelPenerima.Text);
+                Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), frm.pembeli.Id, idPenjual, cipherText, DateTime.Now);
+                MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
+            }
+            else
+            {
+                int idPembeli = Pembeli.CariId(labelPenerima.Text);
+                Chat.BalasPesan(int.Parse(textBoxIdVoucher.Text), idPembeli, frm.penjual.Id, cipherText, DateTime.Now);
+                MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
+            }
         }
     }
 }

@@ -85,6 +85,8 @@ namespace ProjectISA_StudyServer
                     FormBalasChatLagi frm2 = new FormBalasChatLagi();
                     frm2.Owner = this;
                     frm2.labelPenerima.Text = dataGridViewDftrCs.CurrentRow.Cells["Penjual"].Value.ToString();
+                    frm2.pesan = dataGridViewDftrCs.CurrentRow.Cells["Pesan"].Value.ToString();
+                    frm2.pembeli = dataGridViewDftrCs.CurrentRow.Cells["Pembeli"].Value.ToString();
                     frm2.ShowDialog();
                 }
             }
@@ -95,6 +97,8 @@ namespace ProjectISA_StudyServer
                     FormBalasChatLagi frm2 = new FormBalasChatLagi();
                     frm2.Owner = this;
                     frm2.labelPenerima.Text = dataGridViewDftrCs.CurrentRow.Cells["Pembeli"].Value.ToString();
+                    frm2.pesan = dataGridViewDftrCs.CurrentRow.Cells["Pesan"].Value.ToString();
+                    frm2.pembeli = dataGridViewDftrCs.CurrentRow.Cells["Pembeli"].Value.ToString();
                     frm2.ShowDialog();
                 }
             }
