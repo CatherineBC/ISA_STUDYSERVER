@@ -16,6 +16,7 @@ namespace Study_LIB
         private string pesan;
         private DateTime waktu;
         #endregion
+
         #region Constructors
         public Chat()
         {
@@ -34,6 +35,7 @@ namespace Study_LIB
             Waktu = waktu;
         }
         #endregion
+
         #region Properties
         public int Id { get => id; set => id = value; }
         public Pembeli Pembeli { get => pembeli; set => pembeli = value; }

@@ -48,7 +48,6 @@ namespace Study_LIB
 
         #endregion
 
-
         #region METHODS
         public static List<OrderDetails> BacaData(string kriteria, string nilaiKriteria)
         {

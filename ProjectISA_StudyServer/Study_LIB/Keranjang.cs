@@ -80,19 +80,13 @@ namespace Study_LIB
         {
             string sql = "update keranjang set jumlah_item=" + k.Jumlah_item + " where id = " + k.Id;
 
-            int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
-            Boolean status;
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
 
-            if (jumlahDitambahkan == 0)
+            if (jumlahDiubah == 0)
             {
-                status = false;
+                return false;
             }
-            else
-            {
-                status = true;
-            }
-
-            return status;
+            else { return true; }
         }
 
         public static Boolean HapusData(Keranjang k)

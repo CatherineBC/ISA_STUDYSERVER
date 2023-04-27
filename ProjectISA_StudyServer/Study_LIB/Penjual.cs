@@ -195,9 +195,28 @@ namespace Study_LIB
             }
             return hasilUsername;
         }
+
         public static int CariId(string nama)
         {
             string sql = "select id from penjuals where nama_toko = '" + nama + "'";
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString());
+                }
+            }
+            return hasilId;
+        }
+
+        public static int CariIdByProduk(string namaproduk)
+        {
+            string sql = "select php.produks_id from penjuals pen " +
+                "INNER JOIN penjuals_has_produks php ON pen.id = php.penjuals_id " +
+                "INNER JOIN produks prod ON php.produks_id = prod.id " +
+                "where prod.nama = '" + namaproduk + "'";
             int hasilId = 0;
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             if (hasil.Read() == true)

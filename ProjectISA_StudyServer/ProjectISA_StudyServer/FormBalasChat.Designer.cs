@@ -30,6 +30,8 @@ namespace ProjectISA_StudyServer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.labelPenerima = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelPengirim = new System.Windows.Forms.Label();
@@ -48,6 +50,8 @@ namespace ProjectISA_StudyServer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.labelPenerima);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.labelPengirim);
@@ -59,8 +63,28 @@ namespace ProjectISA_StudyServer
             this.panel1.ForeColor = System.Drawing.Color.AliceBlue;
             this.panel1.Location = new System.Drawing.Point(13, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(539, 172);
+            this.panel1.Size = new System.Drawing.Size(539, 244);
             this.panel1.TabIndex = 62;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(297, 157);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(192, 70);
+            this.textBox2.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(17, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(238, 21);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Pesan yang ingin dibalas : ";
             // 
             // labelPenerima
             // 
@@ -112,10 +136,11 @@ namespace ProjectISA_StudyServer
             // 
             // textBoxPesan
             // 
-            this.textBoxPesan.Location = new System.Drawing.Point(239, 95);
+            this.textBoxPesan.Enabled = false;
+            this.textBoxPesan.Location = new System.Drawing.Point(297, 105);
             this.textBoxPesan.Multiline = true;
             this.textBoxPesan.Name = "textBoxPesan";
-            this.textBoxPesan.Size = new System.Drawing.Size(250, 49);
+            this.textBoxPesan.Size = new System.Drawing.Size(192, 39);
             this.textBoxPesan.TabIndex = 4;
             // 
             // label3
@@ -124,7 +149,7 @@ namespace ProjectISA_StudyServer
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(146, 110);
+            this.label3.Location = new System.Drawing.Point(186, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 21);
             this.label3.TabIndex = 3;
@@ -166,7 +191,7 @@ namespace ProjectISA_StudyServer
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonExit.Location = new System.Drawing.Point(410, 272);
+            this.buttonExit.Location = new System.Drawing.Point(410, 330);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(142, 38);
             this.buttonExit.TabIndex = 64;
@@ -179,7 +204,7 @@ namespace ProjectISA_StudyServer
             this.buttonSimpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSimpan.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonSimpan.Location = new System.Drawing.Point(19, 272);
+            this.buttonSimpan.Location = new System.Drawing.Point(20, 330);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(133, 38);
             this.buttonSimpan.TabIndex = 63;
@@ -192,7 +217,7 @@ namespace ProjectISA_StudyServer
             this.buttonKosong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKosong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKosong.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKosong.Location = new System.Drawing.Point(177, 272);
+            this.buttonKosong.Location = new System.Drawing.Point(174, 330);
             this.buttonKosong.Name = "buttonKosong";
             this.buttonKosong.Size = new System.Drawing.Size(133, 38);
             this.buttonKosong.TabIndex = 65;
@@ -204,7 +229,7 @@ namespace ProjectISA_StudyServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 322);
+            this.ClientSize = new System.Drawing.Size(573, 379);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
@@ -235,5 +260,7 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonSimpan;
         private System.Windows.Forms.Button buttonKosong;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
     }
 }
