@@ -20,29 +20,29 @@ namespace ProjectISA_StudyServer
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            Boolean UbahPHP = Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
-                textBoxDeskripsi.Text, int.Parse(textBoxHarga.Text));
+            //Boolean UbahPHP = Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
+            //    textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
 
-            if (UbahPHP == true)
+            ////if (UbahPHP == true)
+            ////{
+            ////    Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
+            ////        textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
+            ////    MessageBox.Show("Data produk berhasil diubah.", "Informasi");
+            ////}
+            ////else
+            ////{
+            ////    MessageBox.Show("Data gagal diubah.", "Informasi");
+            ////}
+
+            try
             {
                 Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
                     textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
-                MessageBox.Show("Data produk berhasil diubah.", "Informasi");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Data gagal diubah.", "Informasi");
+                MessageBox.Show(ex.Message);
             }
-
-            //try
-            //{
-            //    Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
-            //        textBoxDeskripsi.Text, int.Parse(textBoxHarga.Text));
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
 
         private void buttonKeluar_Click(object sender, EventArgs e)
