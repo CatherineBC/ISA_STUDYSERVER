@@ -20,16 +20,13 @@ namespace ProjectISA_StudyServer
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            Boolean UbahPHP = Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
+            FormMainUser frm = (FormMainUser)this.Owner;
+            Boolean UbahPHP = Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), frm.penjual.Id ,
                 textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
 
             if (UbahPHP == true)
             {
-                Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
-                    textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
                 MessageBox.Show("Data produk berhasil diubah.", "Informasi");
-                FormMainUser main;
-                
             }
             else
             {
@@ -49,11 +46,11 @@ namespace ProjectISA_StudyServer
 
          private void buttonKeluar_Click(object sender, EventArgs e)
         {
-
+            /*
             FormMainUser formMain = (FormMainUser)this.Owner;
             formMain.FormMainUser_Load(buttonKeluar, e);
-            Close();
             this.Close();
+            */
         }
     }
 }

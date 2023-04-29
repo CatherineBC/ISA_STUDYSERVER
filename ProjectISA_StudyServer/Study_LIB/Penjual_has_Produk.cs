@@ -69,7 +69,7 @@ namespace Study_LIB
 
         public static Boolean UbahData(int idProduk, int idPenjual, string deskripsi, int stok)
         {
-            string sql = "UPDATE penjuals_has_produks SET keterangan = '" + deskripsi + "', stok = " + stok + " WHERE penjuals_id = " + idPenjual + " AND " + idProduk;
+            string sql = "UPDATE penjuals_has_produks SET keterangan = '" + deskripsi + "', stok = '" + stok + "' WHERE penjuals_id = '" + idPenjual + "' AND produks_id ='" + idProduk + "'";
 
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
 
