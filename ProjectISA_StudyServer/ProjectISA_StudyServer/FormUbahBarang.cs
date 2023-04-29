@@ -20,33 +20,39 @@ namespace ProjectISA_StudyServer
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            //Boolean UbahPHP = Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
-            //    textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
+            Boolean UbahPHP = Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
+                textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
 
-            ////if (UbahPHP == true)
-            ////{
-            ////    Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
-            ////        textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
-            ////    MessageBox.Show("Data produk berhasil diubah.", "Informasi");
-            ////}
-            ////else
-            ////{
-            ////    MessageBox.Show("Data gagal diubah.", "Informasi");
-            ////}
-
-            try
+            if (UbahPHP == true)
             {
                 Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
                     textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
+                MessageBox.Show("Data produk berhasil diubah.", "Informasi");
+                FormMainUser main;
+                
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Data gagal diubah.", "Informasi");
             }
+
+            //try
+            //{
+            //    Penjual_has_Produk.UbahData(Produks.CariId(textBoxNamaBarang.Text), Penjual.CariIdByProduk(textBoxNamaBarang.Text),
+            //        textBoxDeskripsi.Text, (int)(numericUpDownStok.Value));
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
-        private void buttonKeluar_Click(object sender, EventArgs e)
+         private void buttonKeluar_Click(object sender, EventArgs e)
         {
+
+            FormMainUser formMain = (FormMainUser)this.Owner;
+            formMain.FormMainUser_Load(buttonKeluar, e);
+            Close();
             this.Close();
         }
     }

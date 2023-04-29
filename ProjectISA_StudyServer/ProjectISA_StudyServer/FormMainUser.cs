@@ -24,7 +24,7 @@ namespace ProjectISA_StudyServer
 
         public List<Penjual_has_Produk> listProdukPenjuals = new List<Penjual_has_Produk>();
 
-        private void FormMainUser_Load(object sender, EventArgs e)
+        public void FormMainUser_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized; //Form Utama menjadi Fullscreen
             this.IsMdiContainer = true;
