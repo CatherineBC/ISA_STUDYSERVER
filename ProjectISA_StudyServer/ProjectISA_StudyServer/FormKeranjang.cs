@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -93,9 +94,23 @@ namespace ProjectISA_StudyServer
         private void buttonTambah_Click(object sender, EventArgs e)
         {
             FormMainUser frm = (FormMainUser)this.Owner;
+
+            List<Keranjang> listKeranjangUntukStok = new List<Keranjang>();
+            listKeranjang = Keranjang.BacaDataPenggunaGetStok(frm.pembeli.Id);
+            foreach(Keranjang k in listKeranjang)
+            {
+                Boolean updateStok = Penjual_has_Produk.UpdateStok(k.NamaProduk.Id, k.NamaPenjual.Id, k.Jumlah_item);
+                if(updateStok== false)
+                {
+                    MessageBox.Show("Kesalahan di update Stok form keranjang");
+                }
+            }
+
+
             int id = OrderDetails.GenerateId();
             int jumlahSubTotal = Keranjang.jumlahSubTotal(frm.pembeli.Id);
             int idKeranjang = Keranjang.CariId(frm.pembeli.Id);
+            
             Boolean tambahOrderDetails = OrderDetails.TambahData(id, idKeranjang, jumlahSubTotal);
             if (tambahOrderDetails == true)
             {

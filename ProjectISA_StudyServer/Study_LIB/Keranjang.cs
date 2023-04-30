@@ -293,6 +293,48 @@ namespace Study_LIB
             }
             return listKeranjang;
         }
+        public static List<Keranjang> BacaDataPenggunaGetStok(int idPembeli)
+        {
+            string sql = "";
+            sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
+                "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
+                "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
+                "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
+                "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
+                "inner join produks pro on penp2.produks_id = pro.id " +
+                "where k.pembelis_id = '" + idPembeli + "' and k.status ='belum'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Keranjang> listKeranjang = new List<Keranjang>();
+
+            while (hasil.Read() == true)
+            {
+                Keranjang k = new Keranjang();
+                k.Id = int.Parse(hasil.GetString(0));
+                k.Sub_total = double.Parse(hasil.GetString(7));
+                k.Jumlah_item = int.Parse(hasil.GetString(8));
+                k.Status = hasil.GetString(9);
+
+                Pembeli pem = new Pembeli();
+                pem.Id = int.Parse(hasil.GetString(1));
+                pem.Username = hasil.GetString(2);
+                k.NamaPembeli = pem;
+
+                Penjual pen = new Penjual();
+                pen.Id = int.Parse(hasil.GetString(3));
+                pen.Nama = hasil.GetString(4);
+                k.NamaPenjual = pen;
+
+                Produks pro = new Produks();
+                pro.Id = int.Parse(hasil.GetString(5));
+                pro.Nama = hasil.GetString(6);
+                k.NamaProduk = pro;
+
+                listKeranjang.Add(k);
+
+            }
+            return listKeranjang;
+        }
         public static List<Keranjang> BacaDataKeranjang(int idKeranjang)
         {
             string sql = "";

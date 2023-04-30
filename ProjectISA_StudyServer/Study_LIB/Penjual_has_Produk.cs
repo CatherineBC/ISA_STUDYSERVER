@@ -169,6 +169,34 @@ namespace Study_LIB
             }
             return listPenjualHasProduk;
         }
+        public static int DapatStok(int idProduk)
+        {
+            string sql = "select stok from penjuals_has_produks where produks_id = '" + idProduk + "'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            int stok = 0;
+            if (hasil.Read() == true)
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    stok = int.Parse(hasil.GetValue(0).ToString());
+                }
+            }
+            return stok;
+        }
+        public static Boolean UpdateStok(int idProduk, int idPenjual, int stok)
+        {
+            int jumlahStok = DapatStok(idProduk);
+            jumlahStok -= stok;
+            string sql = "UPDATE penjuals_has_produks SET stok = '" + jumlahStok + "' WHERE penjuals_id = '" + idPenjual + "' AND produks_id ='" + idProduk + "'";
+
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else { return true; }
+        }
         #endregion
     }
 }
