@@ -72,6 +72,18 @@
     <Compile Include="FormBeli.Designer.cs">
       <DependentUpon>FormBeli.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarPembeli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarPembeli.Designer.cs">
+      <DependentUpon>FormDaftarPembeli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarPenjual.Designer.cs">
+      <DependentUpon>FormDaftarPenjual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKeranjang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBeli.resx">
       <DependentUpon>FormBeli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarPembeli.resx">
+      <DependentUpon>FormDaftarPembeli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarPenjual.resx">
+      <DependentUpon>FormDaftarPenjual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKeranjang.resx">
       <DependentUpon>FormKeranjang.cs</DependentUpon>
