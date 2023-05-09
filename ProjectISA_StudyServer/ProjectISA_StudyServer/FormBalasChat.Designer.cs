@@ -161,7 +161,7 @@ namespace ProjectISA_StudyServer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(606, 69);
             this.label1.TabIndex = 61;
-            this.label1.Text = "BALAS PESAN CS";
+            this.label1.Text = "BALAS PESAN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonExit
@@ -169,7 +169,7 @@ namespace ProjectISA_StudyServer
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonExit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonExit.Location = new System.Drawing.Point(461, 376);
+            this.buttonExit.Location = new System.Drawing.Point(15, 376);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(160, 48);
@@ -183,7 +183,7 @@ namespace ProjectISA_StudyServer
             this.buttonSimpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSimpan.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonSimpan.Location = new System.Drawing.Point(15, 376);
+            this.buttonSimpan.Location = new System.Drawing.Point(471, 376);
             this.buttonSimpan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(150, 48);

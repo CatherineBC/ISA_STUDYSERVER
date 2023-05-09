@@ -44,7 +44,7 @@ namespace ProjectISA_StudyServer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1472, 69);
             this.label1.TabIndex = 25;
-            this.label1.Text = "DAFTAR SEMUA PESAN CUSTOMER SERVICE";
+            this.label1.Text = "DAFTAR SEMUA PESAN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewDftrCs
@@ -72,6 +72,7 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.TabIndex = 48;
             this.buttonKeluar.Text = "Keluar";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // FormListChat
             // 

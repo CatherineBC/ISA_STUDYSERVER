@@ -69,6 +69,7 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.TabIndex = 44;
             this.buttonTambah.Text = "Keluar";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // FormOrderDetails
             // 

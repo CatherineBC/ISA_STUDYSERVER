@@ -89,6 +89,7 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.TabIndex = 39;
             this.buttonKeluar.Text = "Keluar";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // label2
             // 

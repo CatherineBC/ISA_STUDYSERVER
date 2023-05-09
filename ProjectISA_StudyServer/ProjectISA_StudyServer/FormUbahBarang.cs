@@ -51,6 +51,7 @@ namespace ProjectISA_StudyServer
             formMain.FormMainUser_Load(buttonKeluar, e);
             this.Close();
             */
+            Close();
         }
     }
 }
