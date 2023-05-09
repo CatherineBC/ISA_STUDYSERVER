@@ -228,7 +228,35 @@ namespace Study_LIB
             }
             return hasilId;
         }
+        public static List<Penjual> BacaDataPenjual()
+        {
+            string sql = "select p.id, p.nama_toko, p.username, " +
+                "p.email, p.password, p.rating, p.status, a.id, a.username "
+                + "from penjuals p inner join administrator a on p.administrator_id = a.id" +
+                " where administrator_id is not null";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Penjual> listPenjual = new List<Penjual>();
 
+            while (hasil.Read() == true)
+            {
+                Penjual penjual = new Penjual();
+                penjual.Id = int.Parse(hasil.GetString(0));
+                penjual.Nama = hasil.GetString(1);
+                penjual.Username = hasil.GetString(2);
+                penjual.Email = hasil.GetString(3);
+                penjual.Password = hasil.GetString(4);
+                penjual.Rating = double.Parse(hasil.GetString(5));
+                penjual.Status = hasil.GetString(6);
+
+                Administrator admin = new Administrator();
+                admin.Id = int.Parse(hasil.GetString(7));
+                admin.Username = hasil.GetString(8);
+                penjual.Admin = admin;
+
+                listPenjual.Add(penjual);
+            }
+            return listPenjual;
+        }
         public override string ToString()
         {
             return Nama;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_LIB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace ProjectISA_StudyServer
         public FormDaftarPembeli()
         {
             InitializeComponent();
+        }
+        public List<Pembeli> listPembeli = new List<Pembeli>();
+        private void FormDaftarPembeli_Load(object sender, EventArgs e)
+        {
+            listPembeli = Pembeli.BacaDataPembeli();
+            if (listPembeli.Count > 0 && listPembeli != null)
+            {
+                dataGridViewData.DataSource = listPembeli;
+            }
+            else
+            {
+                dataGridViewData.DataSource = null;
+            }
         }
     }
 }

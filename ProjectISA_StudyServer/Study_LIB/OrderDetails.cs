@@ -159,7 +159,8 @@ namespace Study_LIB
             return hasilNo;
         }
         
-        public static void PrintOrderDetails(string printKriteria, string nilaiKriteria, string printKriteria2, string nilaiKriteria2, string fileName, Font fontType, int idPembeli)
+        public static void PrintOrderDetails(string printKriteria, string nilaiKriteria, string printKriteria2, 
+            string nilaiKriteria2, string fileName, string alamat, Font fontType, int idPembeli)
         {
             List<Keranjang> listKeranjang = new List<Keranjang>();
             List<OrderDetails> listOrderDetails = new List<OrderDetails>();
@@ -173,6 +174,7 @@ namespace Study_LIB
                 tempFile.WriteLine("=".PadRight(50, '='));
                 tempFile.WriteLine("Order Date      : " + od.Tanggal);
                 tempFile.WriteLine("No keranjang    : " + od.Keranjang_id.Id);
+                tempFile.WriteLine("Alamat          : " + alamat);
                 tempFile.WriteLine("=".PadRight(50, '='));
                 tempFile.WriteLine("");
 

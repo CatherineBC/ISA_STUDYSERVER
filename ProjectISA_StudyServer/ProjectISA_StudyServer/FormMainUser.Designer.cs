@@ -46,9 +46,9 @@ namespace ProjectISA_StudyServer
             // labelNama
             // 
             this.labelNama.AutoSize = true;
-            this.labelNama.Location = new System.Drawing.Point(750, 59);
+            this.labelNama.Location = new System.Drawing.Point(667, 47);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(179, 20);
+            this.labelNama.Size = new System.Drawing.Size(150, 16);
             this.labelNama.TabIndex = 3;
             this.labelNama.Text = "Selamat Datang , Nama";
             this.labelNama.Click += new System.EventHandler(this.labelNama_Click);
@@ -56,18 +56,17 @@ namespace ProjectISA_StudyServer
             // dataGridViewData
             // 
             this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewData.Location = new System.Drawing.Point(12, 108);
+            this.dataGridViewData.Location = new System.Drawing.Point(11, 86);
             this.dataGridViewData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.RowHeadersWidth = 62;
             this.dataGridViewData.RowTemplate.Height = 28;
-            this.dataGridViewData.Size = new System.Drawing.Size(957, 335);
+            this.dataGridViewData.Size = new System.Drawing.Size(851, 268);
             this.dataGridViewData.TabIndex = 2;
             this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.konfirmasiTokoToolStripMenuItem,
@@ -79,63 +78,65 @@ namespace ProjectISA_StudyServer
             this.penjualToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(981, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(872, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // konfirmasiTokoToolStripMenuItem
             // 
             this.konfirmasiTokoToolStripMenuItem.Name = "konfirmasiTokoToolStripMenuItem";
-            this.konfirmasiTokoToolStripMenuItem.Size = new System.Drawing.Size(155, 29);
+            this.konfirmasiTokoToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.konfirmasiTokoToolStripMenuItem.Text = "Konfirmasi Toko";
             this.konfirmasiTokoToolStripMenuItem.Click += new System.EventHandler(this.konfirmasiTokoToolStripMenuItem_Click);
             // 
             // chatToolStripMenuItem
             // 
             this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
-            this.chatToolStripMenuItem.Size = new System.Drawing.Size(64, 29);
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.chatToolStripMenuItem.Text = "Chat";
             this.chatToolStripMenuItem.Click += new System.EventHandler(this.chatToolStripMenuItem_Click);
             // 
             // tambahBarangToolStripMenuItem
             // 
             this.tambahBarangToolStripMenuItem.Name = "tambahBarangToolStripMenuItem";
-            this.tambahBarangToolStripMenuItem.Size = new System.Drawing.Size(150, 29);
+            this.tambahBarangToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.tambahBarangToolStripMenuItem.Text = "Tambah Barang";
             this.tambahBarangToolStripMenuItem.Click += new System.EventHandler(this.tambahBarangToolStripMenuItem_Click);
             // 
             // keranjangToolStripMenuItem
             // 
             this.keranjangToolStripMenuItem.Name = "keranjangToolStripMenuItem";
-            this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
+            this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.keranjangToolStripMenuItem.Text = "Keranjang";
             this.keranjangToolStripMenuItem.Click += new System.EventHandler(this.keranjangToolStripMenuItem_Click);
             // 
             // detailOrderToolStripMenuItem
             // 
             this.detailOrderToolStripMenuItem.Name = "detailOrderToolStripMenuItem";
-            this.detailOrderToolStripMenuItem.Size = new System.Drawing.Size(124, 29);
+            this.detailOrderToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
             this.detailOrderToolStripMenuItem.Text = "Detail Order";
             this.detailOrderToolStripMenuItem.Click += new System.EventHandler(this.detailOrderToolStripMenuItem_Click);
             // 
             // pembeliToolStripMenuItem
             // 
             this.pembeliToolStripMenuItem.Name = "pembeliToolStripMenuItem";
-            this.pembeliToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.pembeliToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.pembeliToolStripMenuItem.Text = "Pembeli";
+            this.pembeliToolStripMenuItem.Click += new System.EventHandler(this.pembeliToolStripMenuItem_Click);
             // 
             // penjualToolStripMenuItem
             // 
             this.penjualToolStripMenuItem.Name = "penjualToolStripMenuItem";
-            this.penjualToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
+            this.penjualToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.penjualToolStripMenuItem.Text = "Penjual";
+            this.penjualToolStripMenuItem.Click += new System.EventHandler(this.penjualToolStripMenuItem_Click);
             // 
             // FormMainUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 458);
+            this.ClientSize = new System.Drawing.Size(872, 366);
             this.Controls.Add(this.labelNama);
             this.Controls.Add(this.dataGridViewData);
             this.Controls.Add(this.menuStrip1);

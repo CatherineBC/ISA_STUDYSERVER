@@ -29,8 +29,9 @@ namespace ProjectISA_StudyServer
                         int id = Pembeli.GenerateId();
                         string key = textBoxNoHp.Text + "1234";
                         string cipherText = Cyrptography.Encryption(textBoxPwdUlang.Text, key);
+                        string cipherTextAlamat = Cyrptography.Encryption(textBoxAlamat.Text, key);
                         Pembeli pembeli = new Pembeli(id, textBoxNama.Text, textBoxUserName.Text, cipherText,
-                            textBoxEmail.Text, textBoxAlamat.Text, textBoxNoHp.Text);
+                            textBoxEmail.Text, cipherTextAlamat, textBoxNoHp.Text);
                         Boolean status = Pembeli.TambahData(pembeli);
                         if (status == true)
                         {

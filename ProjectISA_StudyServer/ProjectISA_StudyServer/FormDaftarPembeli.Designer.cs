@@ -40,10 +40,10 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeluar.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKeluar.Location = new System.Drawing.Point(12, 484);
+            this.buttonKeluar.Location = new System.Drawing.Point(11, 387);
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKeluar.Name = "buttonKeluar";
-            this.buttonKeluar.Size = new System.Drawing.Size(138, 45);
+            this.buttonKeluar.Size = new System.Drawing.Size(123, 36);
             this.buttonKeluar.TabIndex = 50;
             this.buttonKeluar.Text = "Keluar";
             this.buttonKeluar.UseVisualStyleBackColor = false;
@@ -55,7 +55,7 @@ namespace ProjectISA_StudyServer
             this.labelTambahBarang.ForeColor = System.Drawing.Color.LightCoral;
             this.labelTambahBarang.Location = new System.Drawing.Point(1, -2);
             this.labelTambahBarang.Name = "labelTambahBarang";
-            this.labelTambahBarang.Size = new System.Drawing.Size(1006, 118);
+            this.labelTambahBarang.Size = new System.Drawing.Size(894, 94);
             this.labelTambahBarang.TabIndex = 48;
             this.labelTambahBarang.Text = "Pembeli";
             this.labelTambahBarang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,24 +63,26 @@ namespace ProjectISA_StudyServer
             // dataGridViewData
             // 
             this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewData.Location = new System.Drawing.Point(12, 130);
+            this.dataGridViewData.Location = new System.Drawing.Point(11, 104);
             this.dataGridViewData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.RowHeadersWidth = 62;
             this.dataGridViewData.RowTemplate.Height = 28;
-            this.dataGridViewData.Size = new System.Drawing.Size(957, 335);
+            this.dataGridViewData.Size = new System.Drawing.Size(851, 268);
             this.dataGridViewData.TabIndex = 47;
             // 
             // FormDaftarPembeli
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 541);
+            this.ClientSize = new System.Drawing.Size(868, 433);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.labelTambahBarang);
             this.Controls.Add(this.dataGridViewData);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDaftarPembeli";
             this.Text = "FormDaftarPembeli";
+            this.Load += new System.EventHandler(this.FormDaftarPembeli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
 

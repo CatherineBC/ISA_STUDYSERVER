@@ -16,7 +16,6 @@ namespace ProjectISA_StudyServer
 
         public List<OrderDetails> listOrderDetails = new List<OrderDetails>();
         public List<Keranjang> listKeranjang = new List<Keranjang>();
-        Koneksi k;
         public FormOrderDetails()
         {
             InitializeComponent();
@@ -53,7 +52,7 @@ namespace ProjectISA_StudyServer
             }
             else if(frm.status == "penjual")
             {
-                listKeranjang = Keranjang.BacaDataPenjual(frm.penjual.Id);
+                listKeranjang = Keranjang.BacaDataPenjualSelesai(frm.penjual.Id);
                 if (listKeranjang.Count > 0)
                 {
                     dataGridViewData.DataSource = listKeranjang;
@@ -69,9 +68,10 @@ namespace ProjectISA_StudyServer
             {
                 if (e.ColumnIndex == dataGridViewData.Columns["buttonPrintGrid"].Index && e.RowIndex >= 0)
                 {
+                    string alamat = Cyrptography.Decryption(frm.pembeli.Alamat, frm.pembeli.No_telpon + "1234");
                     //OrderDetails.PrintOrderDetails("id", dataGridViewData.Rows[e.RowIndex].Cells["id"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12));
                     OrderDetails.PrintOrderDetails("idorders", dataGridViewData.Rows[e.RowIndex].Cells["IdOrders"].Value.ToString(), "k.id",
-                        dataGridViewData.Rows[e.RowIndex].Cells["Keranjang_id"].Value.ToString(), "OrderDetails.txt", new Font("Courier New", 12), frm.pembeli.Id);
+                        dataGridViewData.Rows[e.RowIndex].Cells["Keranjang_id"].Value.ToString(), "OrderDetails.txt", alamat, new Font("Courier New", 12), frm.pembeli.Id);
                     MessageBox.Show("Nota Telah Tercetak");
                 }
             }

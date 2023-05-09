@@ -154,7 +154,27 @@ namespace Study_LIB
             }
             return hasilId;
         }
+        public static List<Pembeli> BacaDataPembeli()
+        {
+            string sql = "select * from pembelis";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Pembeli> listPembeli = new List<Pembeli>();
 
+            while (hasil.Read() == true)
+            {
+                Pembeli pembeli = new Pembeli();
+                pembeli.Id = int.Parse(hasil.GetString(0));
+                pembeli.Nama = hasil.GetString(1);
+                pembeli.Username = hasil.GetString(2);
+                pembeli.Password = hasil.GetString(3);
+                pembeli.Email = hasil.GetString(4);
+                pembeli.Alamat = hasil.GetString(5);
+                pembeli.No_telpon = hasil.GetString(6);
+
+                listPembeli.Add(pembeli);
+            }
+            return listPembeli;
+        }
         public override string ToString()
         {
             return Username;

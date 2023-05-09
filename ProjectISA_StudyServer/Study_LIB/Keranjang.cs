@@ -196,17 +196,30 @@ namespace Study_LIB
             }
             return listKeranjang;
         }
-
-        public static List<Keranjang> BacaDataPenjual(int idPenjual)
+        public static List<Keranjang> BacaDataPenggunaSelesai(string kriteria, string nilaiKriteria, int idPembeli)
         {
             string sql = "";
-            sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
+            if (kriteria == "")
+            {
+                sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
                 "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
                 "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
                 "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
                 "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
                 "inner join produks pro on penp2.produks_id = pro.id " +
-                "where k.penjuals_id = '" + idPenjual + "' and k.status ='selesai'";
+                "where k.pembelis_id = '" + idPembeli + "' and k.status ='selesai'";
+            }
+            else
+            {
+                sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
+                "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
+                "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
+                "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
+                "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
+                "inner join produks pro on penp2.produks_id = pro.id " +
+                "where k.pembelis_id = '" + idPembeli + "' and k.status ='selesai' and " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            }
+
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<Keranjang> listKeranjang = new List<Keranjang>();
 
@@ -238,29 +251,16 @@ namespace Study_LIB
             }
             return listKeranjang;
         }
-        public static List<Keranjang> BacaDataPenggunaSelesai(string kriteria, string nilaiKriteria, int idPembeli)
+        public static List<Keranjang> BacaDataPenjualSelesai(int idPenjual)
         {
             string sql = "";
-            if (kriteria == "")
-            {
-                sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
+            sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
                 "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
                 "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
                 "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
                 "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
                 "inner join produks pro on penp2.produks_id = pro.id " +
-                "where k.pembelis_id = '" + idPembeli + "' and k.status ='selesai'";
-            }
-            else
-            {
-                sql = "select k.id, pem.id, pem.username, pen.id, pen.nama_toko, pro.id, pro.nama, k.sub_total, k.jumlah_item, k.status " +
-                "FROM keranjang k INNER JOIN pembelis pem ON k.pembelis_id = pem.id " +
-                "INNER JOIN penjuals_has_produks penp ON k.penjuals_id=penp.penjuals_id " +
-                "INNER JOIN penjuals pen ON penp.penjuals_id = pen.id " +
-                "INNER JOIN penjuals_has_produks penp2 ON k.produks_id = penp2.produks_id " +
-                "inner join produks pro on penp2.produks_id = pro.id " +
-                "where k.pembelis_id = '" + idPembeli + "' and k.status ='selesai' and " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
-            }
+                "where k.penjuals_id = '" + idPenjual + "' and k.status ='selesai'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<Keranjang> listKeranjang = new List<Keranjang>();

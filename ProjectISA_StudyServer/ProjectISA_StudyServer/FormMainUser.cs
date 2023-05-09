@@ -41,6 +41,8 @@ namespace ProjectISA_StudyServer
                         
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
+                        pembeliToolStripMenuItem.Visible = false;
+                        penjualToolStripMenuItem.Visible = false;
                         listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
                         tambahBarangToolStripMenuItem.Visible = false;
 
@@ -76,6 +78,8 @@ namespace ProjectISA_StudyServer
                         labelNama.Text = "Selamat datang, " + penjual.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
                         keranjangToolStripMenuItem.Visible = false;
+                        pembeliToolStripMenuItem.Visible = false;
+                        penjualToolStripMenuItem.Visible = false;
                         int cekStatus = Penjual.CekStatus(penjual.Id);
                         if(cekStatus == 1)
                         {
@@ -111,7 +115,9 @@ namespace ProjectISA_StudyServer
                     {
                         labelNama.Text = "Selamat datang, " + administrator.Username;
                         listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
-
+                        tambahBarangToolStripMenuItem.Visible = false;
+                        keranjangToolStripMenuItem.Visible = false;
+                        detailOrderToolStripMenuItem.Visible = false;
                         if (listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
                         {
                             dataGridViewData.DataSource = listProdukPenjuals;
@@ -235,6 +241,26 @@ namespace ProjectISA_StudyServer
             {
                 FormOrderDetails fk = new FormOrderDetails();
                 fk.Owner = this;
+                fk.ShowDialog();
+            }
+        }
+
+        private void penjualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormDaftarPenjual"];
+            if (form == null)
+            {
+                FormDaftarPenjual fk = new FormDaftarPenjual();
+                fk.ShowDialog();
+            }
+        }
+
+        private void pembeliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormDaftarPembeli"];
+            if (form == null)
+            {
+                FormDaftarPembeli fk = new FormDaftarPembeli();
                 fk.ShowDialog();
             }
         }
