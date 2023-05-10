@@ -83,6 +83,34 @@ namespace Study_LIB
             }
             return listChat;
         }
+        public static List<Chat> BacaDataSemua()
+        {
+            string sql = "";
+            sql = "select c.id,pem.id, pem.username, pen.id, pen.nama_toko, c.isi_pesan, c.waktu" +
+                " from chats c inner join pembelis pem on c.pembelis_id = pem.id inner join penjuals pen on c.penjuals_id = pen.id";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Chat> listChat = new List<Chat>();
+            while (hasil.Read() == true)
+            {
+                Chat chat = new Chat();
+                chat.Id = int.Parse(hasil.GetString(0));
+                chat.Pesan = hasil.GetString(5);
+                chat.Waktu = DateTime.Parse(hasil.GetString(6));
+
+                chat.Pembeli = new Pembeli();
+                chat.Pembeli.Id = int.Parse(hasil.GetString(1));
+                chat.Pembeli.Username = hasil.GetString(2);
+
+                chat.Penjual = new Penjual();
+                chat.Penjual.Id = int.Parse(hasil.GetString(3));
+                chat.penjual.Nama = hasil.GetString(4);
+
+                listChat.Add(chat);
+            }
+            return listChat;
+        }
         public static void BalasPesan(int id, int pembeliId, int penjualId, string pesan, DateTime waktu)
         {
             string sql = "insert into chats(id, pembelis_id, penjuals_id, isi_pesan, waktu) values ('" + id + "','" + pembeliId + "','" +

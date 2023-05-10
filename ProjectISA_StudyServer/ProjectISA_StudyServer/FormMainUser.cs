@@ -267,12 +267,12 @@ namespace ProjectISA_StudyServer
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormMainUser_Load(logOutToolStripMenuItem, e);
             status = "";
-            dataGridViewData.Refresh();
+            dataGridViewData.DataSource = null;
             pembeli = null;
             penjual = null;
             administrator = null;
+            FormMainUser_Load(logOutToolStripMenuItem, e);
         }
     }
 }

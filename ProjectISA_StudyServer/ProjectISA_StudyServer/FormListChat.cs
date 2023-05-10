@@ -68,6 +68,18 @@ namespace ProjectISA_StudyServer
                     dataGridViewDftrCs.DataSource = null;
                 }
             }
+            else
+            {
+                listChat = Chat.BacaDataSemua();
+                if (listChat.Count > 0 && listChat != null)
+                {
+                    dataGridViewDftrCs.DataSource = listChat;
+                }
+                else
+                {
+                    dataGridViewDftrCs.DataSource = null;
+                }
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -90,7 +102,7 @@ namespace ProjectISA_StudyServer
                     frm2.ShowDialog();
                 }
             }
-            else
+            else if(frm.status == "penjual")
             {
                 if (e.ColumnIndex == dataGridViewDftrCs.Columns["btnBalasGrid"].Index && e.RowIndex >= 0)
                 {
