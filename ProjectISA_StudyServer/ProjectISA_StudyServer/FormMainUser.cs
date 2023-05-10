@@ -269,6 +269,10 @@ namespace ProjectISA_StudyServer
         {
             FormMainUser_Load(logOutToolStripMenuItem, e);
             status = "";
+            dataGridViewData.Refresh();
+            pembeli = null;
+            penjual = null;
+            administrator = null;
         }
     }
 }
