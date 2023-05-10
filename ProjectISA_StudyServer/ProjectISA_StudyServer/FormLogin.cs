@@ -96,5 +96,10 @@ namespace ProjectISA_StudyServer
         {
             
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
