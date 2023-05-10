@@ -43,6 +43,8 @@ namespace ProjectISA_StudyServer
                         konfirmasiTokoToolStripMenuItem.Visible = false;
                         pembeliToolStripMenuItem.Visible = false;
                         penjualToolStripMenuItem.Visible = false;
+                        keranjangToolStripMenuItem.Visible = true;
+                        detailOrderToolStripMenuItem.Visible = true;
                         listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
                         tambahBarangToolStripMenuItem.Visible = false;
 
@@ -269,6 +271,9 @@ namespace ProjectISA_StudyServer
         {
             status = "";
             dataGridViewData.DataSource = null;
+            dataGridViewData.Rows.Clear();
+            dataGridViewData.Columns.Clear();
+            dataGridViewData.Refresh();
             pembeli = null;
             penjual = null;
             administrator = null;

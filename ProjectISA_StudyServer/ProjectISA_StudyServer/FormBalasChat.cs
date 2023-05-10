@@ -46,5 +46,10 @@ namespace ProjectISA_StudyServer
             textBoxIdVoucher.Enabled = false;
             textBoxIdVoucher.Text = id.ToString();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

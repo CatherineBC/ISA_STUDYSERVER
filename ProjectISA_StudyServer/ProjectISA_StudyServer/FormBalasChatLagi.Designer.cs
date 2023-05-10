@@ -160,10 +160,10 @@ namespace ProjectISA_StudyServer
             // 
             // textBoxIdVoucher
             // 
-            this.textBoxIdVoucher.Location = new System.Drawing.Point(269, 20);
+            this.textBoxIdVoucher.Location = new System.Drawing.Point(169, 20);
             this.textBoxIdVoucher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxIdVoucher.Name = "textBoxIdVoucher";
-            this.textBoxIdVoucher.Size = new System.Drawing.Size(281, 26);
+            this.textBoxIdVoucher.Size = new System.Drawing.Size(381, 26);
             this.textBoxIdVoucher.TabIndex = 2;
             // 
             // label2
@@ -172,11 +172,11 @@ namespace ProjectISA_StudyServer
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(19, 19);
+            this.label2.Location = new System.Drawing.Point(42, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 25);
+            this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "ID Customer Service : ";
+            this.label2.Text = "ID Pesan : ";
             // 
             // label1
             // 
@@ -243,7 +243,7 @@ namespace ProjectISA_StudyServer
             this.Controls.Add(this.buttonKosong);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBalasChatLagi";
-            this.Text = "FormBalasChatLagi";
+            this.Text = "FormBalasChat";
             this.Load += new System.EventHandler(this.FormBalasChatLagi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
