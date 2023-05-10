@@ -31,7 +31,6 @@ namespace ProjectISA_StudyServer
         {
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxUlang = new System.Windows.Forms.TextBox();
-            this.textBoxNoHp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.labelDaftarSupplier = new System.Windows.Forms.Label();
             this.buttonKeluar = new System.Windows.Forms.Button();
@@ -44,13 +43,12 @@ namespace ProjectISA_StudyServer
             this.textBoxNamaToko = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPwD = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(225, 242);
+            this.textBoxEmail.Location = new System.Drawing.Point(225, 196);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(226, 26);
@@ -63,14 +61,6 @@ namespace ProjectISA_StudyServer
             this.textBoxUlang.Name = "textBoxUlang";
             this.textBoxUlang.Size = new System.Drawing.Size(226, 26);
             this.textBoxUlang.TabIndex = 16;
-            // 
-            // textBoxNoHp
-            // 
-            this.textBoxNoHp.Location = new System.Drawing.Point(225, 198);
-            this.textBoxNoHp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxNoHp.Name = "textBoxNoHp";
-            this.textBoxNoHp.Size = new System.Drawing.Size(226, 26);
-            this.textBoxNoHp.TabIndex = 15;
             // 
             // label8
             // 
@@ -98,7 +88,7 @@ namespace ProjectISA_StudyServer
             this.buttonKeluar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeluar.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonKeluar.Location = new System.Drawing.Point(24, 425);
+            this.buttonKeluar.Location = new System.Drawing.Point(24, 384);
             this.buttonKeluar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(138, 44);
@@ -138,7 +128,7 @@ namespace ProjectISA_StudyServer
             this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonTambah.Location = new System.Drawing.Point(360, 425);
+            this.buttonTambah.Location = new System.Drawing.Point(360, 384);
             this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(138, 44);
@@ -164,8 +154,6 @@ namespace ProjectISA_StudyServer
             this.panel1.Controls.Add(this.textBoxPwD);
             this.panel1.Controls.Add(this.textBoxEmail);
             this.panel1.Controls.Add(this.textBoxUlang);
-            this.panel1.Controls.Add(this.textBoxNoHp);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -174,7 +162,7 @@ namespace ProjectISA_StudyServer
             this.panel1.Location = new System.Drawing.Point(-15, 91);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 312);
+            this.panel1.Size = new System.Drawing.Size(549, 262);
             this.panel1.TabIndex = 31;
             // 
             // textBoxNamaToko
@@ -188,7 +176,7 @@ namespace ProjectISA_StudyServer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 245);
+            this.label1.Location = new System.Drawing.Point(35, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 19;
@@ -202,20 +190,11 @@ namespace ProjectISA_StudyServer
             this.textBoxPwD.Size = new System.Drawing.Size(226, 26);
             this.textBoxPwD.TabIndex = 18;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 198);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 20);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Nomor HP :";
-            // 
             // FormRegisSeller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 481);
+            this.ClientSize = new System.Drawing.Size(526, 446);
             this.Controls.Add(this.labelDaftarSupplier);
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.buttonTambah);
@@ -234,7 +213,6 @@ namespace ProjectISA_StudyServer
 
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxUlang;
-        private System.Windows.Forms.TextBox textBoxNoHp;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelDaftarSupplier;
         private System.Windows.Forms.Button buttonKeluar;
@@ -247,6 +225,5 @@ namespace ProjectISA_StudyServer
         private System.Windows.Forms.TextBox textBoxNamaToko;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPwD;
-        private System.Windows.Forms.Label label9;
     }
 }
