@@ -41,12 +41,13 @@ namespace ProjectISA_StudyServer
                         
                         labelNama.Text = "Selamat datang, " + pembeli.Nama;
                         konfirmasiTokoToolStripMenuItem.Visible = false;
-                        pembeliToolStripMenuItem.Visible = false;
-                        penjualToolStripMenuItem.Visible = false;
+                        chatToolStripMenuItem.Visible = true;
+                        tambahBarangToolStripMenuItem.Visible = false;
                         keranjangToolStripMenuItem.Visible = true;
                         detailOrderToolStripMenuItem.Visible = true;
+                        pembeliToolStripMenuItem.Visible = false;
+                        penjualToolStripMenuItem.Visible = false;
                         listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
-                        tambahBarangToolStripMenuItem.Visible = false;
 
                         if (listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
                         {
@@ -78,10 +79,15 @@ namespace ProjectISA_StudyServer
                     else if(status == "penjual")
                     {
                         labelNama.Text = "Selamat datang, " + penjual.Nama;
+
                         konfirmasiTokoToolStripMenuItem.Visible = false;
+                        chatToolStripMenuItem.Visible = true;
+                        tambahBarangToolStripMenuItem.Visible = true;
                         keranjangToolStripMenuItem.Visible = false;
+                        detailOrderToolStripMenuItem.Visible = true;
                         pembeliToolStripMenuItem.Visible = false;
                         penjualToolStripMenuItem.Visible = false;
+
                         int cekStatus = Penjual.CekStatus(penjual.Id);
                         if(cekStatus == 1)
                         {
@@ -117,9 +123,15 @@ namespace ProjectISA_StudyServer
                     {
                         labelNama.Text = "Selamat datang, " + administrator.Username;
                         listProdukPenjuals = Penjual_has_Produk.BacaData("", "");
+
+                        konfirmasiTokoToolStripMenuItem.Visible = true;
+                        chatToolStripMenuItem.Visible = true;
                         tambahBarangToolStripMenuItem.Visible = false;
                         keranjangToolStripMenuItem.Visible = false;
                         detailOrderToolStripMenuItem.Visible = false;
+                        pembeliToolStripMenuItem.Visible = true;
+                        penjualToolStripMenuItem.Visible = true;
+
                         if (listProdukPenjuals.Count > 0 && listProdukPenjuals != null)
                         {
                             dataGridViewData.DataSource = listProdukPenjuals;
