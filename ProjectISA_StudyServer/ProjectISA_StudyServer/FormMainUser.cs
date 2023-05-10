@@ -264,5 +264,11 @@ namespace ProjectISA_StudyServer
                 fk.ShowDialog();
             }
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMainUser_Load(logOutToolStripMenuItem, e);
+            status = "";
+        }
     }
 }

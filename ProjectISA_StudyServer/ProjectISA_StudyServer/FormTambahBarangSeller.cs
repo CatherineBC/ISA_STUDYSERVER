@@ -57,5 +57,10 @@ namespace ProjectISA_StudyServer
             textBoxNamaBarang.Text = "";
             numericUpDownStok.Value = 0;
         }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

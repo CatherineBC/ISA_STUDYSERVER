@@ -83,5 +83,10 @@ namespace ProjectISA_StudyServer
                 MessageBox.Show("Pesan terkirim ke : " + labelPenerima.Text);
             }
         }
+
+        private void buttonExit_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

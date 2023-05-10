@@ -77,5 +77,10 @@ namespace ProjectISA_StudyServer
             }
 
         }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

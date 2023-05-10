@@ -58,8 +58,17 @@ namespace Study_LIB
         #region METHODS
         public static Boolean TambahData(int idKeranjang, int idPembeli, int idPenjual, int idProduk, double sub, int jumlahItem, string statusKeran)
         {
-            string sql = "insert into keranjang(id, pembelis_id, penjuals_id, produks_id, sub_total, jumlah_item, status) values ('" + idKeranjang + "', '" + idPembeli + "', '" +
-                idPenjual + "','" + idProduk + "', '" + sub + "', '" + jumlahItem + "', '" + statusKeran + "')";
+            string sql = "";
+            if(jumlahItem != 0)
+            {
+                sql = "insert into keranjang(id, pembelis_id, penjuals_id, produks_id, sub_total, jumlah_item, status) values ('" + idKeranjang + "', '" + idPembeli + "', '" +
+               idPenjual + "','" + idProduk + "', '" + sub + "', '" + jumlahItem + "', '" + statusKeran + "')";
+
+            }
+            else
+            {
+                throw new Exception("Pembelian minimal 1 buah.");
+            }
 
             int jumlahDitambahkan = Koneksi.JalankanPerintahDML(sql);
             Boolean status;
